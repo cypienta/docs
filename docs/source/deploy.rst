@@ -28,9 +28,6 @@ Deploy resources using the Cloud Formation template
 
     .. image:: resources/upload_template_file.png
         :alt: Subscribe to technique detector
-        :width: 1392px
-        :height: 789px
-        :scale: 100%
         :align: center
 
 5. Now you can input all the parameters needed for the cloud formation stack. Few parameters are already filled in with default recommended value. You can change the values as required.
