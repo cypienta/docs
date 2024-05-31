@@ -1,4 +1,4 @@
-TASK 3: Run an end 2 end test on sample input data
+Sample Test
 ==================================================
 
 3.1 How to test end-to-end
