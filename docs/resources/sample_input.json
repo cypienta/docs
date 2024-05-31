@@ -1,0 +1,42 @@
+{
+    "input": [
+        {
+            "instalertid": 25485,
+            "src": "Internal_User_1",
+            "dst": "ServerA",
+            "time": 1.2741200091934108,
+            "tech": [
+                "T1490"
+            ],
+            "name": " ET DNS Query for .cc TLD ",
+            "other_attributes_dict": {
+                "priority": 1
+            }
+        },
+        {
+            "instalertid": 25486,
+            "src": "ServerA",
+            "dst": "Internal_User_1",
+            "time": 1.2741200091934200,
+            "tech": [
+                "T1055"
+            ],
+            "name": " ET DNS Query for .cc TLD ",
+            "other_attributes_dict": {
+                "priority": 2
+            }
+        }
+    ],
+    "node_feature": {
+        "ServerA": {
+            "userid": "machine_1",
+            "user_group": "HR",
+            "OS": "Linux"
+        },
+        "Internal_User_1": {
+            "userid": "machine_2",
+            "user_group": "EMP",
+            "OS": "Windows11"
+        }
+    }
+}
