@@ -18,12 +18,11 @@ How to test end-to-end
     All fields are required unless mentioned otherwise.
 
 3. Upload input json file to the s3 bucket in path (eg:
-   s3://{bucket-name}/input/). The name of the input file does not
-   matter to the end-to-end flow. Note that if you upload a file with
-   the same name, it will be overwritten in S3 bucket.
+    s3://{bucket-name}/input/). The name of the input file does not
+    matter to the end-to-end flow. Note that if you upload a file with
+    the same name, it will be overwritten in S3 bucket.
 
-    1. Once you upload the input file. Lets say ``input.json``. Then the
-        control flow will be as follows:
+    1. Once you upload the input file. Lets say ``input.json``. Then the control flow will be as follows:
 
         -  Enrich_with_technique: lambda function
         -  Transform-job-tech-{unique-id}: Batch transform job
@@ -59,5 +58,4 @@ How to test end-to-end
     3. You can monitor the progress on CloudWatch logs for each lambda
         function and transform job created.
 
-4. Wait for a complete output to show up on the S3 bucket.
-   (s3://alert-detector/output/flow/{unique-id}/)
+4. Wait for a complete output to show up on the S3 bucket. (s3://alert-detector/output/flow/{unique-id}/)
