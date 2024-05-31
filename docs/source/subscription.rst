@@ -10,18 +10,12 @@ ATTACK Technique Detector
 
     .. image:: resources/subscribe_to_technique_detector.png
         :alt: Subscribe to technique detector
-        :width: 1120px
-        :height: 170px
-        :scale: 100%
         :align: center
 
 2. Click on the ``Accept offer`` button on the next page.
 
     .. image:: resources/accept_offer.png
         :alt: Subscribe to technique detector
-        :width: 1120px
-        :height: 170px
-        :scale: 100%
         :align: center
 
     .. note::
@@ -31,9 +25,6 @@ ATTACK Technique Detector
 
     .. image:: resources/model_package_arn.png
         :alt: Subscribe to technique detector
-        :width: 1120px
-        :height: 170px
-        :scale: 100%
         :align: center
 
 
@@ -46,18 +37,12 @@ Temporal Clustering
 
     .. image:: resources/subscribe_to_temporal_clustering.png
         :alt: Subscribe to temporal clustering
-        :width: 1120px
-        :height: 170px
-        :scale: 100%
         :align: center
 
 2. Click on the ``Accept offer`` button on the next page.
 
     .. image:: resources/accept_offer.png
         :alt: Subscribe to technique detector
-        :width: 1120px
-        :height: 170px
-        :scale: 100%
         :align: center
 
     .. note::
@@ -67,9 +52,6 @@ Temporal Clustering
 
     .. image:: resources/model_package_arn.png
         :alt: Subscribe to flow detector
-        :width: 1120px
-        :height: 170px
-        :scale: 100%
         :align: center
 
 
@@ -82,18 +64,12 @@ MITRE ATTACK Flow Detector
 
     .. image:: resources/subscribe_to_flow_detector.png
         :alt: Subscribe to technique detector
-        :width: 1120px
-        :height: 170px
-        :scale: 100%
         :align: center
 
 2. Click on the ``Accept offer`` button on the next page.
 
     .. image:: resources/accept_offer.png
         :alt: Subscribe to technique detector
-        :width: 1120px
-        :height: 170px
-        :scale: 100%
         :align: center
 
     .. note::
@@ -103,7 +79,4 @@ MITRE ATTACK Flow Detector
 
     .. image:: resources/model_package_arn.png
         :alt: Subscribe to technique detector
-        :width: 1120px
-        :height: 170px
-        :scale: 100%
         :align: center
