@@ -4,13 +4,21 @@ Prerequisites
 Permissions
 -----------
 Make sure that you have the required permissions for resources for the IAM user you will be using.
+
 - SageMaker
+
 - Lambda
+
 - S3
+
 - ECS
+
 - EC2
+
 - IAM - create and edit roles
+
 - CloudFormation
+
 
 Quotas
 ------
