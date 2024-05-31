@@ -18,20 +18,20 @@ Deploy resources using the Cloud Formation template
 3. Click on ``Stacks`` on the left hand side panel, and click on ``Create stack`` dropdown. Select ``With new resources (standard)`` to start creating a stack
 
     .. image:: resources/create_stack_start.png
-    :alt: Subscribe to technique detector
-    :width: 1763px
-    :height: 273px
-    :scale: 100%
-    :align: center
+        :alt: Subscribe to technique detector
+        :width: 1763px
+        :height: 273px
+        :scale: 100%
+        :align: center
 
 4. For the ``Prerequisite - Prepare template`` section, select ``Choose an existing template``, and then select ``Upload a template file``. It will enable a ``Choose file`` button. Click on the button to upload the template. The template is present in the root directory of Lambda repository you have cloned. Then click on ``Next``.
 
     .. image:: resources/upload_template_file.png
-    :alt: Subscribe to technique detector
-    :width: 1392px
-    :height: 789px
-    :scale: 100%
-    :align: center
+        :alt: Subscribe to technique detector
+        :width: 1392px
+        :height: 789px
+        :scale: 100%
+        :align: center
 
 5. Now you can input all the parameters needed for the cloud formation stack. Few parameters are already filled in with default recommended value. You can change the values as required.
     
