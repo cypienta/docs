@@ -80,7 +80,7 @@ MITRE ATTACK Flow Detector
 
     Click on ``Continue to Subscribe``.
 
-    .. image:: ../resources/subscribe_to_flow_detector.png
+    .. image:: resources/subscribe_to_flow_detector.png
     :alt: Subscribe to technique detector
     :width: 1120px
     :height: 170px
@@ -89,7 +89,7 @@ MITRE ATTACK Flow Detector
 
 2. Click on the ``Accept offer`` button on the next page.
 
-    .. image:: ../resources/accept_offer.png
+    .. image:: resources/accept_offer.png
     :alt: Subscribe to technique detector
     :width: 1120px
     :height: 170px
@@ -101,7 +101,7 @@ MITRE ATTACK Flow Detector
 
 3. Make note of the flow detector model package ARN by going to the Sagemaker console. On the left hand side panel, navigate to Inference → Marketplace model packages. Select ``AWS Marketplace subscriptions`` tab. Click on the desired product title and copy the ``Model package ARN``.
 
-    .. image:: ../resources/model_package_arn.png
+    .. image:: resources/model_package_arn.png
     :alt: Subscribe to technique detector
     :width: 1120px
     :height: 170px
