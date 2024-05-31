@@ -21,4 +21,4 @@ Getting Started
     subscription
     deploy
     end_to_end_test
-    toubleshoot
+    troubleshoot

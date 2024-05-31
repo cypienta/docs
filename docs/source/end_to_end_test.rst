@@ -1,7 +1,7 @@
 Sample Test
 ==================================================
 
-3.1 How to test end-to-end
+How to test end-to-end
 --------------------------
 
 1. Navigate to the AWS console and search for ``S3``. Select the S3 bucket
