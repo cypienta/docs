@@ -9,7 +9,8 @@ How to test end-to-end
    as ``input`` and create the folder.
 2. Sample input json file:
 
-    .. code-block::
+    .. code-block:: JSON
+        
         {
             "input": [
                 {
@@ -33,7 +34,8 @@ How to test end-to-end
 
     Input data JSON description:
 
-    .. code-block:: 
+    .. code-block:: JSON
+        
         {
             "input": [
                 {
