@@ -19,7 +19,7 @@ ATTACK Technique Detector
         :align: center
 
     .. note::
-        Note: Do not click on ``Continue to configuration`` at the top of the page. You can move to the next step.
+        Do not click on ``Continue to configuration`` at the top of the page. You can move to the next step.
 
 3. Make note of the technique detector model package ARN by going to the Sagemaker console. On the left-hand side panel, navigate to Inference → Marketplace model packages. Select ``AWS Marketplace subscriptions`` tab. Click on the desired product title and copy the ``Model package ARN``.
 
@@ -46,7 +46,7 @@ Temporal Clustering
         :align: center
 
     .. note::
-        Note: Do not click on ``Continue to configuration`` at the top of the page. You can move to the next step.
+        Do not click on ``Continue to configuration`` at the top of the page. You can move to the next step.
 
 3. Make note of the temporal clustering model package ARN by going to the Sagemaker console. On the left hand side panel, navigate to Inference → Marketplace model packages. Select ``AWS Marketplace subscriptions`` tab. Click on the desired product title and copy the ``Model package ARN``.
 
@@ -73,7 +73,7 @@ MITRE ATTACK Flow Detector
         :align: center
 
     .. note::
-        Note: Do not click on ``Continue to configuration`` at the top of the page. You can move to the next step.
+        Do not click on ``Continue to configuration`` at the top of the page. You can move to the next step.
 
 3. Make note of the flow detector model package ARN by going to the Sagemaker console. On the left hand side panel, navigate to Inference → Marketplace model packages. Select ``AWS Marketplace subscriptions`` tab. Click on the desired product title and copy the ``Model package ARN``.
 
