@@ -32,7 +32,7 @@ Deploy resources using the Cloud Formation template
     Give a name to the stack in ``Stack name``.
 
 
-    Values that are required to be added:
+    Fill in the following parameter values as they require user input:
 
     **BucketName:**\ The name of S3 bucket that you want to create.
     (required to change as the current value populated may not be
@@ -53,9 +53,9 @@ Deploy resources using the Cloud Formation template
     **FlowModelARN:**\ The ARN of the subscribed model package for MITRE
     flow detector
 
-    The recommended value for parameter:
+    Recommended value for parameter:
 
-    ChunkSize: The size of a single chunk that will be processed at a
+    **ChunkSize:**\ The size of a single chunk that will be processed at a
     time for an input file uploaded to S3. Recommended chunk_size is
     below ``50000``.
 
