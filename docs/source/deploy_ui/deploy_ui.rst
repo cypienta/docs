@@ -4,7 +4,7 @@ Deploy Cypienta User Interface
 Deploy using Cloud Formation template
 -------------------------------------
 
-1. Clone the Github repo 
+1.  Clone the Github repo 
 
     .. code-block:: shell
 
@@ -13,21 +13,21 @@ Deploy using Cloud Formation template
     .. note::
         This command will clone the repository and checkout the branch ``v0.4``
 
-2. Navigate to the AWS console, and search for ``CloudFormation``.
+2.  Navigate to the AWS console, and search for ``CloudFormation``.
 
-3. Click on ``Stacks`` on the left hand side panel, and click on ``Create stack`` dropdown. Select ``With new resources (standard)`` to start creating a stack
+3.  Click on ``Stacks`` on the left hand side panel, and click on ``Create stack`` dropdown. Select ``With new resources (standard)`` to start creating a stack
 
     .. image:: resources/create_stack_start.png
         :alt: Subscribe to technique detector
         :align: center
 
-4. For the ``Prerequisite - Prepare template`` section, select ``Choose an existing template``, and then select ``Upload a template file``. It will enable a ``Choose file`` button. Click on the button to upload the template. The template is present in the root directory of Lambda repository you have cloned. Then click on ``Next``.
+4.  For the ``Prerequisite - Prepare template`` section, select ``Choose an existing template``, and then select ``Upload a template file``. It will enable a ``Choose file`` button. Click on the button to upload the template. The template is present in the root directory of Lambda repository you have cloned. Then click on ``Next``.
 
     .. image:: resources/upload_template_file.png
         :alt: Subscribe to technique detector
         :align: center
 
-5. Now you can input all the parameters needed for the cloud formation stack. Few parameters are already filled in with default recommended value. You can change the values as required.
+5.  Now you can input all the parameters needed for the cloud formation stack. Few parameters are already filled in with default recommended value. You can change the values as required.
     
     Give a name to the stack in ``Stack name``.
 

@@ -64,7 +64,7 @@ How to use the Hide feature for events in UI
         :alt: click hide
         :align: center
 
-    You can see the list of hidden events now has an event that was selected earlier and hide action was taken.
+   You can see the list of hidden events now has an event that was selected earlier and hide action was taken.
 
 Edit recognized techniques for events
 -------------------------------------
@@ -118,9 +118,9 @@ How to use "Copy Events" feature
         :alt: campaign reference
         :align: center
 
-    Notice the event count for campaign name ``3614.0`` is 3 and ``3599.0`` is 4. 
+   Notice the event count for campaign name ``3614.0`` is 3 and ``3599.0`` is 4. 
 
-    Click on campaign name ``3599.0`` to copy event to ``3614.0``
+   Click on campaign name ``3599.0`` to copy event to ``3614.0``
 
 3. Select the event that you want to copy and click on the edit button
    on top of the section
@@ -148,7 +148,7 @@ How to use "Copy Events" feature
         :alt: Copy completed
         :align: center
 
-    The selected event below shows the event that was copied:
+   The selected event below shows the event that was copied:
 
     .. image:: resources/copy_verify.png
         :alt: Copy verify
@@ -165,15 +165,15 @@ How to use "Cut Events" feature
 
 2. Click on any campaign from which you want to copy events:
 
-    Picking two campaigns for reference below:
+   Picking two campaigns for reference below:
 
     .. image:: resources/cut_show_campaigns.png
         :alt: show campaigns
         :align: center
 
-    Notice the event count for campaign name ``3599.0`` is 4 and ``3572.0`` is 12. 
+   Notice the event count for campaign name ``3599.0`` is 4 and ``3572.0`` is 12. 
 
-    Click on campaign name ``3599.0`` to cut event to ``3572.0``
+   Click on campaign name ``3599.0`` to cut event to ``3572.0``
 
 3. Select the event that you want to copy and click on the edit button
    on top of the section
@@ -182,11 +182,7 @@ How to use "Cut Events" feature
         :alt: select event
         :align: center
 
-4. Select ``Cut Events``, and a side panel will appear to select
-    campaign(s) you want to cut the events to, here, selection shows
-    campaign name ``3614``. You may choose different values for the ``Event
-    attributes`` and ``Node attributes``. Default value for all the
-    attribute is set to 0. And click on ``Done``.
+4. Select ``Cut Events``, and a side panel will appear to select campaign(s) you want to cut the events to, here, selection shows campaign name ``3614``. You may choose different values for the ``Event attributes`` and ``Node attributes``. Default value for all the attribute is set to 0. And click on ``Done``.
 
     .. image:: resources/cut_modal.png
         :alt: cut modal
@@ -194,9 +190,7 @@ How to use "Cut Events" feature
 
 5. Click on ``OK`` button to confirm your cut action
 
-6. Navigate back to the Campaigns page. You will notice now that the
-    campaign name ``3599.0`` has event count of 3, changed from 4. And the
-    ``3572.0`` campaign has count of 13 changed from 12.
+6. Navigate back to the Campaigns page. You will notice now that the campaign name ``3599.0`` has event count of 3, changed from 4. And the ``3572.0`` campaign has count of 13 changed from 12. 
 
     .. image:: resources/cut_completed.png
         :alt: cut completed
