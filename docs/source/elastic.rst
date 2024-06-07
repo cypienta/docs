@@ -127,22 +127,27 @@ below to configure Logstash.
    Navigate to Logstash installation directory:
 
     .. code-block:: shell
+
         $ cd /usr/share/logstash
+        
 
    Install the required plugins:
 
     .. code-block:: shell
+
         $ sudo bin/logstash-plugin install logstash-input-elasticsearch 
         $ sudo bin/logstash-plugin install logstash-output-s3
 
 2. Create configuration file
 
     .. code-block:: shell
+
         $ sudo nano /etc/logstash/conf.d/logstash.conf
 
 3. Add the following configuration to the configuration file created
 
     .. code-block:: 
+
         input {
             elasticsearch {
                 hosts => "http://elastic-localhost:9200" # Replace with your Elasticsearch host
@@ -180,12 +185,14 @@ Start Logstash
 
 Start Logstash with the configuration file you created.
 
-.. code-block:: 
+.. code-block:: shell
+
     $ sudo systemctl start logstash
 
 Check the status to ensure Logstash is running correctly
 
-.. code-block:: 
+.. code-block:: shell
+
     $ sudo systemctl status logstash
 
 Optional Steps:
@@ -200,7 +207,8 @@ issues that may arise.
 Check Logstash Configuration Syntax. The following command will check
 the configuration file for syntax errors.
 
-.. code-block:: 
+.. code-block:: shell
+
     $ sudo /usr/share/logstash/bin/logstash --config.test_and_exit -f /etc/logstash/conf.d/logstash.conf
 
 If there are no errors, you will see a message indicating that the
@@ -214,7 +222,8 @@ Verify Data Flow
    Run Logstash in the foreground to observe its behavior and debug any
    issues. This will also allow you to see the logs in real-time.
 
-    .. code-block:: 
+    .. code-block:: shell
+
         $ sudo /usr/share/logstash/bin/logstash -f /etc/logstash/conf.d/logstash.conf
 
 2. Verify the that data is being written to your specified S3 bucket.
