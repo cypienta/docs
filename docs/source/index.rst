@@ -19,20 +19,32 @@ Getting Started
     :maxdepth: 1
     :caption: Getting Started
 
-    prerequisites
-    subscription
-    deploy
-    end_to_end_test
-    troubleshoot
+    getting_started/prerequisites
+    getting_started/subscription
+    getting_started/deploy
+    getting_started/end_to_end_test
+    getting_started/troubleshoot
 
 .. toctree::
     :maxdepth: 1
     :caption: JIRA to Splunk SOAR integration
 
-    splunk
+    splunk/splunk
 
 .. toctree::
     :maxdepth: 1
     :caption: Elastic to S3 integration
 
-    elastic
+    elastic/elastic
+
+.. toctree::
+    :maxdepth: 1
+    :caption: Choose input format
+
+    choose_input_format
+
+.. toctree::
+    :maxdepth: 1
+    :caption: Deploy Cypienta UI
+
+    deploy_ui/deploy_ui
