@@ -16,7 +16,7 @@ To subscribe to Cypienta UI, follow the steps below.
 
 3. Wait for the subscription confirmation page to appear.
 
-    .. image:: confirm_subscribe.png
+    .. image:: resources/confirm_subscribe.png
         :alt: confirm subscribe
         :align: center
 
