@@ -118,14 +118,14 @@ Monitoring Progress
 To monitor the progress of the transformation and processing, use the following resources:
 
 -  **CloudWatch Logs**: Check the CloudWatch logs for each Lambda function and transform job created for the specific input. These logs provide detailed information on the processing status.
--  **S3 Bucket**: Wait for the complete output to appear in the S3 bucket. The output file will be located at ``s3://alert-detector/output/cluster.json\ ``.
+-  **S3 Bucket**: Wait for the complete output to appear in the S3 bucket. The output file will be located at ``s3://alert-detector/output/cluster.json``.
 
 Viewing Results
 ~~~~~~~~~~~~~~~
 
-Once the ``cluster.json\ `` file is updated in the S3 bucket, you can verify the results through the following:
+Once the ``cluster.json`` file is updated in the S3 bucket, you can verify the results through the following:
 
--  **JIRA Tickets**: A JIRA ticket will be created for each cluster identified in the ``cluster.json\ `` file.
+-  **JIRA Tickets**: A JIRA ticket will be created for each cluster identified in the ``cluster.json`` file.
 -  **Splunk SOAR Event**: A Splunk SOAR Event will also be created for each cluster.
 
 JIRA ticket:

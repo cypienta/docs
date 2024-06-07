@@ -51,8 +51,7 @@ Add Logstash Integration
 5. Now on the machine where the elastic agent is installed, install
    logstash.
 
-   `Installing Logstash \| Logstash Reference [8.14] \|
-   Elastic <https://www.elastic.co/guide/en/logstash/current/installing-logstash.html>`__
+   `Refer <https://www.elastic.co/guide/en/logstash/current/installing-logstash.html>`__
 
 Create Role for configuring Logstash
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -120,9 +119,9 @@ Once the installation of Logstash is complete. Follow the instructions
 below to configure Logstash.
 
 1. Install necessary plugins for Logstash. Required input plugin is
-   ```elasticsearch <https://www.elastic.co/guide/en/logstash/current/plugins-inputs-elasticsearch.html>`__``,
+   `elasticsearch <https://www.elastic.co/guide/en/logstash/current/plugins-inputs-elasticsearch.html>`__,
    and output plugin is
-   ```s3 <https://www.elastic.co/guide/en/logstash/current/plugins-outputs-s3.html>`__``
+   `s3 <https://www.elastic.co/guide/en/logstash/current/plugins-outputs-s3.html>`__
 
    Navigate to Logstash installation directory:
 
