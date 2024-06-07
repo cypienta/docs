@@ -16,9 +16,23 @@ Getting Started
 --------
 
 .. toctree::
+    :maxdepth: 1
+    :caption: Getting Started
 
     prerequisites
     subscription
     deploy
     end_to_end_test
     troubleshoot
+
+.. toctree::
+    :maxdepth: 1
+    :caption: JIRA to Splunk SOAR integration
+
+    splunk
+
+.. toctree::
+    :maxdepth: 1
+    :caption: Elastic to S3 integration
+
+    elastic
