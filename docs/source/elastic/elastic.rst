@@ -49,9 +49,7 @@ Add Logstash Integration
         :align: center
 
 5. Now on the machine where the elastic agent is installed, install
-   logstash.
-
-   `Refer <https://www.elastic.co/guide/en/logstash/current/installing-logstash.html>`__
+   logstash. `Refer <https://www.elastic.co/guide/en/logstash/current/installing-logstash.html>`__ the documentation for the same.
 
 Create Role for configuring Logstash
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

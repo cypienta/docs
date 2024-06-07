@@ -47,4 +47,6 @@ Getting Started
     :maxdepth: 1
     :caption: Deploy Cypienta UI
 
+    deploy_ui/subscribe
     deploy_ui/deploy_ui
+    deploy_ui/start_using
