@@ -1,6 +1,16 @@
 Deploy Cypienta User Interface
 ==============================
 
+Prerequisite
+------------
+
+Make sure that you have the required permissions for resources for the IAM user you will be using.
+
+-  ECS
+-  EC2
+-  IAM - create and edit roles
+-  CloudFormation
+
 Deploy using Cloud Formation template
 -------------------------------------
 
@@ -18,13 +28,13 @@ Deploy using Cloud Formation template
 3.  Click on ``Stacks`` on the left hand side panel, and click on ``Create stack`` dropdown. Select ``With new resources (standard)`` to start creating a stack
 
     .. image:: resources/create_stack_start.png
-        :alt: Subscribe to technique detector
+        :alt: create stack
         :align: center
 
-4.  For the ``Prerequisite - Prepare template`` section, select ``Choose an existing template``, and then select ``Upload a template file``. It will enable a ``Choose file`` button. Click on the button to upload the template. The template is present in the root directory of Lambda repository you have cloned. Then click on ``Next``.
+4.  For the ``Prerequisite - Prepare template`` section, select ``Choose an existing template``, and then select ``Upload a template file``. It will enable a ``Choose file`` button. Click on the button to upload the template. The template ``ui-template.yaml`` is present in the root directory of Lambda repository you have cloned. Then click on ``Next``.
 
     .. image:: resources/upload_template_file.png
-        :alt: Subscribe to technique detector
+        :alt: upload template
         :align: center
 
 5.  Now you can input all the parameters needed for the cloud formation stack. Few parameters are already filled in with default recommended value. You can change the values as required.
@@ -33,11 +43,11 @@ Deploy using Cloud Formation template
 
     Fill in the following parameter values as they require user input:
 
-    **Username:**\ The username of the admin user
+    **SuperuserEmail:**\ The email for admin user for UI
 
-    **Password:**\ The password of the admin user
+    **SuperuserUsername:**\ The username of the admin user for UI
 
-    **LoadBalancerName:**\ The name for Load balancer
+    **SuperuserPassword:**\ The password of the admin user for UI
 
 
 6.  Click on ``Next`` after adding the parameters.
