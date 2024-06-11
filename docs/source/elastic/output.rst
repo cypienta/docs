@@ -43,6 +43,7 @@ JIRA ticket:
     :align: center
 
 Attached invovled alerts:
+
 .. image:: elastic_resources/jira_attachment.png
     :alt: jira
     :align: center
@@ -75,6 +76,7 @@ Elastic case:
 .. image:: elastic_resources/case.png
     :alt: jira
     :align: center
+
 
 The Elastic Security case will contain the same title and description as
 the JIRA ticket. This ensures consistency and ease of reference across
