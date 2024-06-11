@@ -36,6 +36,14 @@ Getting Started
     :caption: Elastic to S3 integration
 
     elastic/elastic
+    elastic/vrl
+    elastic/output
+
+.. toctree::
+    :maxdepth: 1
+    :caption: Using VRL
+
+    vrl/transform
 
 .. toctree::
     :maxdepth: 1

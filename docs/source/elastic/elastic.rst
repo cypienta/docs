@@ -141,7 +141,7 @@ below to configure Logstash.
 
         $ sudo nano /etc/logstash/conf.d/logstash.conf
 
-3. Add the following configuration to the configuration file created
+3. Add the following configuration to the configuration file created. Replace ``your_index_name`` with the index of the alerts generated from a rule.
 
     .. code-block:: 
 
@@ -170,6 +170,12 @@ below to configure Logstash.
                 codec => "json_lines" # Format of the output file
             }
         }
+
+    To get the index of the alerts for a rule. You may open an alert details, and click on ``JSON`` tab. The field value ``_index`` is the index of the alert.
+
+    .. image:: alert_index.png
+        :alt: get index
+        :align: center
 
 
 Note: For more information on the elasticsearch input plugin, click
