@@ -49,6 +49,10 @@ Deploy using Cloud Formation template
 
     **SuperuserPassword:**\ The password of the admin user for UI
 
+    **WebContainerImage:**\ The container image of the subscribed marketplace UI product with tag ``market*``. The ``Web container image`` noted in the section :doc:`subscribe`.
+
+    **NginxContainerImage:**\ The container image of the subscribed marketplace UI product with tag ``nginx-market*``. The ``Nginx container image`` noted in the section :doc:`subscribe`.
+
 
 6.  Click on ``Next`` after adding the parameters.
 
