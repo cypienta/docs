@@ -27,6 +27,20 @@ Getting Started
 
 .. toctree::
     :maxdepth: 1
+    :caption: Deploy Cypienta UI
+
+    deploy_ui/subscribe
+    deploy_ui/deploy_ui
+    deploy_ui/start_using
+
+.. toctree::
+    :maxdepth: 1
+    :caption: Overview of Lambda
+
+    lambda/functions
+
+.. toctree::
+    :maxdepth: 1
     :caption: JIRA to Splunk SOAR integration
 
     splunk/splunk
@@ -50,11 +64,3 @@ Getting Started
     :caption: Choose input format
 
     choose_input_format
-
-.. toctree::
-    :maxdepth: 1
-    :caption: Deploy Cypienta UI
-
-    deploy_ui/subscribe
-    deploy_ui/deploy_ui
-    deploy_ui/start_using
