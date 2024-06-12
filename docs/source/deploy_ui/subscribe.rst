@@ -6,7 +6,7 @@ Cypienta User Interface (UI)
 
 To subscribe to Cypienta UI, follow the steps below.
 
-1. Subscribe to the `Cypienta User Interface (UI) <https://www.elastic.co/guide/en/logstash/current/plugins-outputs-s3.html>`__ by clicking on ``Continue to Subscribe`` button.
+1. Subscribe to the `Cypienta User Interface (UI) <https://aws.amazon.com/marketplace/pp/prodview-s4qek5tyez6zk>`__ by clicking on ``Continue to Subscribe`` button.
 
     .. image:: resources/ui_product.png
         :alt: UI product subscribe
@@ -48,6 +48,7 @@ To subscribe to Cypienta UI, follow the steps below.
     Here the two images are:
 
     - **Web container image:** 709825985650.dkr.ecr.us-east-1.amazonaws.com/cypienta/cytech:marketv0.0.4
+    
     - **Nginx container image:** 709825985650.dkr.ecr.us-east-1.amazonaws.com/cypienta/cytech:nginx-marketv0.0.3
 
 6. Move to section :doc:`deploy_ui`

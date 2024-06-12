@@ -53,6 +53,7 @@ Deploy using Cloud Formation template
 
     **NginxContainerImage:**\ The container image of the subscribed marketplace UI product with tag ``nginx-market*``. The ``Nginx container image`` noted in the section :doc:`subscribe`.
 
+    The constraints for choosing the ``Cpu`` and ``Memory`` for the cluster can be found `here <https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-taskdefinition.html#cfn-ecs-taskdefinition-cpu>`__
 
 6.  Click on ``Next`` after adding the parameters.
 
