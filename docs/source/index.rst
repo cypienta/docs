@@ -44,6 +44,8 @@ Getting Started
     :caption: JIRA to Splunk SOAR integration
 
     splunk/splunk
+    splunk/vrl
+    splunk/output
 
 .. toctree::
     :maxdepth: 1

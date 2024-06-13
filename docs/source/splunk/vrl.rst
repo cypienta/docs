@@ -1,12 +1,11 @@
 Mapping data to cypienta input
 ==============================
 
-To map the data to cypienta input, use the Vector Remap Language (VRL). The output from the VRL mapping must contain ``rule_id``, ``rule_name``, and ``index`` fields.
+To map the data to cypienta input, use the Vector Remap Language (VRL). 
 
-Using the python script below, we will get 2 files. 
+Using the python script below, we will get a file. 
 
-1. **elastic_input.json:** This file can be used as the input to the cypienta product. This file should be uploaded to ``input/`` folder on S3 bucket on which the cypienta product is set up.
-2. **alert_to_rule:**: This file must be uploaded to ``elastic/`` folder on S3 bucket on which the cypienta product is set up. If this file is missing, the elastic case created by cypienta lambda function will not attach the alerts to the relevant case.
+- **splunk_input.json:** This file can be used as the input to the cypienta product. This file should be uploaded to ``input/`` folder on S3 bucket on which the cypienta product is set up.
 
 .. code-block:: 
 
@@ -15,7 +14,7 @@ Using the python script below, we will get 2 files.
     import json
 
     file_to_read = "vrl_transformed_alerts.json"
-    file_to_save = "elastic_input.json"
+    file_to_save = "splunk_input.json"
     rule_mapping_file = "alert_to_rule.json"
 
     # Read the VRL output file
@@ -23,17 +22,6 @@ Using the python script below, we will get 2 files.
 
     # Keep columns which maps to cypienta input
     keep_cols = ["id", "name", "src", "dst", "time", "tech", "other_attributes_dict"]
-
-    # Columns for the mapping created for alert id to rule id, rule name, and index
-    rule_mapping_cols = ["id", "rule_id", "rule_name", "index"]
-
-    empty_rule_id = df["rule_id"].isna().any()
-    empty_rule_name = df["rule_name"].isna().any()
-
-    if empty_rule_id:
-        print("Found empty rule ids in the alerts.")
-    if empty_rule_name:
-        print("Found empty rule names in the alerts.")
 
     # filter rows which do not have values in required fields
     empty_ids = df["id"].isna().any()
@@ -54,10 +42,6 @@ Using the python script below, we will get 2 files.
     df = df[~df["time"].isna()]
     df = df[~df["dst"].isna()]
     df = df[~df["src"].isna()]
-
-    # save alert id to rule id mapping as json
-    df_rule_mapping = df[rule_mapping_cols]
-    df_rule_mapping.to_json(rule_mapping_file, orient="records")
 
     df_input = df[keep_cols]
 
