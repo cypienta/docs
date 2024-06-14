@@ -53,6 +53,18 @@ Deploy resources using the Cloud Formation template
     **FlowModelARN:**\ The ARN of the subscribed model package for MITRE
     flow detector
 
+    **SuperuserEmail:**\ The email for admin user for UI
+
+    **SuperuserUsername:**\ The username of the admin user for UI
+
+    **SuperuserPassword:**\ The password of the admin user for UI
+
+    **WebContainerImage:**\ The container image of the subscribed marketplace UI product with tag ``market*``. The ``Web container image`` noted in the section :doc:`subscribe`.
+
+    **NginxContainerImage:**\ The container image of the subscribed marketplace UI product with tag ``nginx-market*``. The ``Nginx container image`` noted in the section :doc:`subscribe`.
+
+    The constraints for choosing the ``Cpu`` and ``Memory`` for the cluster can be found `here <https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-taskdefinition.html#cfn-ecs-taskdefinition-cpu>`__
+
     Recommended value for parameter:
 
     **ChunkSize:**\ The size of a single chunk that will be processed at a
