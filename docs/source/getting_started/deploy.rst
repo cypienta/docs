@@ -8,10 +8,10 @@ Deploy resources using the Cloud Formation template
 
     .. code-block:: shell
 
-        $ git clone -b v0.4 https://github.com/cypienta/Lambda.git
+        $ git clone -b v0.5 https://github.com/cypienta/Lambda.git
     
     .. note::
-        This command will clone the repository and checkout the branch ``v0.4``
+        This command will clone the repository and checkout the branch ``v0.5``
 
 2. Navigate to the AWS console, and search for ``CloudFormation``.
 
