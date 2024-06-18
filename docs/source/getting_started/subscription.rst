@@ -18,7 +18,7 @@ ATTACK Technique Detector
         :alt: Subscribe to technique detector
         :align: center
 
-3. Click on ``Continue to configuration``. In the section ``Select your launch method``, select ``AWS CloudFormation``. Select the ``Software Version`` as ``0.4`` from the drop down. Select the ``Region`` in which the you would want to deploy Cypienta products. Copy and make note of the ``Product Arn``.
+3. Click on ``Continue to configuration``. In the section ``Select your launch method``, select ``AWS CloudFormation``. Select the ``Software Version`` as ``0.4`` from the drop down. Select the ``Region`` in which you would want to deploy Cypienta products. Copy and make note of the ``Product Arn``.
 
     .. image:: resources/model_arn.png
         :alt: Subscribe to technique detector
@@ -47,7 +47,7 @@ Temporal Clustering
     .. note::
         Do not click on ``Continue to configuration`` at the top of the page. You can move to the next step.
 
-3. Click on ``Continue to configuration``. In the section ``Select your launch method``, select ``AWS CloudFormation``. Select the ``Software Version`` as ``0.5`` from the drop down. Select the ``Region`` in which the you would want to deploy Cypienta products. Copy and make note of the ``Product Arn``.
+3. Click on ``Continue to configuration``. In the section ``Select your launch method``, select ``AWS CloudFormation``. Select the ``Software Version`` as ``0.5`` from the drop down. Select the ``Region`` in which you would want to deploy Cypienta products. Copy and make note of the ``Product Arn``.
 
     .. image:: resources/model_arn.png
         :alt: Subscribe to flow detector
@@ -76,7 +76,7 @@ MITRE ATTACK Flow Detector
     .. note::
         Do not click on ``Continue to configuration`` at the top of the page. You can move to the next step.
 
-3. Click on ``Continue to configuration``. In the section ``Select your launch method``, select ``AWS CloudFormation``. Select the ``Software Version`` as ``0.6`` from the drop down. Select the ``Region`` in which the you would want to deploy Cypienta products. Copy and make note of the ``Product Arn``.
+3. Click on ``Continue to configuration``. In the section ``Select your launch method``, select ``AWS CloudFormation``. Select the ``Software Version`` as ``0.6`` from the drop down. Select the ``Region`` in which you would want to deploy Cypienta products. Copy and make note of the ``Product Arn``.
 
     .. image:: resources/model_arn.png
         :alt: Subscribe to technique detector
