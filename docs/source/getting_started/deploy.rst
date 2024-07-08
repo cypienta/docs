@@ -34,7 +34,7 @@ Deploy resources using the Cloud Formation template
 
     Fill in the following parameter values as they require user input:
 
-    **BucketName:**\ The name of S3 bucket that you want to create.
+    **BucketName:** The name of S3 bucket that you want to create.
     (required to change as the current value populated may not be
     valid). Follow these
     `rules <https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucketnamingrules.html#general-purpose-bucket-names>`__
@@ -44,13 +44,13 @@ Deploy resources using the Cloud Formation template
     can see the failure reasons by clicking on the stack that was
     created and clicking on the ``Events`` tab.
 
-    **TechniqueModelARN:**\ The ARN of the subscribed model package for
+    **TechniqueModelARN:** The ARN of the subscribed model package for
     ATTACK Technique detector. Use version 0.4 Product ARN for the region in which CloudFormation stack is created.
 
-    **ClusterModelARN:**\ The ARN of the subscribed model package for
+    **ClusterModelARN:** The ARN of the subscribed model package for
     Temporal Clustering. Use version 0.5 Product ARN for the region in which CloudFormation stack is created.
 
-    **FlowModelARN:**\ The ARN of the subscribed model package for MITRE
+    **FlowModelARN:** The ARN of the subscribed model package for MITRE
     flow detector. Use version 0.6 Product ARN for the region in which CloudFormation stack is created.
 
     **SuperuserEmail:** The email for admin user for UI
