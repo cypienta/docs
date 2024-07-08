@@ -18,12 +18,9 @@ ATTACK Technique Detector
         :alt: Subscribe to technique detector
         :align: center
 
-    .. note::
-        Do not click on ``Continue to configuration`` at the top of the page. You can move to the next step.
+3. Click on ``Continue to configuration``. In the section ``Select your launch method``, select ``AWS CloudFormation``. Select the ``Software Version`` as ``0.4`` from the drop down. Select the ``Region`` in which you would want to deploy Cypienta products. Copy and make note of the ``Product Arn``.
 
-3. Make note of the technique detector model package ARN by going to the Sagemaker console. On the left-hand side panel, navigate to Inference → Marketplace model packages. Select ``AWS Marketplace subscriptions`` tab. Click on the desired product title and copy the ``Model package ARN``.
-
-    .. image:: resources/model_package_arn.png
+    .. image:: resources/model_arn_tech.png
         :alt: Subscribe to technique detector
         :align: center
 
@@ -45,12 +42,9 @@ Temporal Clustering
         :alt: Subscribe to technique detector
         :align: center
 
-    .. note::
-        Do not click on ``Continue to configuration`` at the top of the page. You can move to the next step.
+3. Click on ``Continue to configuration``. In the section ``Select your launch method``, select ``AWS CloudFormation``. Select the ``Software Version`` as ``0.4`` from the drop down. Select the ``Region`` in which you would want to deploy Cypienta products. Copy and make note of the ``Product Arn``.
 
-3. Make note of the temporal clustering model package ARN by going to the Sagemaker console. On the left hand side panel, navigate to Inference → Marketplace model packages. Select ``AWS Marketplace subscriptions`` tab. Click on the desired product title and copy the ``Model package ARN``.
-
-    .. image:: resources/model_package_arn.png
+    .. image:: resources/model_arn_cluster.png
         :alt: Subscribe to flow detector
         :align: center
 
@@ -72,12 +66,9 @@ MITRE ATTACK Flow Detector
         :alt: Subscribe to technique detector
         :align: center
 
-    .. note::
-        Do not click on ``Continue to configuration`` at the top of the page. You can move to the next step.
+3. Click on ``Continue to configuration``. In the section ``Select your launch method``, select ``AWS CloudFormation``. Select the ``Software Version`` as ``0.6`` from the drop down. Select the ``Region`` in which you would want to deploy Cypienta products. Copy and make note of the ``Product Arn``.
 
-3. Make note of the flow detector model package ARN by going to the Sagemaker console. On the left hand side panel, navigate to Inference → Marketplace model packages. Select ``AWS Marketplace subscriptions`` tab. Click on the desired product title and copy the ``Model package ARN``.
-
-    .. image:: resources/model_package_arn.png
+    .. image:: resources/model_arn_flow.png
         :alt: Subscribe to technique detector
         :align: center
 
