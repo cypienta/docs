@@ -1,12 +1,11 @@
-Sample Test
+End to End Test
 ==================================================
 
 How to test end-to-end
 --------------------------
 
 1. Navigate to the AWS console and search for ``S3``. Select the S3 bucket
-   that you created, and click on ``Create folder``. Give a name of folder
-   as ``input`` and create the folder.
+   that you created, and click on ``Create folder``. Set the name of the folder as input and create the folder.
 2. Sample input json file:
 
     .. code-block:: JSON

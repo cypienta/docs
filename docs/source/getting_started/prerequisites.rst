@@ -10,7 +10,7 @@ Make sure that you have the required permissions for resources for the IAM user 
 -  S3
 -  ECS
 -  EC2
--  IAM - create and edit roles
+-  IAM
 -  CloudFormation
 
 
@@ -20,7 +20,7 @@ Quotas
 Instance types
 ~~~~~~~~~~~~~~
 
-Verify your instance type quotas by going to the AWS console. Search for ``Service Quotas``, and select SageMaker from the AWS Services list. Search for ``transform job usage``. You will require a GPU instance type for ``ATTACK Technique Detector`` and ``Temporal Clustering``, so look at the supported and recommended instance types for the product before subscribing and request for an increase of quota if found to be less than 1. The ``MITRE ATTACK Flow Detector`` requires a CPU-based instance type.
+Verify your instance type quotas by going to the AWS console. Search for ``Service Quotas``, and select SageMaker from the AWS Services list. Search for ``transform job usage``. You will require a GPU instance type for ``ATTACK Technique Detector`` and ``Temporal Clustering``, so look at the supported and recommended instance types for the product before subscribing and request for an increase of quota if found to be less than 1. The recommended GPU instance types are p2 and p3. The ``MITRE ATTACK Flow Detector`` requires a CPU-based instance type.
 
 .. note::
     To check for the supported and recommended instance type. On the AWS marketplace model product page, scroll down to the ``Pricing`` section and click on ``Model Batch Transform`` under ``Software Pricing``.

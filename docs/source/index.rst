@@ -11,10 +11,6 @@ In this documentation, you will find detailed instructions for:
 -  **Sample Test**: An example of how to use the product with a sample test.
 -  **Troubleshooting and Support**: Solutions to common issues and information on how to get further assistance.
 
-
-Getting Started
---------
-
 .. toctree::
     :maxdepth: 1
     :caption: Getting Started
@@ -58,9 +54,3 @@ Getting Started
     :caption: Using VRL
 
     vrl/transform
-
-.. toctree::
-    :maxdepth: 1
-    :caption: Choose input format
-
-    choose_input_format

@@ -1,7 +1,7 @@
 Start using Cypienta UI
 ===============
 
-Once all you resources are deployed and the ECS app is up and in ``Running`` status. You can start using the Cypienta UI.
+Once all your resources are deployed and the ECS app is up and in ``Running`` status. You can start using the Cypienta UI.
 
 Start using Cypienta UI
 -----------------------
@@ -57,7 +57,7 @@ How to use the Hide feature for events in UI
         :alt: click hide
         :align: center
 
-5. Click on the ``Events`` tab in the analysis page to see list of all
+5. Click on the ``Events`` tab in the analysis page to see a list of all
    events under the selected campaign
 
     .. image:: resources/hide_events_tab.png
@@ -81,7 +81,7 @@ Edit recognized techniques for events
         :alt: Open campaign
         :align: center
 
-3. Select the ``Events`` tab to see the list of event under the selected
+3. Select the ``Events`` tab to see the list of events under the selected
    campaign
 
     .. image:: resources/tech_events_tab.png
@@ -122,27 +122,26 @@ How to use "Copy Events" feature
 
    Click on campaign name ``3599.0`` to copy event to ``3614.0``
 
-3. Select the event that you want to copy and click on the edit button
-   on top of the section
+3. Select the event that you want to copy and click on the edit button at the top of the section
 
     .. image:: resources/copy_select_event.png
         :alt: Select events for copy action
         :align: center
 
 4. Select ``Copy Events``, and a side panel will appear to select
-   campaign(s) you want to copy the events to, here, selection shows
+   campaign(s) you want to copy the events to, here, the selection shows
    campaign name ``3614``. You may choose different values for the ``Event
-   attributes`` and ``Node attributes``. Default value for all the
-   attribute is set to 0. And click on ``Done``.
+   attributes`` and ``Node attributes``. The default value for all the
+   attributes is set to 0. Click on ``Done``.
 
     .. image:: resources/copy_modal.png
         :alt: Copy modal
         :align: center
 
-5. Click on ``OK`` button to confirm your copy action
+5. Click on the ``OK`` button to confirm your copy action
 
 6. Navigate back to the Campaigns page. You will notice now that the
-   campaign name ``3614.0`` has event count of 4, changed from 3.
+   campaign name ``3614.0`` has an event count of 4, changed from 3.
 
     .. image:: resources/copy_completed.png
         :alt: Copy completed
@@ -173,7 +172,7 @@ How to use "Cut Events" feature
 
    Notice the event count for campaign name ``3599.0`` is 4 and ``3572.0`` is 12. 
 
-   Click on campaign name ``3599.0`` to cut event to ``3572.0``
+   Click on campaign name ``3599.0`` to cut the event to ``3572.0``
 
 3. Select the event that you want to copy and click on the edit button
    on top of the section
@@ -190,7 +189,7 @@ How to use "Cut Events" feature
 
 5. Click on ``OK`` button to confirm your cut action
 
-6. Navigate back to the Campaigns page. You will notice now that the campaign name ``3599.0`` has event count of 3, changed from 4. And the ``3572.0`` campaign has count of 13 changed from 12. 
+6. Navigate back to the Campaigns page. You will notice now that the campaign name ``3599.0`` has an event count of 3, changed from 4. And the ``3572.0`` campaign has an event count of 13 changed from 12. 
 
     .. image:: resources/cut_completed.png
         :alt: cut completed

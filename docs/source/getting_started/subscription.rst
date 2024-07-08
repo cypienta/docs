@@ -104,7 +104,7 @@ Cypienta User Interface (UI)
         :alt: to launch
         :align: center
 
-5. CLick on the Copy button in the ``Container images`` section and make note of the ``CONTAINER_IMAGES``
+5. Click on the Copy button in the ``Container images`` section and make note of the ``CONTAINER_IMAGES``
 
     .. image:: resources/container_images.png
         :alt: container images

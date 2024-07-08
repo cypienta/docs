@@ -27,7 +27,7 @@ Deploy resources using the Cloud Formation template
         :alt: Subscribe to technique detector
         :align: center
 
-5. Now you can input all the parameters needed for the cloud formation stack. Few parameters are already filled in with default recommended value. You can change the values as required.
+5. Now you can input all the parameters needed for the cloud formation stack. A few parameters are already filled in with default recommended values. You can change the values as required.
     
     Give a name to the stack in ``Stack name``.
 
@@ -44,32 +44,31 @@ Deploy resources using the Cloud Formation template
     can see the failure reasons by clicking on the stack that was
     created and clicking on the ``Events`` tab.
 
-    **TechniqueModelARN:**\ The ARN of the subscribed model package for
+    **TechniqueModelARN:** The ARN of the subscribed model package for
     ATTACK Technique detector
 
-    **ClusterModelARN:**\ The ARN of the subscribed model package for
+    **ClusterModelARN:** The ARN of the subscribed model package for
     Temporal Clustering
 
-    **FlowModelARN:**\ The ARN of the subscribed model package for MITRE
+    **FlowModelARN:** The ARN of the subscribed model package for MITRE
     flow detector
 
-    **SuperuserEmail:**\ The email for admin user for UI
+    **SuperuserEmail:** The email for admin user for UI
 
-    **SuperuserUsername:**\ The username of the admin user for UI
+    **SuperuserUsername:** The username of the admin user for UI
 
-    **SuperuserPassword:**\ The password of the admin user for UI
+    **SuperuserPassword:** The password of the admin user for UI
 
-    **WebContainerImage:**\ The container image of the subscribed marketplace UI product with tag ``market*``. The ``Web container image`` noted in the section :doc:`subscribe`.
+    **WebContainerImage:** The container image of the subscribed marketplace UI product with tag ``market*``. The ``Web container image`` noted in the section :doc:`subscribe`.
 
-    **NginxContainerImage:**\ The container image of the subscribed marketplace UI product with tag ``nginx-market*``. The ``Nginx container image`` noted in the section :doc:`subscribe`.
+    **NginxContainerImage:** The container image of the subscribed marketplace UI product with tag ``nginx-market*``. The ``Nginx container image`` noted in the section :doc:`subscribe`.
 
     The constraints for choosing the ``Cpu`` and ``Memory`` for the cluster can be found `here <https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-taskdefinition.html#cfn-ecs-taskdefinition-cpu>`__
 
-    Recommended value for parameter:
+    Recommended value for parameter **ChunkSize** is below ``100000``.
 
-    **ChunkSize:**\ The size of a single chunk that will be processed at a
-    time for an input file uploaded to S3. Recommended chunk_size is
-    below ``50000``.
+    .. note::
+        **ChunkSize:** The size of a single chunk that will be processed at a time for an input file uploaded to S3. 
 
 6.  Click on ``Next`` after adding the parameters.
 
