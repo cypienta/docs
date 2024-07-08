@@ -42,7 +42,7 @@ Temporal Clustering
         :alt: Subscribe to technique detector
         :align: center
 
-3. Click on ``Continue to configuration``. In the section ``Select your launch method``, select ``AWS CloudFormation``. Select the ``Software Version`` as ``0.4`` from the drop down. Select the ``Region`` in which you would want to deploy Cypienta products. Copy and make note of the ``Product Arn``.
+3. Click on ``Continue to configuration``. In the section ``Select your launch method``, select ``AWS CloudFormation``. Select the ``Software Version`` as ``0.5`` from the drop down. Select the ``Region`` in which you would want to deploy Cypienta products. Copy and make note of the ``Product Arn``.
 
     .. image:: resources/model_arn_cluster.png
         :alt: Subscribe to flow detector
@@ -71,6 +71,7 @@ MITRE ATTACK Flow Detector
     .. image:: resources/model_arn_flow.png
         :alt: Subscribe to technique detector
         :align: center
+
 
 Cypienta User Interface (UI)
 ----------------------------

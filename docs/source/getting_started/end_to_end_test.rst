@@ -13,7 +13,7 @@ How to test end-to-end
         {
             "input": [
                 {
-                    "instalertid": 25485,
+                    "id": 25485,
                     "src": "Internal_User_1",
                     "dst": "ServerA",
                     "time": 1.2741200091934108,
@@ -29,7 +29,7 @@ How to test end-to-end
             ]
         }
 
-    View the `sample input file <https://drive.google.com/file/d/1b9KLQ5k-259zklX1u56Gpk255SUUFeXP/view?usp=drive_link>`__ for your reference
+    View the `sample input file <https://drive.google.com/file/d/1u_59P8IfiPBIEY44j13svROjaV_WDLek/view?usp=drive_link>`__ for your reference
 
     Input data JSON description:
 
@@ -38,7 +38,7 @@ How to test end-to-end
         {
             "input": [
                 {
-                    "instalertid": int, // alert id
+                    "id": int, // alert id
                     "time": float, // timestamp of the alert
                     "src": string, // IP address/hostname of the source
                     "dst": string, // IP address/hostname of the destination

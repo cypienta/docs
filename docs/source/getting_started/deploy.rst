@@ -48,7 +48,7 @@ Deploy resources using the Cloud Formation template
     ATTACK Technique detector. Use version 0.4 Product ARN for the region in which CloudFormation stack is created.
 
     **ClusterModelARN:**\ The ARN of the subscribed model package for
-    Temporal Clustering. Use version 0.4 Product ARN for the region in which CloudFormation stack is created.
+    Temporal Clustering. Use version 0.5 Product ARN for the region in which CloudFormation stack is created.
 
     **FlowModelARN:**\ The ARN of the subscribed model package for MITRE
     flow detector. Use version 0.6 Product ARN for the region in which CloudFormation stack is created.
