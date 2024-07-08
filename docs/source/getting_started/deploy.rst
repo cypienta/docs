@@ -8,10 +8,10 @@ Deploy resources using the Cloud Formation template
 
     .. code-block:: shell
 
-        $ git clone -b v0.4 https://github.com/cypienta/Lambda.git
+        $ git clone -b v0.5 https://github.com/cypienta/Lambda.git
     
     .. note::
-        This command will clone the repository and checkout the branch ``v0.4``
+        This command will clone the repository and checkout the branch ``v0.5``
 
 2. Navigate to the AWS console, and search for ``CloudFormation``.
 
@@ -27,14 +27,14 @@ Deploy resources using the Cloud Formation template
         :alt: Subscribe to technique detector
         :align: center
 
-5. Now you can input all the parameters needed for the cloud formation stack. Few parameters are already filled in with default recommended value. You can change the values as required.
+5. Now you can input all the parameters needed for the cloud formation stack. A few parameters are already filled in with default recommended values. You can change the values as required.
     
     Give a name to the stack in ``Stack name``.
 
 
     Fill in the following parameter values as they require user input:
 
-    **BucketName:**\ The name of S3 bucket that you want to create.
+    **BucketName:** The name of S3 bucket that you want to create.
     (required to change as the current value populated may not be
     valid). Follow these
     `rules <https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucketnamingrules.html#general-purpose-bucket-names>`__
@@ -44,20 +44,31 @@ Deploy resources using the Cloud Formation template
     can see the failure reasons by clicking on the stack that was
     created and clicking on the ``Events`` tab.
 
-    **TechniqueModelARN:**\ The ARN of the subscribed model package for
+    **TechniqueModelARN:** The ARN of the subscribed model package for
     ATTACK Technique detector. Use version 0.4 Product ARN for the region in which CloudFormation stack is created.
 
-    **ClusterModelARN:**\ The ARN of the subscribed model package for
-    Temporal Clustering. Use version 0.4 Product ARN for the region in which CloudFormation stack is created.
+    **ClusterModelARN:** The ARN of the subscribed model package for
+    Temporal Clustering. Use version 0.5 Product ARN for the region in which CloudFormation stack is created.
 
-    **FlowModelARN:**\ The ARN of the subscribed model package for MITRE
+    **FlowModelARN:** The ARN of the subscribed model package for MITRE
     flow detector. Use version 0.6 Product ARN for the region in which CloudFormation stack is created.
 
-    Recommended value for parameter:
+    **SuperuserEmail:** The email for admin user for UI
 
-    **ChunkSize:**\ The size of a single chunk that will be processed at a
-    time for an input file uploaded to S3. Recommended chunk_size is
-    below ``50000``.
+    **SuperuserUsername:** The username of the admin user for UI
+
+    **SuperuserPassword:** The password of the admin user for UI
+
+    **WebContainerImage:** The container image of the subscribed marketplace UI product with tag ``market*``. The ``Web container image`` noted in the section :doc:`subscribe`.
+
+    **NginxContainerImage:** The container image of the subscribed marketplace UI product with tag ``nginx-market*``. The ``Nginx container image`` noted in the section :doc:`subscribe`.
+
+    The constraints for choosing the ``Cpu`` and ``Memory`` for the cluster can be found `here <https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-taskdefinition.html#cfn-ecs-taskdefinition-cpu>`__
+
+    Recommended value for parameter **ChunkSize** is below ``100000``.
+
+    .. note::
+        **ChunkSize:** The size of a single chunk that will be processed at a time for an input file uploaded to S3. 
 
 6.  Click on ``Next`` after adding the parameters.
 

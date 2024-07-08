@@ -11,14 +11,46 @@ In this documentation, you will find detailed instructions for:
 -  **Sample Test**: An example of how to use the product with a sample test.
 -  **Troubleshooting and Support**: Solutions to common issues and information on how to get further assistance.
 
+.. toctree::
+    :maxdepth: 1
+    :caption: Getting Started
 
-Getting Started
---------
+    getting_started/prerequisites
+    getting_started/subscription
+    getting_started/deploy
+    getting_started/end_to_end_test
+    getting_started/troubleshoot
 
 .. toctree::
+    :maxdepth: 1
+    :caption: Cypienta UI
 
-    prerequisites
-    subscription
-    deploy
-    end_to_end_test
-    troubleshoot
+    deploy_ui/start_using
+
+.. toctree::
+    :maxdepth: 1
+    :caption: Overview of Lambda
+
+    lambda/functions
+
+.. toctree::
+    :maxdepth: 1
+    :caption: JIRA to Splunk SOAR integration
+
+    splunk/splunk
+    splunk/vrl
+    splunk/output
+
+.. toctree::
+    :maxdepth: 1
+    :caption: Elastic to S3 integration
+
+    elastic/elastic
+    elastic/vrl
+    elastic/output
+
+.. toctree::
+    :maxdepth: 1
+    :caption: Using VRL
+
+    vrl/transform
