@@ -101,58 +101,6 @@ Edit recognized techniques for events
         :align: center
 
 
-How to use "Copy Events" feature
---------------------------------
-
-1. On the left hand side panel, click on ``Campaigns``
-
-    .. image:: resources/campaign_list.png
-        :alt: Campaign list
-        :align: center
-
-2. Click on any campaign from which you want to copy events:
-
-   Picking two campaigns for reference below:
-
-    .. image:: resources/copy_show_campaigns.png
-        :alt: campaign reference
-        :align: center
-
-   Notice the event count for campaign name ``3614.0`` is 3 and ``3599.0`` is 4. 
-
-   Click on campaign name ``3599.0`` to copy event to ``3614.0``
-
-3. Select the event that you want to copy and click on the edit button at the top of the section
-
-    .. image:: resources/copy_select_event.png
-        :alt: Select events for copy action
-        :align: center
-
-4. Select ``Copy Events``, and a side panel will appear to select
-   campaign(s) you want to copy the events to, here, the selection shows
-   campaign name ``3614``. You may choose different values for the ``Event
-   attributes`` and ``Node attributes``. The default value for all the
-   attributes is set to 0. Click on ``Done``.
-
-    .. image:: resources/copy_modal.png
-        :alt: Copy modal
-        :align: center
-
-5. Click on the ``OK`` button to confirm your copy action
-
-6. Navigate back to the Campaigns page. You will notice now that the
-   campaign name ``3614.0`` has an event count of 4, changed from 3.
-
-    .. image:: resources/copy_completed.png
-        :alt: Copy completed
-        :align: center
-
-   The selected event below shows the event that was copied:
-
-    .. image:: resources/copy_verify.png
-        :alt: Copy verify
-        :align: center
-
 How to use "Cut Events" feature
 -------------------------------
 

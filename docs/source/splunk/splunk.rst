@@ -59,6 +59,55 @@ To get search results of Splunk to AWS S3. Follow the steps below:
         To debug logs from the app, search with the query ``index=_internal source="/opt/splunk/var/log/splunk/amazon_s3_upload_modalert.log"``. The default logging level is ``INFO``, but it can be increased or decreased from the configuration dashboard.
 
 
+Getting data from S3 to Splunk
+------------------------------
+
+To get results of cypienta product from S3 to Splunk. Follow the steps below:
+
+1. Login to the splunk instance. Click on the ``Apps`` drop down from the top panel. Select ``Find More Apps``
+
+    .. image:: splunk_resources/find_apps.png
+        :alt: Find more apps
+        :align: center
+
+2. Search for ``S3``, and find the ``Splunk Add-on for Amazon Web Services (AWS)`` app from the list. Click on ``Install``, and enter your credentials to install the app.
+
+    .. note::
+        More details for the Splunk Add-on for Amazon Web Services (AWS) app can be found `here <https://apps.splunk.com/app/1876/#/overview>`__
+
+3. After installing the app, move to the home page, and click on ``Apps`` again. You should now see ``Splunk Add-on for AWS`` in the list. Click on the app and click on the ``Configuration`` tab to get configuration page for the app.
+
+    .. image:: splunk_resources/splunk_aws_app.png
+        :alt: Select S3 app
+        :align: center
+
+4. On the configuration page. Click on the ``Account`` tab, and click on ``Add`` to add an AWS account.
+
+    In the ``Logging`` tab, the ``Log level`` is set to ``INFO`` by default, modify it as required.
+
+    .. image:: splunk_resources/splunk_add_on_conf_tab.png
+        :alt: Configure app
+        :align: center
+
+5. Now move to the ``Inputs`` tab. Click on ``Create New Input`` button, select ``S3 Access Logs``, then select ``Incremental S3``.
+
+    .. image:: splunk_resources/incremental_s3.png
+        :alt: Search for events
+        :align: center
+
+6. On the ``Add Incremental S3`` page, give a name to the configuration, select the ``AWS Account`` that was created in the previous step, select the ``S3 Bucket`` from which the data should be read, and provide the ``Log File Prefix`` of ``splunk/``. Under ``Splunk-related Configuration`` configure the ``Log Start Date`` and ``Index`` of your choice and click on ``Add``.
+
+    .. image:: splunk_resources/conf_input.png
+        :alt: configure input
+        :align: center
+
+7. Now click on the search tab, and write a query
+
+    .. image:: splunk_resources/s3_to_splunk_search.png
+        :alt: Search for events
+        :align: center
+
+
 Configure integration with JIRA
 -------------------------------
 
