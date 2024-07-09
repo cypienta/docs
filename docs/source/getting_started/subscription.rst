@@ -90,7 +90,7 @@ Cypienta User Interface (UI)
         :alt: confirm subscribe
         :align: center
 
-4. Select the ``Fulfillment option`` as ``ECS``. Select the ``Software version``. Then click on ``Continue to Launch``
+4. Select the ``Fulfillment option`` as ``ECS``. Select the ``Software version`` as ``v0.1``. Then click on ``Continue to Launch``
 
     .. image:: resources/to_launch.png
         :alt: to launch
