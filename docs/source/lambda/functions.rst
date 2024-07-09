@@ -57,3 +57,9 @@ The fleet of lambda functions will be responsible for end-to-end flow for the Cy
 - Read lookup for the Elastic case to cluster id.
 - If the cluster id already has case created, and the status is ``open`` / ``in progress``, overwrite the description with new details. If the status is not ``open`` / ``in progress``, then create new case with updated summary and description
 - If the cluster id does not have case created, then create case with summary, description.
+
+11. **save_feedback:**
+
+- Triggered by cut action performed on UI.
+- Fetch involved events and campaigns from UI and update weights for node and event attributes.
+- Create cluster ticket output for involved clusters, and save feedback.
