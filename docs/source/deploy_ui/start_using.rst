@@ -122,14 +122,14 @@ How to use "Cut Events" feature
 
    Click on campaign name ``3599.0`` to cut the event to ``3572.0``
 
-3. Select the event that you want to copy and click on the edit button
+3. Select the event that you want to cut and click on the edit button
    on top of the section
 
     .. image:: resources/cut_select_event.png
         :alt: select event
         :align: center
 
-4. Select ``Cut Events``, and a side panel will appear to select campaign(s) you want to cut the events to, here, selection shows campaign name ``3614``. You may choose different values for the ``Event attributes`` and ``Node attributes``. Default value for all the attribute is set to 0. And click on ``Done``.
+4. Select ``Cut Events``, and a side panel will appear to select campaign(s) you want to cut the events to. Search for the ``campaign id`` or the ``campaign name`` you want to cut events to. Here, selection shows campaign name ``3614``, campaign id ``23``. You may choose different values for the ``Event attributes`` and ``Node attributes``. Default value for all the attribute is set to 0. And click on ``Done``.
 
     .. image:: resources/cut_modal.png
         :alt: cut modal
