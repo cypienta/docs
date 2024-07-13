@@ -1,4 +1,4 @@
-Cypienta Input Processing
+Cypienta to JIRA & Splunk SOAR
 =========================
 
 Uploading the Input File
