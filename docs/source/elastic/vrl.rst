@@ -1,4 +1,4 @@
-Mapping data to cypienta input
+Mapping Elastic data
 ==============================
 
 To map the data to cypienta input, use the Vector Remap Language (VRL). The output from the VRL mapping must contain ``rule_id``, ``rule_name``, and ``index`` fields.
