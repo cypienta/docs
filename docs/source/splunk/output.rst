@@ -1,8 +1,8 @@
 Cypienta Input Processing
--------------------------
+=========================
 
 Uploading the Input File
-~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------
 
 Once the input is prepared by the transformation script, follow these steps to upload the JSON file to the S3 bucket:
 
@@ -10,7 +10,7 @@ Once the input is prepared by the transformation script, follow these steps to u
 2. **Upload the JSON File**: Upload the prepared JSON file to the ``input`` folder of the specified S3 bucket.
 
 Monitoring Progress
-~~~~~~~~~~~~~~~~~~~
+-------------------------
 
 To monitor the progress of the transformation and processing, use the following resources:
 
@@ -18,7 +18,7 @@ To monitor the progress of the transformation and processing, use the following 
 -  **S3 Bucket**: Wait for the complete output to appear in the S3 bucket. The output file will be located at ``s3://alert-detector/output/cluster.json``.
 
 Viewing Results
-~~~~~~~~~~~~~~~
+-------------------------
 
 Once the ``cluster.json`` file is updated in the S3 bucket, you can verify the results through the following:
 
