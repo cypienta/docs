@@ -1,4 +1,4 @@
-Mapping data to cypienta input
+Mapping Splunk Data
 ==============================
 
 To map the data to cypienta input, use the Vector Remap Language (VRL). 
