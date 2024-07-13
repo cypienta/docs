@@ -29,22 +29,17 @@ In this documentation, you will find detailed instructions for:
 
 .. toctree::
     :maxdepth: 1
-    :caption: Overview of Lambda
+    :caption: Open-Source Lambda Functions 
 
     lambda/functions
 
 .. toctree::
     :maxdepth: 1
-    :caption: JIRA to Splunk SOAR integration
+    :caption: Example Integrations (SIEM, XDR, SOAR, Tickets)
 
     splunk/splunk
     splunk/vrl
     splunk/output
-
-.. toctree::
-    :maxdepth: 1
-    :caption: Elastic to S3 integration
-
     elastic/elastic
     elastic/vrl
     elastic/output
