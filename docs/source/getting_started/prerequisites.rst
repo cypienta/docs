@@ -20,10 +20,20 @@ Quotas
 Instance types
 ~~~~~~~~~~~~~~
 
-Verify your instance type quotas by going to the AWS console. Search for ``Service Quotas``, and select SageMaker from the AWS Services list. Search for ``transform job usage``. You will require a GPU instance type for ``ATTACK Technique Detector`` and ``Temporal Clustering``, so look at the supported and recommended instance types for the product before subscribing and request for an increase of quota if found to be less than 1. The recommended GPU instance types are p2 and p3. The ``MITRE ATTACK Flow Detector`` requires a CPU-based instance type.
+Verify your instance type quotas by going to the AWS console. Search for ``Service Quotas``, and select SageMaker from the AWS Services list. Search for ``transform job usage``. You will require a GPU instance type for ``ATTACK Technique Detector`` and ``Temporal Clustering``, so look at the supported and recommended instance types for the product before subscribing and request for an increase of quota if found to be less than 1. The recommended GPU instance types are p2 and p3. The ``MITRE ATTACK Flow Detector`` requires a CPU-based instance type such as c5.
 
 .. note::
     To check for the supported and recommended instance type. On the AWS marketplace model product page, scroll down to the ``Pricing`` section and click on ``Model Batch Transform`` under ``Software Pricing``.
+
+.. example:: 
+    Visit  https://us-east-2.console.aws.amazon.com/servicequotas/home/services/sagemaker/quotas
+    Search "transform job usage" 
+    Select ml.p2.xlarge
+    Request increase 
+    Select ml.p3.2xlarge
+    Request increase 
+    Select ml.c5.4xlarge
+    Request increase 
 
 Lambda concurrent executions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
