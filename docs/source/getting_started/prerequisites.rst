@@ -24,14 +24,13 @@ Verify your instance type quotas by going to the AWS console. Search for ``Servi
 
 .. note::
     Example: 
-        -  Visit  https://us-east-2.console.aws.amazon.com/servicequotas/home/services/sagemaker/quotas
-        -  Search "transform job usage" 
-        -  Select ml.p2.xlarge
-        -  Request increase 
-        -  Select ml.p3.2xlarge
-        -  Request increase 
-        -  Select ml.c5.4xlarge
-        -  Request increase 
+        - Given the target region, go to service quotas or visit https://us-east-2.console.aws.amazon.com/servicequotas/home/services/sagemaker/quotas
+        - Search and select "ml.p2.xlarge for transform job usage" or visit https://us-east-2.console.aws.amazon.com/servicequotas/home/services/sagemaker/quotas/L-89843D09
+            - If the applied account-level quota value is less than 1, request an increase to at least 1. 
+        - Search and select "ml.p3.2xlarge for transform job usage" or visit https://us-east-2.console.aws.amazon.com/servicequotas/home/services/sagemaker/quotas/L-45F58E7E
+            - If the applied account-level quota value is less than 1, request an increase to at least 1. 
+        - Search and select "ml.c5.4xlarge for transform job usage" or visit https://us-east-2.console.aws.amazon.com/servicequotas/home/services/sagemaker/quotas/L-89843D09
+            - If the applied account-level quota value is less than 1, request an increase to at least 1. 
 
 .. note::
     To check for the supported and recommended instance type. On the AWS marketplace model product page, scroll down to the ``Pricing`` section and click on ``Model Batch Transform`` under ``Software Pricing``.
