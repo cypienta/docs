@@ -12,8 +12,8 @@ Setup Lambda repository
 
     .. code-block:: shell
 
-        # Replace value with the Account ID that was copied
-        $ export AWS_ACCOUNT_ID="582441423537"
+        $ export AWS_ACCOUNT_ID=$(aws sts get-caller-identity --query "Account" --output text)
+
         # Replace value with ECR repository name you want to give
         $ export REPO_NAME="cypienta-vrl-lambda"
 
