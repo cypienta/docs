@@ -51,7 +51,7 @@ To get search results of Splunk to AWS S3. Follow the steps below:
         :alt: Configure action for alert
         :align: center
 
-8. Add the ``Bucket name`` where you want splunk to save the results. For ``Object key``, enter ``%d-%b-%Y %H:%M:%S.json``. Select ``Account`` that you created on the configuration page from the dropdown. Finally click ``Save``. 
+8. Add the ``Bucket name`` which was created using the CloudFormation template to save the results. For ``Object key``, enter ``splunk_input/input/%d-%b-%Y %H:%M:%S.json``. Select ``Account`` that you created on the configuration page from the dropdown. Finally click ``Save``. 
 
     .. note::
         The user-provided object key is passed to Python's ``datetime.strftime()`` function, which encodes the time the search started. Format codes are extremely similar to Splunk's, please refer to the `official documentation <https://docs.python.org/3.7/library/datetime.html#strftime-strptime-behavior>`__.
@@ -95,7 +95,7 @@ To get results of cypienta product from S3 to Splunk. Follow the steps below:
         :alt: Search for events
         :align: center
 
-6. On the ``Add Incremental S3`` page, give a name to the configuration, select the ``AWS Account`` that was created in the previous step, select the ``S3 Bucket`` from which the data should be read, and provide the ``Log File Prefix`` of ``splunk/``. Under ``Splunk-related Configuration`` configure the ``Log Start Date`` and ``Index`` of your choice and click on ``Add``.
+6. On the ``Add Incremental S3`` page, give a name to the configuration. Select the ``AWS Account`` that was created in the previous step. Select the ``S3 Bucket`` which was created using the CloudFormation template, and provide the ``Log File Prefix`` of ``splunk/``. Under ``Splunk-related Configuration`` configure the ``Log Start Date`` and ``Index`` of your choice and click on ``Add``.
 
     .. image:: splunk_resources/conf_input.png
         :alt: configure input

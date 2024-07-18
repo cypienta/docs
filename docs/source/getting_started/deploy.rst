@@ -1,6 +1,50 @@
 AWS Deployment
 ==============
 
+.. _setup_lambda_repository:
+
+Setup Lambda repository
+-----------------------
+
+1. Navigate to the AWS console, and select ``CloudShell`` at the bottom left of the console. Open the cloud shell in the region you want to deploy.
+
+2. Store the AWS Account ID, and ECR repository name to environment variable in cloud shell.
+
+    .. code-block:: shell
+
+        # Replace value with the Account ID that was copied
+        $ export AWS_ACCOUNT_ID="582441423537"
+        # Replace value with ECR repository name you want to give
+        $ export REPO_NAME="cypienta-vrl-lambda"
+
+3. Pull the Cypienta VRL Lambda image from the AWS public repository using the following command.
+
+    .. code-block:: shell
+
+        $ docker pull public.ecr.aws/p2d2x2s3/cypienta/vrl-lambda:v0.1
+
+4. Once the image pull is completed, create an ECR repository to push the Cypienta VRL Lambda image.
+
+    .. code-block:: shell
+
+        $ aws ecr create-repository --repository-name ${REPO_NAME}
+
+5. After successfully create ECR repository, you can navigate to ECR private repository to view the responsitory you just created.
+
+    .. image:: resources/lambda_ecr.png
+        :alt: lambda ecr repo
+        :align: center
+
+6. Run the following commands to push the image to ECR repository.
+    
+    .. code-block:: shell
+
+        $ export ECR_URI="${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_REGION}.amazonaws.com"
+        $ aws ecr get-login-password --region ${AWS_REGION} | docker login --username AWS --password-stdin ${ECR_URI}
+        $ docker tag public.ecr.aws/p2d2x2s3/cypienta/vrl-lambda:v0.1 ${ECR_URI}/${REPO_NAME}:v0.1
+        $ docker push ${ECR_URI}/${REPO_NAME}:v0.1
+
+
 Deploy resources using the Cloud Formation template
 ---------------------------------------------------
 
@@ -8,10 +52,10 @@ Deploy resources using the Cloud Formation template
 
     .. code-block:: shell
 
-        $ git clone -b v0.6 https://github.com/cypienta/Lambda.git
+        $ git clone -b v0.7 https://github.com/cypienta/Lambda.git
     
     .. note::
-        This command will clone the repository and checkout the branch ``v0.6``
+        This command will clone the repository and checkout the branch ``v0.7``
 
 2. Navigate to the AWS console, and search for ``CloudFormation``.
 
@@ -62,6 +106,8 @@ Deploy resources using the Cloud Formation template
     **WebContainerImage:** The container image of the subscribed marketplace UI product with tag ``market*``. The ``Web container image`` noted in the section :doc:`subscribe`.
 
     **NginxContainerImage:** The container image of the subscribed marketplace UI product with tag ``nginx-market*``. The ``Nginx container image`` noted in the section :doc:`subscribe`.
+
+    **VRLLambdaImage:** The container image of the VRL Lambda that was pushed to ECR private repository in :ref:`my-heading`
 
     The constraints for choosing the ``Cpu`` and ``Memory`` for the cluster can be found `here <https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-taskdefinition.html#cfn-ecs-taskdefinition-cpu>`__
 

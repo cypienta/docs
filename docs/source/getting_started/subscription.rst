@@ -90,7 +90,7 @@ Cypienta User Interface (UI)
         :alt: confirm subscribe
         :align: center
 
-4. Select the ``Fulfillment option`` as ``ECS``. Select the ``Software version`` as ``v0.1``. Then click on ``Continue to Launch``
+4. Select the ``Fulfillment option`` as ``ECS``. Select the ``Software version`` as ``v0.1.2``. Then click on ``Continue to Launch``
 
     .. image:: resources/to_launch.png
         :alt: to launch
@@ -111,12 +111,12 @@ Cypienta User Interface (UI)
             --username AWS \
             --password-stdin 709825985650.dkr.ecr.us-east-1.amazonaws.com
             
-        CONTAINER_IMAGES="709825985650.dkr.ecr.us-east-1.amazonaws.com/cypienta/cytech:nginx-marketv0.0.3,709825985650.dkr.ecr.us-east-1.amazonaws.com/cypienta/cytech:marketv0.1.1"    
+        CONTAINER_IMAGES="709825985650.dkr.ecr.us-east-1.amazonaws.com/cypienta/cytech:nginx-marketv0.0.3,709825985650.dkr.ecr.us-east-1.amazonaws.com/cypienta/cytech:marketv0.1.2"    
 
         for i in $(echo $CONTAINER_IMAGES | sed "s/,/ /g"); do docker pull $i; done
 
     Here the two images are:
 
-    - **Web container image:** 709825985650.dkr.ecr.us-east-1.amazonaws.com/cypienta/cytech:marketv0.1.1
+    - **Web container image:** 709825985650.dkr.ecr.us-east-1.amazonaws.com/cypienta/cytech:marketv0.1.2
     
     - **Nginx container image:** 709825985650.dkr.ecr.us-east-1.amazonaws.com/cypienta/cytech:nginx-marketv0.0.3
