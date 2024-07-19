@@ -212,3 +212,12 @@ Writing transformation VRL expressions
 
 The input to your VRL expression is a single record from your data
 source. The output of the VRL expression is the transformed record.
+
+
+
+
+
+Using an AI model to generate mappings
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+https://github.com/cypienta/data_mapper_model
