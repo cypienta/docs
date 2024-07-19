@@ -49,3 +49,4 @@ In this documentation, you will find detailed instructions for:
     :caption: Data Mapping & Transfromations 
 
     vrl/transform
+    vrl/ai
