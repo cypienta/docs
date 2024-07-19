@@ -1,4 +1,4 @@
-Using transformation script
+Data transformation / Remodelling
 ---------------------------
 
 Once you have the Elastic logs stored in S3 in JSON Lines format, you
