@@ -46,6 +46,6 @@ In this documentation, you will find detailed instructions for:
 
 .. toctree::
     :maxdepth: 1
-    :caption: Using VRL
+    :caption: Data Mapping & Transfromations 
 
     vrl/transform
