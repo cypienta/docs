@@ -61,8 +61,6 @@ To get search results of Splunk to AWS S3. Follow the steps below:
 
 4. On the configuration page. Click on the ``Account`` tab, and click on ``Add`` to add an AWS account.
 
-    Then click on the ``IAM Role`` tab, and add an IAM role that has ``write`` permissions to S3. You can use the ARN of IAM role created by the CloudFormation template for Lambda.
-
     In the ``Logging`` tab, the ``Log level`` is set to ``INFO`` by default, modify it as required.
 
     .. image:: splunk_resources/app_config.png
