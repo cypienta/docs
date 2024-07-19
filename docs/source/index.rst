@@ -22,7 +22,7 @@ In this documentation, you will find detailed instructions for:
 
 .. toctree::
     :maxdepth: 1
-    :caption: Example Integrations (SIEM, XDR, SOAR, Tickets)
+    :caption: Ex Integrations (SIEM, XDR, SOAR)
 
     splunk/splunk
     splunk/vrl
