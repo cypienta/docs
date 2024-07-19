@@ -44,6 +44,12 @@ Setup Lambda repository
         $ docker tag public.ecr.aws/p2d2x2s3/cypienta/vrl-lambda:v0.1 ${ECR_URI}/${REPO_NAME}:v0.1
         $ docker push ${ECR_URI}/${REPO_NAME}:v0.1
 
+7. Copy the ECR Image URI and make a note of it to use in CloudFormation template
+
+    .. code-block:: shell
+
+        $ echo ${ECR_URI}/${REPO_NAME}:v0.1
+
 
 Deploy resources using the Cloud Formation template
 ---------------------------------------------------
@@ -107,7 +113,7 @@ Deploy resources using the Cloud Formation template
 
     **NginxContainerImage:** The container image of the subscribed marketplace UI product with tag ``nginx-market*``. The ``Nginx container image`` noted in the section :doc:`subscribe`.
 
-    **VRLLambdaImage:** The container image of the VRL Lambda that was pushed to ECR private repository in :ref:`my-heading`
+    **VRLLambdaImage:** The container image of the VRL Lambda that was pushed to ECR private repository in :ref:`setup_lambda_repository`
 
     The constraints for choosing the ``Cpu`` and ``Memory`` for the cluster can be found `here <https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-taskdefinition.html#cfn-ecs-taskdefinition-cpu>`__
 
