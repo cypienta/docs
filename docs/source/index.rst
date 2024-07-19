@@ -18,8 +18,18 @@ In this documentation, you will find detailed instructions for:
     getting_started/prerequisites
     getting_started/subscription
     getting_started/deploy
-    getting_started/end_to_end_test
     getting_started/troubleshoot
+
+.. toctree::
+    :maxdepth: 1
+    :caption: Example Integrations (SIEM, XDR, SOAR, Tickets)
+
+    splunk/splunk
+    splunk/vrl
+    splunk/output
+    elastic/elastic
+    elastic/vrl
+    elastic/output
 
 .. toctree::
     :maxdepth: 1
@@ -33,16 +43,6 @@ In this documentation, you will find detailed instructions for:
 
     lambda/functions
 
-.. toctree::
-    :maxdepth: 1
-    :caption: Example Integrations (SIEM, XDR, SOAR, Tickets)
-
-    splunk/splunk
-    splunk/vrl
-    splunk/output
-    elastic/elastic
-    elastic/vrl
-    elastic/output
 
 .. toctree::
     :maxdepth: 1
