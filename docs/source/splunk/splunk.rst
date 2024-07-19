@@ -1,6 +1,42 @@
 Configure Splunk
 ================
 
+Getting AWS Access key
+----------------------
+
+To get data from and to S3, the Apps for Splunk would require Access keys from AWS. Follow the steps below to get Access key. If you already have Access key and corresponding Secret key, you can skip to :ref:`getting_data_from_splunk` 
+
+1. Navigate to AWS console and search for ``IAM``.
+
+2. On the left hand side panel, under ``Access Management``, select ``Users``
+
+    .. image:: splunk_resources/iam_users_panel.png
+        :alt: select users from panel
+        :align: center
+
+3. Click on the user for whom you want to create Access key. Select the tab ``Security credentials`` and find ``Access keys`` section. Click on ``Create access key`` button on top right of the section.
+
+    .. image:: splunk_resources/access_key_tab.png
+        :alt: select users from panel
+        :align: center
+
+4. On the ``Access key best practices & alternatives`` page, select ``Other`` and click on ``Next``.
+
+    .. image:: splunk_resources/other_access_key.png
+        :alt: select other
+        :align: center
+
+5. Set an optional description tag for the access key and click on ``Create access key``.
+
+6. Make note of the ``Access key`` and ``Secret access key`` to use in later steps. You may also download .csv file by clicking on ``Download .csv file``.
+
+    .. image:: splunk_resources/copy_access_key.png
+        :alt: copy access key
+        :align: center
+
+
+.. _getting_data_from_splunk:
+
 Getting data from Splunk to S3
 ------------------------------
 
@@ -24,8 +60,6 @@ To get search results of Splunk to AWS S3. Follow the steps below:
         :align: center
 
 4. On the configuration page. Click on the ``Account`` tab, and click on ``Add`` to add an AWS account.
-
-    Then click on the ``IAM Role`` tab, and add an IAM role that has ``write`` permissions to S3.
 
     In the ``Logging`` tab, the ``Log level`` is set to ``INFO`` by default, modify it as required.
 
@@ -51,7 +85,7 @@ To get search results of Splunk to AWS S3. Follow the steps below:
         :alt: Configure action for alert
         :align: center
 
-8. Add the ``Bucket name`` where you want splunk to save the results. For ``Object key``, enter ``%d-%b-%Y %H:%M:%S.json``. Select ``Account`` that you created on the configuration page from the dropdown. Finally click ``Save``. 
+8. Add the ``Bucket name`` which was created using the CloudFormation template to save the results. For ``Object key``, enter ``splunk_input/input/%d-%b-%Y %H:%M:%S.json``. Select ``Account`` that you created on the configuration page from the dropdown. Finally click ``Save``. 
 
     .. note::
         The user-provided object key is passed to Python's ``datetime.strftime()`` function, which encodes the time the search started. Format codes are extremely similar to Splunk's, please refer to the `official documentation <https://docs.python.org/3.7/library/datetime.html#strftime-strptime-behavior>`__.
@@ -95,7 +129,7 @@ To get results of cypienta product from S3 to Splunk. Follow the steps below:
         :alt: Search for events
         :align: center
 
-6. On the ``Add Incremental S3`` page, give a name to the configuration, select the ``AWS Account`` that was created in the previous step, select the ``S3 Bucket`` from which the data should be read, and provide the ``Log File Prefix`` of ``splunk/``. Under ``Splunk-related Configuration`` configure the ``Log Start Date`` and ``Index`` of your choice and click on ``Add``.
+6. On the ``Add Incremental S3`` page, give a name to the configuration. Select the ``AWS Account`` that was created in the previous step. Select the ``S3 Bucket`` which was created using the CloudFormation template, and provide the ``Log File Prefix`` of ``splunk/``. Under ``Splunk-related Configuration`` configure the ``Log Start Date`` and ``Index`` of your choice and click on ``Add``.
 
     .. image:: splunk_resources/conf_input.png
         :alt: configure input
