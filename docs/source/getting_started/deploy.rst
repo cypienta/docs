@@ -172,5 +172,18 @@ Deploy resources using the Cloud Formation template
 
 Now all your resources are ready to be used.
 
-You may now go to the step :doc:`end_to_end_test` to start testing
-your application.
+
+.. _Handling Multiple Inputs:
+
+Handling Multiple Inputs
+-------------------------
+
+    The pipeline will process files in the input folder sequentially in the order of upload.
+    Only one file will be processed at a time. Once a file is finished be processed the
+    pipeline will start with the next file in the queue automatically.
+
+.. note::
+        **Small input files:** For best performance, it is not recommended to upload many
+        small files due to the startup time overhead of SageMaker jobs. 
+        It is recommended to aggregate small inputs into larger input files.
+.. You may now go to the step :doc:`end_to_end_test` to start testing your application.
