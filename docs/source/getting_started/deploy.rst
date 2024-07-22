@@ -91,6 +91,10 @@ Deploy resources using the Cloud Formation template
 
 2. Navigate to the AWS console, and search for ``CloudFormation``.
 
+    .. note::
+        The UI component deployed from this template is only supported in the following AWS Regions. Make sure that you create stack in the supported region.
+        Supported AWS regions: eu-north-1, ap-south-1, eu-west-3, us-east-2, eu-west-1, eu-central-1, sa-east-1, ap-east-1, us-east-1, ap-northeast-2, eu-west-2, ap-northeast-1, us-west-2, us-west-1, ap-southeast-1, ap-southeast-2, ca-central-1
+
 3. Click on ``Stacks`` on the left hand side panel, and click on ``Create stack`` dropdown. Select ``With new resources (standard)`` to start creating a stack
 
     .. image:: resources/create_stack_start.png
@@ -154,7 +158,11 @@ Deploy resources using the Cloud Formation template
     failure options``, select ``Roll back all stack resources`` for
     ``Behaviour on provisioning failure``. Select ``Delete all newly
     created resources`` for ``Delete newly created resources during a
-    rollback``. Expand the options for ``Stack creation options`` and under  ``Timeout`` and, enter ``15`` to set a max time out of 15 minutes. And then click on ``Next``.
+    rollback``. Expand the options for ``Stack creation options - optional`` and under  ``Timeout``, enter ``15`` to set a max timeout of 15 minutes for the stack. And then click on ``Next``.
+
+    .. image:: resources/stack_timeout.png
+        :alt: stack timeout
+        :align: center
 
 8.  Now in the ``Review and create`` page, you can review your parameters.
     At the bottom of the page, select all checkboxes for ``I
@@ -165,10 +173,16 @@ Deploy resources using the Cloud Formation template
     recently created cloud stack and going to the ``Events`` tab.
 
     .. note::
-        **Build Time:** The cloud stack will take approximately 10 minutes to complete the building. 
+        **Resource Creation Time:** The cloud stack will take approximately 10 minutes to complete the creation of all the resources. 
 
 10. Once the cloud stack is completed successfully. You can start using
-    the products.
+    the products. Click on the ``Outputs`` tab for the recently created cloud 
+    stack and note down the load balancer URL for the UI under ``LoadBalancerDNSName``. 
+    Click on the link to open the UI.
+
+    .. image:: resources/lb_url.png
+        :alt: lb url
+        :align: center
 
 Now all your resources are ready to be used.
 
