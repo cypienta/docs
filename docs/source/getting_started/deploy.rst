@@ -154,7 +154,7 @@ Deploy resources using the Cloud Formation template
     failure options``, select ``Roll back all stack resources`` for
     ``Behaviour on provisioning failure``. Select ``Delete all newly
     created resources`` for ``Delete newly created resources during a
-    rollback``. And then click on ``Next``.
+    rollback``. Expand the options for ``Stack creation options`` and under  ``Timeout`` and, enter ``15`` to set a max time out of 15 minutes. And then click on ``Next``.
 
 8.  Now in the ``Review and create`` page, you can review your parameters.
     At the bottom of the page, select all checkboxes for ``I
@@ -163,6 +163,9 @@ Deploy resources using the Cloud Formation template
 
 9.  You can monitor the events of the cloud stack by clicking on the
     recently created cloud stack and going to the ``Events`` tab.
+
+    .. note::
+        **Build Time:** The cloud stack will take approximately 10 minutes to complete the building. 
 
 10. Once the cloud stack is completed successfully. You can start using
     the products.
