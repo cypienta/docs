@@ -1,9 +1,27 @@
 AWS Deployment
 ==============
 
+.. _setup_lambda_repository_single_command:
+
+Setup Lambda repository - Single quick command
+-----------------------
+
+1. Navigate to the AWS console, and select ``CloudShell`` at the bottom left of the console. Open the cloud shell in the region you want to deploy.
+
+2. The following command will download shell script to setup lambda repository and output an ECR Image URI. Make note of the ECR Image URI to use in CloudFormation template.
+
+    .. code-block:: shell
+
+        $ wget https://github.com/cypienta/Lambda/raw/main/vrl-lambda.sh && sh vrl-lambda.sh
+    
+    .. note::
+        Move to the section :ref:`setup_lambda_repository` for manual detailed steps.
+
+3. Once you make note of the ECR image URI for the VRL lambda, move to the section :ref:`deploy_cloud_formation`
+
 .. _setup_lambda_repository:
 
-Setup Lambda repository
+Setup Lambda repository - Detailed manual steps
 -----------------------
 
 1. Navigate to the AWS console, and select ``CloudShell`` at the bottom left of the console. Open the cloud shell in the region you want to deploy.
@@ -12,6 +30,7 @@ Setup Lambda repository
 
     .. code-block:: shell
 
+        # Save AWS Account ID as environment variable
         $ export AWS_ACCOUNT_ID=$(aws sts get-caller-identity --query "Account" --output text)
 
         # Replace value with ECR repository name you want to give
@@ -39,9 +58,13 @@ Setup Lambda repository
     
     .. code-block:: shell
 
+        # Create ECR URI for ECR repository
         $ export ECR_URI="${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_REGION}.amazonaws.com"
+        # Login to the ECR repository
         $ aws ecr get-login-password --region ${AWS_REGION} | docker login --username AWS --password-stdin ${ECR_URI}
+        # Tag pulled image to push to ECR repository
         $ docker tag public.ecr.aws/p2d2x2s3/cypienta/vrl-lambda:v0.1 ${ECR_URI}/${REPO_NAME}:v0.1
+        # Push the image to ECR repository
         $ docker push ${ECR_URI}/${REPO_NAME}:v0.1
 
 7. Copy the ECR Image URI and make a note of it to use in CloudFormation template
@@ -50,18 +73,21 @@ Setup Lambda repository
 
         $ echo ${ECR_URI}/${REPO_NAME}:v0.1
 
+8. Once you make note of the ECR image URI for the VRL lambda, move to the section :ref:`deploy_cloud_formation`
+
+.. _deploy_cloud_formation:
 
 Deploy resources using the Cloud Formation template
 ---------------------------------------------------
 
-1. Clone the Github repo 
+1. On your local machine, download the template file from Github. `Template file <https://github.com/cypienta/Lambda/blob/747502cc6b01975b60f286b42a27859ac2280649/template.yaml>`__. Or, use the following command to download the ``template.yaml`` file.
 
     .. code-block:: shell
 
-        $ git clone -b v0.7 https://github.com/cypienta/Lambda.git
+        $ wget https://github.com/cypienta/Lambda/raw/main/template.yaml
     
     .. note::
-        This command will clone the repository and checkout the branch ``v0.7``
+        Run this command on your local machine. This command will download the template.yaml file.
 
 2. Navigate to the AWS console, and search for ``CloudFormation``.
 
@@ -109,11 +135,11 @@ Deploy resources using the Cloud Formation template
 
     **SuperuserPassword:** The password of the admin user for UI
 
+    **VRLLambdaImage:** The container image of the VRL Lambda that was pushed to ECR private repository in :ref:`setup_lambda_repository_single_command`
+
     **WebContainerImage:** The container image of the subscribed marketplace UI product with tag ``market*``. The ``Web container image`` noted in the section :doc:`subscribe`.
 
     **NginxContainerImage:** The container image of the subscribed marketplace UI product with tag ``nginx-market*``. The ``Nginx container image`` noted in the section :doc:`subscribe`.
-
-    **VRLLambdaImage:** The container image of the VRL Lambda that was pushed to ECR private repository in :ref:`setup_lambda_repository`
 
     The constraints for choosing the ``Cpu`` and ``Memory`` for the cluster can be found `here <https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-taskdefinition.html#cfn-ecs-taskdefinition-cpu>`__
 
