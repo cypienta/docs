@@ -91,7 +91,7 @@ the batch transform job can be retriggered manually. Follow the steps below to r
 1. Open the lambda function ``create_cluster``.
 
 2. Click on the ``Configuration`` tab, then click on ``Environment variables``. 
-Click on ``Edit`` button, and click on ``Add environment variable``. Under the ``Key`` text field enter ``batch_transform_job_suffix``, under ``Value`` text field enter any unique value. For example, ``1``. And, click on ``Save`` button.
+Click on ``Edit`` button, and click on ``Add environment variable``. Under the ``Key`` text field enter ``batch_transform_job_suffix``, under ``Value`` text field enter any unique value. Limit the text value to length of 3. For example, ``1``. And, click on ``Save`` button.
 
 3. Open the S3 bucket created by the CloudFormation stack. Navigate to ``scratch/output/classification/<unique_id>/``. 
 
@@ -106,7 +106,7 @@ the batch transform job can be retriggered manually. Follow the steps below to r
 1. Open the lambda function ``create_flow``.
 
 2. Click on the ``Configuration`` tab, then click on ``Environment variables``. 
-Click on ``Edit`` button, and click on ``Add environment variable``. Under the ``Key`` text field enter ``batch_transform_job_suffix``, under ``Value`` text field enter any unique value. For example, ``1``. And, click on ``Save`` button.
+Click on ``Edit`` button, and click on ``Add environment variable``. Under the ``Key`` text field enter ``batch_transform_job_suffix``, under ``Value`` text field enter any unique value. Limit the text value to length of 3. For example, ``1``. And, click on ``Save`` button.
 
 3. Open the S3 bucket created by the CloudFormation stack. Navigate to ``scratch/output/cluster/<unique_id>/``. 
 
