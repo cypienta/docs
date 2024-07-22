@@ -14,6 +14,12 @@ Make sure that you have the required permissions for resources for the IAM user 
 -  IAM
 -  CloudFormation
 
+To confirm you have the required permssion for the resoucres nessary to run the 
+pipeline you can check with the following script.
+
+.. code-block:: console
+
+    $ wget -O- https://raw.githubusercontent.com/cypienta/AWS/v0.7/check_permissions.py | python 
 
 Quotas
 ------
