@@ -1,7 +1,7 @@
-Using transformation script
+VRL mapping language & engine
 ---------------------------
 
-Once you have the Elastic logs stored in S3 in JSON Lines format, you
+Once you have the Elastic or Splunk logs stored in S3 in JSON Lines format, you
 can use the `VRL (Vector Remap
 Language) <https://vector.dev/docs/reference/vrl/>`__ tool to transform
 your data to meet the format expected by the Cypienta end-to-end
@@ -212,3 +212,12 @@ Writing transformation VRL expressions
 
 The input to your VRL expression is a single record from your data
 source. The output of the VRL expression is the transformed record.
+
+
+
+
+Using an AI model to generate mappings
+~~~~~~~~~~~~~~~~~~~
+
+https://github.com/cypienta/data_mapper_model
+
