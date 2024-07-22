@@ -23,6 +23,34 @@ AWS console for the region you are using. Search for ``Service Quotas``
 3. Select the required instance type from the list and click on ``Request
    increase at account level``.
 
+How to delete stack and start fresh
+-----------------------------------
+
+1. Navigate to the AWS console and search for ``CloudWatch``. Make sure you are in the same region in which you created CloudFormation stack.
+
+2. On the left hand side panel, under ``Logs``, click on ``Log groups``. Select all the check boxes for the ``Log groups`` that were created by the CloudFormation stack, click on ``Actions`` dropdown and click on ``Delete log group(s)``, and then click on ``Delete`` button.
+
+3. Next, search for ``S3`` in the AWS console search bar.
+
+4. Select the bucket that was created from the CloudFormation stack and click on ``Empty``. Type in ``permanently delete`` in the confirmation box and click on ``Empty``.
+
+5. Now search for ``CloudFormation`` in the the AWS console search bar.
+
+6. Open the stack that you want to delete and click on ``Delete``. Wait for the entire stack to be deleted before you move on to creating new stack.
+
+    .. note::
+        If there are any failures in deleting the stack, then ``Retry delete``.
+        
+        To speed up delete for stack, follow the optional steps below:
+
+        1. Navigate to AWS console and search for ``ECS`` and select ``Elastic Container Service``.
+        
+        2. Click on the ECS cluster deployed from the stack. Select all the service from the ``Services`` tab and click on ``Delete service``. Check the box for ``Force delete`` and type in ``delete`` in the confirmation box and then click on ``Delete``.
+
+        3. Navigate to AWS console and search for ``EC2``.
+
+        4. Manually delete the running EC2 instance with name ``* - <ECS-cluster-name>``. Select all the pertinent instances, click on the ``Instance state`` dropdown and click on ``Terminate instance``.
+
 Common Mistakes
 ----------------
 
@@ -33,16 +61,19 @@ Some of the common errors that can result in the failure of the CloudFormation s
 - Incorrect Image for VRL Lambda 
 
 Duplicate S3 bucket name
---------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~
+
 In the case of a duplicate S3 bucket name, delete the failed CloudFormation stack,
 then choose a new globally unique S3 bucket name and recreate the stack.
 
 Incorrect arn for Models/UI
-----------------------------
-In thge case of an incorrect arn for models/UI, delete the failed CloudFormation stack,
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+In the case of an incorrect arn for models/UI, delete the failed CloudFormation stack,
 then confirm the arns for all models and UI components as seen in :doc:`subscription` and recreate the stack.
 
 Incorrect Image for VRL Lambda 
--------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~
+
 In the case of an incorrect image for VRL lambda, delete the failed CloudFormation stack,
 then ensure that you have the correct ECR Image URI and version number, and recreate the stack. 
