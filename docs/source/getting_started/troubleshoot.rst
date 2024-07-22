@@ -23,8 +23,8 @@ AWS console for the region you are using. Search for ``Service Quotas``
 3. Select the required instance type from the list and click on ``Request
    increase at account level``.
 
-How to delete stack and start fresh
------------------------------------
+How to delete stack
+-------------------
 
 1. Navigate to the AWS console and search for ``CloudWatch``. Make sure you are in the same region in which you created CloudFormation stack.
 
@@ -77,3 +77,39 @@ Incorrect Image for VRL Lambda
 
 In the case of an incorrect image for VRL lambda, delete the failed CloudFormation stack,
 then ensure that you have the correct ECR Image URI and version number, and recreate the stack. 
+
+Common errors
+-------------
+
+CapacityError: Unable to provision requested ML compute capacity. Please retry using a different ML instance type.
+~~~~~~~~~~~~~~~
+
+If the SageMaker batch transform job fails for ``transform-job-cluster-*`` with the error 
+``CapacityError: Unable to provision requested ML compute capacity. Please retry using a different ML instance type.`` 
+the batch transform job can be retriggered manually. Follow the steps below to retrigger:
+
+1. Open the lambda function ``create_cluster``.
+
+2. Click on the ``Configuration`` tab, then click on ``Environment variables``. 
+Click on ``Edit`` button, and click on ``Add environment variable``. Under the ``Key`` text field enter ``batch_transform_job_suffix``, under ``Value`` text field enter any unique value. For example, ``1``. And, click on ``Save`` button.
+
+3. Open the S3 bucket created by the CloudFormation stack. Navigate to ``scratch/output/classification/<unique_id>/``. 
+
+4. Select the ``input.json``, click on ``Actions``, click on ``Copy``. On the Copy page, click on ``Browse S3``, click on ``Choose destination``, and then click on ``Copy``.
+
+5. This will trigger a new batch transform job.
+
+If the SageMaker batch transform job fails for ``transform-job-flow-*`` with the error 
+``CapacityError: Unable to provision requested ML compute capacity. Please retry using a different ML instance type.`` 
+the batch transform job can be retriggered manually. Follow the steps below to retrigger:
+
+1. Open the lambda function ``create_flow``.
+
+2. Click on the ``Configuration`` tab, then click on ``Environment variables``. 
+Click on ``Edit`` button, and click on ``Add environment variable``. Under the ``Key`` text field enter ``batch_transform_job_suffix``, under ``Value`` text field enter any unique value. For example, ``1``. And, click on ``Save`` button.
+
+3. Open the S3 bucket created by the CloudFormation stack. Navigate to ``scratch/output/cluster/<unique_id>/``. 
+
+4. Select the ``input_flow.json``, click on ``Actions``, click on ``Copy``. On the Copy page, click on ``Browse S3``, click on ``Choose destination``, and then click on ``Copy``.
+
+5. This will trigger a new batch transform job.
