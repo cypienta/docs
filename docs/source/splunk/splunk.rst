@@ -4,7 +4,7 @@ Configure Splunk
 Prerequisites
 -------------
 
-Make sure that you have deployed the Cypienta application detailed in :doc:`../getting_started/deploy.rst` before integrating.
+Make sure that you have deployed the Cypienta application detailed in :doc:`../getting_started/deploy` before integrating.
 
 Getting AWS Access key
 ----------------------
