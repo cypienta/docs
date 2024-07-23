@@ -14,8 +14,8 @@ Make sure that you have the required permissions for resources for the IAM user 
 -  IAM
 -  CloudFormation
 
-To confirm you have the required permssion for the resoucres nessary to run the 
-pipeline you can check with the following script.
+To confirm you have the required permssion for the resources necessary to run the 
+pipeline you can check that with the following script. To run the script the iam user must have ``iam:SimulatePrincipalPolicy`` policy.
 
 .. code-block:: console
 
