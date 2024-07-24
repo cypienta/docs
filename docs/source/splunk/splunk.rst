@@ -90,6 +90,10 @@ To get search results of Splunk to AWS S3. Follow the steps below:
         :alt: Configure action for alert
         :align: center
 
+    .. note::
+        To make a quick test of the alert setup, select ``Run on Cron Schedule`` an type in the cron job schedule with reference to UTC-0 timezone. For example, if the current time is 13:46 UTC-0, then the ``Cron Expression`` can be set to 2 minutes past the current time.
+        ``48 * * * *``. This cron expression will run the alert at every 48th minute past the hour every hour in referene to UTC-0. If this is a one-off test, make sure to use dummy bucket and path to save the output, and make sure to disable the alert once test is successful.
+
 8. Add the ``Bucket name`` which was created using the CloudFormation template to save the results. For ``Object key``, enter ``splunk_input/input/%d-%b-%Y %H:%M:%S.json``. Select ``Account`` that you created on the configuration page from the dropdown. Finally click ``Save``. 
 
     .. note::
