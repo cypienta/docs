@@ -42,7 +42,7 @@ Temporal Clustering
         :alt: Subscribe to technique detector
         :align: center
 
-3. Click on ``Continue to configuration``. In the section ``Select your launch method``, select ``AWS CloudFormation``. Select the ``Software Version`` as ``0.7`` from the drop down. Select the ``Region`` in which you would want to deploy Cypienta products. Copy and make note of the ``Product Arn``.
+3. Click on ``Continue to configuration``. In the section ``Select your launch method``, select ``AWS CloudFormation``. Select the ``Software Version`` as ``0.7.1`` from the drop down. Select the ``Region`` in which you would want to deploy Cypienta products. Copy and make note of the ``Product Arn``.
 
     .. image:: resources/model_arn_cluster.png
         :alt: Subscribe to flow detector
@@ -90,7 +90,7 @@ Cypienta User Interface (UI)
         :alt: confirm subscribe
         :align: center
 
-4. Select the ``Fulfillment option`` as ``ECS``. Select the ``Software version`` as ``v0.1.2``. Then click on ``Continue to Launch``
+4. Select the ``Fulfillment option`` as ``ECS``. Select the ``Software version`` as ``v0.2.1``. Then click on ``Continue to Launch``
 
     .. image:: resources/to_launch.png
         :alt: to launch
@@ -111,12 +111,12 @@ Cypienta User Interface (UI)
             --username AWS \
             --password-stdin 709825985650.dkr.ecr.us-east-1.amazonaws.com
             
-        CONTAINER_IMAGES="709825985650.dkr.ecr.us-east-1.amazonaws.com/cypienta/cytech:nginx-marketv0.0.3,709825985650.dkr.ecr.us-east-1.amazonaws.com/cypienta/cytech:marketv0.1.2"    
+        CONTAINER_IMAGES="709825985650.dkr.ecr.us-east-1.amazonaws.com/cypienta/cytech:nginx-marketv0.0.3,709825985650.dkr.ecr.us-east-1.amazonaws.com/cypienta/cytech:marketv0.2.1"    
 
         for i in $(echo $CONTAINER_IMAGES | sed "s/,/ /g"); do docker pull $i; done
 
     Here the two images are:
 
-    - **Web container image:** 709825985650.dkr.ecr.us-east-1.amazonaws.com/cypienta/cytech:marketv0.1.2
+    - **Web container image:** 709825985650.dkr.ecr.us-east-1.amazonaws.com/cypienta/cytech:marketv0.2.1
     
     - **Nginx container image:** 709825985650.dkr.ecr.us-east-1.amazonaws.com/cypienta/cytech:nginx-marketv0.0.3
