@@ -39,8 +39,8 @@ How to use the Hide feature for events in UI
         :align: center
     
     .. note::
-        The ``Campaigns`` page will show all the clusters that were created from the events. Each event will only be present in one cluster.
-        The ``Flows`` page will show all the clusters that were created from the events. Each event can be present in none or more than one flow.
+        The ``Campaigns`` page will show all the clusters that were created from the events. Each event will only be present in one cluster. Clusters with single event will not be visible on UI.
+        The ``Flows`` page will show all the flows that were created from the events. Each event can be present in none or more than one flow.
 
 2. Click on any campaign that you want to modify:
 
