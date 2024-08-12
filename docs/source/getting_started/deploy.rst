@@ -84,11 +84,11 @@ Setup Lambda repository - Detailed manual steps
 Deploy resources using the Cloud Formation template
 ---------------------------------------------------
 
-1. On your local machine, download the template file from Github. `Template file <https://github.com/cypienta/AWS/blob/862fe7a6a28a3be7c8f3367d142d5464a2f52037/template.yaml>`__. Or, use the following command to download the ``template.yaml`` file.
+1. On your local machine, download the template file from Github. `Template file <https://github.com/cypienta/AWS/blob/8b685e14f0377ba519524f65c35c8e9c3c12f14c/template.yaml>`__. Or, use the following command to download the ``template.yaml`` file.
 
     .. code-block:: shell
 
-        $ wget https://github.com/cypienta/AWS/raw/v0.7/template.yaml
+        $ wget https://github.com/cypienta/AWS/raw/v0.8/template.yaml
     
     .. note::
         Run this command on your local machine. This command will download the template.yaml file.
