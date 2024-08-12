@@ -25,7 +25,7 @@ ATTACK Technique Detector
         :align: center
 
 
-Temporal Clustering
+Temporal Clustering Part-1
 -------------------
 
 1. Use the `link <https://aws.amazon.com/marketplace/pp/prodview-a6owq2ddgrcrc?sr=0-3&ref_=beagle&applicationId=AWSMPContessa>`_ to explore the marketplace model packages in AWS. Search for ``Cypienta Temporal Clustering``
@@ -42,7 +42,31 @@ Temporal Clustering
         :alt: Subscribe to technique detector
         :align: center
 
-3. Click on ``Continue to configuration``. In the section ``Select your launch method``, select ``AWS CloudFormation``. Select the ``Software Version`` as ``0.7.1`` from the drop down. Select the ``Region`` in which you would want to deploy Cypienta products. Copy and make note of the ``Product Arn``.
+3. Click on ``Continue to configuration``. In the section ``Select your launch method``, select ``AWS CloudFormation``. Select the ``Software Version`` as ``0.8`` from the drop down. Select the ``Region`` in which you would want to deploy Cypienta products. Copy and make note of the ``Product Arn``.
+
+    .. image:: resources/model_arn_cluster.png
+        :alt: Subscribe to flow detector
+        :align: center
+
+
+Temporal Clustering Part-2
+-------------------
+
+1. Use the `link <https://aws.amazon.com/marketplace/pp/prodview-ub47j253tgi4c?sr=0-5&ref_=beagle&applicationId=AWSMPContessa>`_ to explore the marketplace model packages in AWS. Search for ``Cypienta Temporal Clustering``
+
+    Click on ``Continue to Subscribe``.
+
+    .. image:: resources/subscribe_to_temporal_clustering.png
+        :alt: Subscribe to temporal clustering
+        :align: center
+
+2. Click on the ``Accept offer`` button on the next page.
+
+    .. image:: resources/accept_offer.png
+        :alt: Subscribe to technique detector
+        :align: center
+
+3. Click on ``Continue to configuration``. In the section ``Select your launch method``, select ``AWS CloudFormation``. Select the ``Software Version`` as ``0.8`` from the drop down. Select the ``Region`` in which you would want to deploy Cypienta products. Copy and make note of the ``Product Arn``.
 
     .. image:: resources/model_arn_cluster.png
         :alt: Subscribe to flow detector
