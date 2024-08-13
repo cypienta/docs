@@ -55,9 +55,3 @@ In this documentation, you will find detailed instructions for:
 
     vrl/transform
     vrl/ai
-
-.. toctree::
-    :maxdepth: 1
-    :caption: Test with custom input (non CEF input format)
-
-    getting_started/end_to_end
