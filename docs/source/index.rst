@@ -60,4 +60,4 @@ In this documentation, you will find detailed instructions for:
     :maxdepth: 1
     :caption: Test with custom input (non CEF input format)
 
-    getting_started/end_to_end_test
+    getting_started/end_to_end
