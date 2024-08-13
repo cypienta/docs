@@ -1,4 +1,4 @@
-End to End Test (non-CEF input format)
+End to End Test (non CEF input format)
 ==================================================
 
 How to test end-to-end
@@ -81,7 +81,7 @@ How to test end-to-end
     .. note::
         If the node_feature are already in encoded format, skip the encoding of node features by updating environment variable to ``enrich_with_technique``. Update the value for ``encode_node_feature`` to ``false``.
 
-4. Upload input json file to the s3 bucket in path: ``s3://{bucket-name}/input/``. The name of the input file does not matter to the end-to-end flow. Note that if you upload a file with the same name, it will be overwritten in S3 bucket.
+3. Upload input json file to the s3 bucket in path: ``s3://{bucket-name}/input/``. The name of the input file does not matter to the end-to-end flow. Note that if you upload a file with the same name, it will be overwritten in S3 bucket.
 
     1. Once you upload the input file. You can use the AWS step function to monitor the flow of your input.
 
@@ -89,4 +89,4 @@ How to test end-to-end
 
     3. You can monitor the progress on CloudWatch logs for each lambda function and transform job created.
 
-5. Final output will be put on the S3 bucket with prefix ``s3://alert-detector/output/``
+4. Final output will be put on the S3 bucket with prefix ``s3://alert-detector/output/``
