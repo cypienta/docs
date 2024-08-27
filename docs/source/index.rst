@@ -44,6 +44,12 @@ In this documentation, you will find detailed instructions for:
 
 .. toctree::
     :maxdepth: 1
+    :caption: JIRA Integration
+
+    jira/jira
+
+.. toctree::
+    :maxdepth: 1
     :caption: Open-Source Lambda Functions 
 
     lambda/functions
