@@ -28,7 +28,7 @@ Start using Cypienta UI
         :align: center
     
     .. note::
-        The default ``Username`` is ``maestro`` and the default password is ``changemenow``
+        The default ``Username`` is ``maestro`` and the default ``Password`` is ``changemenow``
 
 
 How to use the Hide feature for events in UI
