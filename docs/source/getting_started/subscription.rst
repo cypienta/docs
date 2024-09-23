@@ -45,7 +45,7 @@ ATTACK Technique Detector
 
     Here the model container image is:
 
-    - **Technique container image:** 709825985650.dkr.ecr.us-east-1.amazonaws.com/cypienta/flow-ecs:tech_trialv0.0.4
+    - **Technique container image:** ``709825985650.dkr.ecr.us-east-1.amazonaws.com/cypienta/flow-ecs:tech_trialv0.0.4``
 
 
 Temporal Clustering Part-1
@@ -92,7 +92,7 @@ Temporal Clustering Part-1
 
     Here the model container image is:
     
-    - **Cluster Part 1 container image:** 709825985650.dkr.ecr.us-east-1.amazonaws.com/cypienta/flow-ecs:cluster1_trialv0.0.4
+    - **Cluster Part 1 container image:** ``709825985650.dkr.ecr.us-east-1.amazonaws.com/cypienta/flow-ecs:cluster1_trialv0.0.4``
 
 
 Temporal Clustering Part-2
@@ -139,7 +139,7 @@ Temporal Clustering Part-2
 
     Here the model container image is:
 
-    - **Cluster Part 2 container image:** 709825985650.dkr.ecr.us-east-1.amazonaws.com/cypienta/flow-ecs:cluster2_trialv0.0.4
+    - **Cluster Part 2 container image:** ``709825985650.dkr.ecr.us-east-1.amazonaws.com/cypienta/flow-ecs:cluster2_trialv0.0.4``
 
 
 MITRE ATTACK Flow Detector
@@ -186,7 +186,7 @@ MITRE ATTACK Flow Detector
 
     Here the model container image is:
 
-    - **Flow container image:** 709825985650.dkr.ecr.us-east-1.amazonaws.com/cypienta/flow-ecs:flow_trialv0.0.4
+    - **Flow container image:** ``709825985650.dkr.ecr.us-east-1.amazonaws.com/cypienta/flow-ecs:flow_trialv0.0.4``
 
 
 Cypienta User Interface (UI)
@@ -233,6 +233,6 @@ Cypienta User Interface (UI)
 
     Here the two images are:
 
-    - **Web container image:** 709825985650.dkr.ecr.us-east-1.amazonaws.com/cypienta/cytech:marketv0.2.3
+    - **Web container image:** ``709825985650.dkr.ecr.us-east-1.amazonaws.com/cypienta/cytech:marketv0.2.3``
     
-    - **Nginx container image:** 709825985650.dkr.ecr.us-east-1.amazonaws.com/cypienta/cytech:nginx-marketv0.0.3
+    - **Nginx container image:** ``709825985650.dkr.ecr.us-east-1.amazonaws.com/cypienta/cytech:nginx-marketv0.0.3``
