@@ -1,8 +1,8 @@
-End to End Test (non-CEF input format)
+End to End Test
 ==================================================
 
 How to test end-to-end
-----------------------
+--------------------------
 
 1. Navigate to the AWS console and search for ``S3``. Select the S3 bucket
    that you created, and click on ``Create folder``. Set the name of the folder as ``input`` and create the folder.
@@ -72,21 +72,34 @@ How to test end-to-end
 
     All fields are required unless mentioned otherwise.
 
-3. Update the environment variables for the lambda functions: ``enrich_with_technique`` and ``process_flow``, and update variable ``map_cef_to_internal`` to value set as ``false``.
+3. Upload input json file to the s3 bucket in path: ``s3://{bucket-name}/input/``. The name of the input file does not matter to the end-to-end flow. Note that if you upload a file with the same name, it will be overwritten in S3 bucket.
 
-    .. note::
-        To access the environment variable for lambda functions, navigate to the AWS console and search for ``Lambda``. Select the lambda function that you want to edit. Click on the ``Configuration`` tab and select ``Environment variables`` 
-        from the left panel under ``Configuration``. Click on ``Edit`` button to open the edit page and update the pertinent values.
+    1. Once you upload the input file. Lets say ``input.json``. Then the control flow will be as follows:
 
-    .. note::
-        If the node_feature are already in encoded format, skip the encoding of node features by updating environment variable to ``enrich_with_technique``. Update the value for ``encode_node_feature`` to ``false``.
+        -  Enrich_with_technique: lambda function
+        -  Transform-job-tech-{unique-id}: Batch transform job
 
-4. Upload input json file to the s3 bucket in path: ``s3://{bucket-name}/input/``. The name of the input file does not matter to the end-to-end flow. Note that if you upload a file with the same name, it will be overwritten in S3 bucket.
+            -  Reads input from: ``{bucket}/intermediate/{unique-id}/input_classification.json``
+            -  Output to: ``{bucket}/response/classification_out/{unique-id}/input_classification.json.out``
 
-    1. Once you upload the input file. You can use the AWS step function to monitor the flow of your input.
+        -  Process_enriched_with_technique: lambda function
+        -  Create_cluster: lambda function
+        -  Transform-job-cluster-{unique-id}: Batch transform job
+
+            -  Reads input from: ``{bucket}/output/classification/{unique-id}/input.zip``
+            -  Output to: ``{bucket}/response/cluster_out/{unique-id}/input.zip.out``
+
+        -  Process_cluster: lambda function
+        -  Create_flow: lambda function
+        -  Transform-job-flow-{unique-id}: Batch transform job
+
+            -  Reads input from: ``{bucket}/output/cluster/{unique-id}/input_flow.json``
+            -  Output to: ``{bucket}/response/flow_out/{unique-id}/input_flow.json.out``
+
+        -  Process_flow: lambda function
 
     2. You can use the Amazon SageMaker console and navigate to Inference → Batch transform jobs, to view the created jobs for your input.
 
     3. You can monitor the progress on CloudWatch logs for each lambda function and transform job created.
 
-5. Final output will be put on the S3 bucket with prefix ``s3://alert-detector/output/``
+4. Wait for a complete output to show up on the S3 bucket. ``s3://alert-detector/output/flow/{unique-id}/``

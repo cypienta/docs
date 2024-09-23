@@ -135,12 +135,12 @@ Cypienta User Interface (UI)
             --username AWS \
             --password-stdin 709825985650.dkr.ecr.us-east-1.amazonaws.com
             
-        CONTAINER_IMAGES="709825985650.dkr.ecr.us-east-1.amazonaws.com/cypienta/cytech:nginx-marketv0.0.3,709825985650.dkr.ecr.us-east-1.amazonaws.com/cypienta/cytech:marketv0.2.3"    
+        CONTAINER_IMAGES="709825985650.dkr.ecr.us-east-1.amazonaws.com/cypienta/cytech:nginx-marketv0.0.3,709825985650.dkr.ecr.us-east-1.amazonaws.com/cypienta/cytech:marketv0.2.2"    
 
         for i in $(echo $CONTAINER_IMAGES | sed "s/,/ /g"); do docker pull $i; done
 
     Here the two images are:
 
-    - **Web container image:** 709825985650.dkr.ecr.us-east-1.amazonaws.com/cypienta/cytech:marketv0.2.3
+    - **Web container image:** 709825985650.dkr.ecr.us-east-1.amazonaws.com/cypienta/cytech:marketv0.2.2
     
     - **Nginx container image:** 709825985650.dkr.ecr.us-east-1.amazonaws.com/cypienta/cytech:nginx-marketv0.0.3

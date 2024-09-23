@@ -44,6 +44,12 @@ In this documentation, you will find detailed instructions for:
 
 .. toctree::
     :maxdepth: 1
+    :caption: JIRA Integration
+
+    jira/jira
+
+.. toctree::
+    :maxdepth: 1
     :caption: Open-Source Lambda Functions 
 
     lambda/functions
@@ -55,10 +61,3 @@ In this documentation, you will find detailed instructions for:
 
     vrl/transform
     vrl/ai
-
-.. toctree::
-    :maxdepth: 1
-    :caption: Test with CEF and non-CEF input format
-
-    getting_started/end_to_end_test_cef
-    getting_started/end_to_end_test

@@ -3,7 +3,6 @@ Start using Cypienta UI
 
 Once all your resources are deployed and the ECS app is up and in ``Running`` status. You can start using the Cypienta UI.
 
-
 Start using Cypienta UI
 -----------------------
 
@@ -27,6 +26,9 @@ Start using Cypienta UI
     .. image:: resources/home_page.png
         :alt: Home page
         :align: center
+    
+    .. note::
+        The default ``Username`` is ``maestro`` and the default ``Password`` is ``changemenow``
 
 
 How to use the Hide feature for events in UI
@@ -37,11 +39,6 @@ How to use the Hide feature for events in UI
     .. image:: resources/campaign_list.png
         :alt: Campaign list
         :align: center
-
-
-    .. note::
-        The ``Campaigns`` page will show all the clusters that were created from the events. Each event will only be present in one cluster. Clusters with single event will not be visible on UI.
-        The ``Flows`` page will show all the flows that were created from the events. Each event can be present in none or more than one flow.
 
 2. Click on any campaign that you want to modify:
 
@@ -71,7 +68,6 @@ How to use the Hide feature for events in UI
         :align: center
 
    You can see the list of hidden events now has an event that was selected earlier and hide action was taken.
-
 
 Edit recognized techniques for events
 -------------------------------------
