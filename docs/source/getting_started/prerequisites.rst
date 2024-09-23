@@ -27,13 +27,17 @@ Quotas
 Instance types
 ~~~~~~~~~~~~~~
 
-Verify your instance type quotas by going to the AWS console. Search for ``Service Quotas``, and select ``Amazon Elastic Compute Cloud (Amazon EC2)`` from the AWS Services list. Search for ``Running On-Demand G and VT instances``. You will require a GPU instance type for ``ATTACK Technique Detector`` and ``Temporal Clustering``, so look at the supported and recommended instance types for the product before subscribing and request for an increase of quota if found to be less than 1. The recommended GPU instance types are g4dn and p2. The ``MITRE ATTACK Flow Detector`` requires a CPU-based instance type such as c5.
+Verify your instance type quotas by going to the AWS console. Search for ``Service Quotas``, and select ``Amazon Elastic Compute Cloud (Amazon EC2)`` from the AWS Services list. Search for ``Running On-Demand G and VT instances`` or ``Running On-Demand P instances``. You will require a GPU instance type for ``ATTACK Technique Detector`` and ``Temporal Clustering``, so look at the supported and recommended instance types for the product before subscribing and request for an increase of quota if found to be less than 1. The recommended GPU instance types are g4dn and p2. The ``MITRE ATTACK Flow Detector`` requires a CPU-based instance type such as c5.
 
 .. note::
     Example: 
         - Given the target region, go to service quotas or visit https://us-east-2.console.aws.amazon.com/servicequotas/home/services/sagemaker/quotas
         - Search and select "Running On-Demand G and VT instances" or visit https://us-east-2.console.aws.amazon.com/servicequotas/home/services/ec2/quotas/L-DB2E81BA
-            - If the applied account-level quota value is less than 1, request an increase to at least 1. 
+            - If the applied account-level quota value is less than 1, request an increase to at least 1.
+    
+    If you want to select a p3 instance. Follow the steps below:
+        - Search and select "Running On-Demand P instances" or visit https://us-east-2.console.aws.amazon.com/servicequotas/home/services/ec2/quotas/L-417A185B
+            - If the applied account-level quota value is less than 1, request an increase to at least 1.
 
 
 Lambda concurrent executions

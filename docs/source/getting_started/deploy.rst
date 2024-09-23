@@ -24,11 +24,7 @@ Setup Lambda repository - Single quick command
 Setup Lambda repository - Detailed manual steps
 -----------------------
 
-1. Navigate to the AWS console, and select ``CloudShell`` at the bottom left of the console. Open the cloud shell in the region you want to deploy. You may run the following one line command, or continue to next step to run individual commands.
-
-    .. code-block:: shell
-
-        $ export AWS_ACCOUNT_ID=$(aws sts get-caller-identity --query "Account" --output text) && export REPO_NAME="cypienta-vrl-lambda" && export VRL_TAG="v0.2" && docker pull public.ecr.aws/p2d2x2s3/cypienta/vrl-lambda:${VRL_TAG} && aws ecr create-repository --repository-name ${REPO_NAME} && export ECR_URI="${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_REGION}.amazonaws.com" && aws ecr get-login-password --region ${AWS_REGION} | docker login --username AWS --password-stdin ${ECR_URI} && docker tag public.ecr.aws/p2d2x2s3/cypienta/vrl-lambda:${VRL_TAG} ${ECR_URI}/${REPO_NAME}:${VRL_TAG} && docker push ${ECR_URI}/${REPO_NAME}:${VRL_TAG} && echo ${ECR_URI}/${REPO_NAME}:${VRL_TAG}
+1. Navigate to the AWS console, and select ``CloudShell`` at the bottom left of the console. Open the cloud shell in the region you want to deploy.
 
 2. Store the AWS Account ID, and ECR repository name to environment variable in cloud shell.
 
@@ -49,7 +45,7 @@ Setup Lambda repository - Detailed manual steps
 
         $ docker pull public.ecr.aws/p2d2x2s3/cypienta/vrl-lambda:${VRL_TAG}
 
-4. Once the image pull is completed, create an ECR repository to push the Cypienta VRL Lambda image.
+4. Once the image pull is completed, create an ECR repository to push the Cypienta VRL Lambda image. Skip this step if the repository is already created.
 
     .. code-block:: shell
 
@@ -131,13 +127,13 @@ Deploy resources using the Cloud Formation template
     can see the failure reasons by clicking on the stack that was
     created and clicking on the ``Events`` tab.
 
-    **TechModelContainerImage:** The container image URL for ATTACK Technique detector. The container image of the subscribed marketplace product with tag ``market*``. The container image URL noted in the section :doc:`subscribe`.
+    **TechModelContainerImage:** The container image URL for ATTACK Technique detector. The container image URL noted in the section :doc:`subscribe`.
 
-    **ClusterModelPart1ContainerImage:** The container image URL for Temporal Clustering. The container image of the subscribed marketplace product with tag ``market*``. The container image URL noted in the section :doc:`subscribe`.
+    **ClusterModelPart1ContainerImage:** The container image URL for Cluster Model Part 1. The container image URL noted in the section :doc:`subscribe`.
 
-    **ClusterModelPart2ContainerImage:** The container image URL for Temporal Clustering. The container image of the subscribed marketplace product with tag ``market*``. The container image URL noted in the section :doc:`subscribe`.
+    **ClusterModelPart2ContainerImage:** The container image URL for Cluster Model Part 2. The container image URL noted in the section :doc:`subscribe`.
 
-    **FlowModelContainerImage:** The container image URL for MITRE flow detector. The container image of the subscribed marketplace product with tag ``market*``. The container image URL noted in the section :doc:`subscribe`.
+    **FlowModelContainerImage:** The container image URL for MITRE flow detector. The container image URL noted in the section :doc:`subscribe`.
 
     **SuperuserEmail:** The email for admin user for UI
 
