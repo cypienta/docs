@@ -40,11 +40,14 @@ Setup Lambda repository - Detailed manual steps
         # Replace value with ECR repository name you want to give
         $ export REPO_NAME="cypienta-vrl-lambda"
 
+        # Save Tag for the docker image
+        $ export VRL_TAG="v0.2"
+
 3. Pull the Cypienta VRL Lambda image from the AWS public repository using the following command.
 
     .. code-block:: shell
 
-        $ docker pull public.ecr.aws/p2d2x2s3/cypienta/vrl-lambda:v0.1
+        $ docker pull public.ecr.aws/p2d2x2s3/cypienta/vrl-lambda:${VRL_TAG}
 
 4. Once the image pull is completed, create an ECR repository to push the Cypienta VRL Lambda image.
 
@@ -67,15 +70,15 @@ Setup Lambda repository - Detailed manual steps
         # Login to the ECR repository
         $ aws ecr get-login-password --region ${AWS_REGION} | docker login --username AWS --password-stdin ${ECR_URI}
         # Tag pulled image to push to ECR repository
-        $ docker tag public.ecr.aws/p2d2x2s3/cypienta/vrl-lambda:v0.1 ${ECR_URI}/${REPO_NAME}:v0.1
+        $ docker tag public.ecr.aws/p2d2x2s3/cypienta/vrl-lambda:${VRL_TAG} ${ECR_URI}/${REPO_NAME}:${VRL_TAG}
         # Push the image to ECR repository
-        $ docker push ${ECR_URI}/${REPO_NAME}:v0.1
+        $ docker push ${ECR_URI}/${REPO_NAME}:${VRL_TAG}
 
 7. Copy the ECR Image URI and make a note of it to use in CloudFormation template
 
     .. code-block:: shell
 
-        $ echo ${ECR_URI}/${REPO_NAME}:v0.1
+        $ echo ${ECR_URI}/${REPO_NAME}:${VRL_TAG}
 
 8. Once you make note of the ECR image URI for the VRL lambda, move to the section :ref:`deploy_cloud_formation`
 
@@ -84,7 +87,7 @@ Setup Lambda repository - Detailed manual steps
 Deploy resources using the Cloud Formation template
 ---------------------------------------------------
 
-1. On your local machine, download the template file from Github. `Template file <https://github.com/cypienta/AWS/blob/8b685e14f0377ba519524f65c35c8e9c3c12f14c/template.yaml>`__. Or, use the following command to download the ``template.yaml`` file.
+1. On your local machine, download the template file from Github. `Template file <https://github.com/cypienta/AWS/blob/862fe7a6a28a3be7c8f3367d142d5464a2f52037/template.yaml>`__. Or, use the following command to download the ``template.yaml`` file.
 
     .. code-block:: shell
 
@@ -128,17 +131,13 @@ Deploy resources using the Cloud Formation template
     can see the failure reasons by clicking on the stack that was
     created and clicking on the ``Events`` tab.
 
-    **TechniqueModelARN:** The ARN of the subscribed model package for
-    ATTACK Technique detector. Use version 0.4 Product ARN for the region in which CloudFormation stack is created.
+    **TechModelContainerImage:** The container image URL for ATTACK Technique detector. The container image of the subscribed marketplace product with tag ``market*``. The container image URL noted in the section :doc:`subscribe`.
 
-    **ClusterModelPart1ARN:** The ARN of the subscribed model package for
-    Temporal Clustering Part-1. Use version 0.8 Product ARN for the region in which CloudFormation stack is created.
+    **ClusterModelPart1ContainerImage:** The container image URL for Temporal Clustering. The container image of the subscribed marketplace product with tag ``market*``. The container image URL noted in the section :doc:`subscribe`.
 
-    **ClusterModelPart2ARN:** The ARN of the subscribed model package for
-    Temporal Clustering Part-2. Use version 0.8 Product ARN for the region in which CloudFormation stack is created.
+    **ClusterModelPart2ContainerImage:** The container image URL for Temporal Clustering. The container image of the subscribed marketplace product with tag ``market*``. The container image URL noted in the section :doc:`subscribe`.
 
-    **FlowModelARN:** The ARN of the subscribed model package for MITRE
-    flow detector. Use version 0.7 Product ARN for the region in which CloudFormation stack is created.
+    **FlowModelContainerImage:** The container image URL for MITRE flow detector. The container image of the subscribed marketplace product with tag ``market*``. The container image URL noted in the section :doc:`subscribe`.
 
     **SuperuserEmail:** The email for admin user for UI
 
