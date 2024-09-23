@@ -5,7 +5,6 @@ Permissions
 -----------
 Make sure that you have the required permissions for resources for the IAM user you will be using.
 
--  SageMaker
 -  Lambda
 -  S3
 -  ECS
@@ -20,7 +19,7 @@ pipeline you can check that with the following script. To run the script the iam
 
 .. code-block:: console
 
-    $ wget -O- https://raw.githubusercontent.com/cypienta/AWS/v0.7/check_permissions.py | python 
+    $ wget -O- https://raw.githubusercontent.com/cypienta/AWS/v0.8/check_permissions.py | python 
 
 Quotas
 ------
@@ -28,20 +27,13 @@ Quotas
 Instance types
 ~~~~~~~~~~~~~~
 
-Verify your instance type quotas by going to the AWS console. Search for ``Service Quotas``, and select SageMaker from the AWS Services list. Search for ``transform job usage``. You will require a GPU instance type for ``ATTACK Technique Detector`` and ``Temporal Clustering``, so look at the supported and recommended instance types for the product before subscribing and request for an increase of quota if found to be less than 1. The recommended GPU instance types are p2 and p3. The ``MITRE ATTACK Flow Detector`` requires a CPU-based instance type such as c5.
+Verify your instance type quotas by going to the AWS console. Search for ``Service Quotas``, and select ``Amazon Elastic Compute Cloud (Amazon EC2)`` from the AWS Services list. Search for ``Running On-Demand G and VT instances``. You will require a GPU instance type for ``ATTACK Technique Detector`` and ``Temporal Clustering``, so look at the supported and recommended instance types for the product before subscribing and request for an increase of quota if found to be less than 1. The recommended GPU instance types are g4dn and p2. The ``MITRE ATTACK Flow Detector`` requires a CPU-based instance type such as c5.
 
 .. note::
     Example: 
         - Given the target region, go to service quotas or visit https://us-east-2.console.aws.amazon.com/servicequotas/home/services/sagemaker/quotas
-        - Search and select "ml.p2.xlarge for transform job usage" or visit https://us-east-2.console.aws.amazon.com/servicequotas/home/services/sagemaker/quotas/L-89843D09
+        - Search and select "Running On-Demand G and VT instances" or visit https://us-east-2.console.aws.amazon.com/servicequotas/home/services/ec2/quotas/L-DB2E81BA
             - If the applied account-level quota value is less than 1, request an increase to at least 1. 
-        - Search and select "ml.p3.2xlarge for transform job usage" or visit https://us-east-2.console.aws.amazon.com/servicequotas/home/services/sagemaker/quotas/L-45F58E7E
-            - If the applied account-level quota value is less than 1, request an increase to at least 1. 
-        - Search and select "ml.c5.4xlarge for transform job usage" or visit https://us-east-2.console.aws.amazon.com/servicequotas/home/services/sagemaker/quotas/L-89843D09
-            - If the applied account-level quota value is less than 1, request an increase to at least 1. 
-
-.. note::
-    To check for the supported and recommended instance type. On the AWS marketplace model product page, scroll down to the ``Pricing`` section and click on ``Model Batch Transform`` under ``Software Pricing``.
 
 
 Lambda concurrent executions
