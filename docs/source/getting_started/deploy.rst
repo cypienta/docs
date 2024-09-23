@@ -12,7 +12,7 @@ Setup Lambda repository - Single quick command
 
     .. code-block:: shell
 
-        $ wget https://github.com/cypienta/AWS/raw/v0.7/vrl-lambda.sh && sh vrl-lambda.sh
+        $ wget https://github.com/cypienta/AWS/raw/v0.8/vrl-lambda.sh && sh vrl-lambda.sh
     
     .. note::
         Move to the section :ref:`setup_lambda_repository` for manual detailed steps.
@@ -28,7 +28,7 @@ Setup Lambda repository - Detailed manual steps
 
     .. code-block:: shell
 
-        $ export AWS_ACCOUNT_ID=$(aws sts get-caller-identity --query "Account" --output text) && export REPO_NAME="cypienta-vrl-lambda" && docker pull public.ecr.aws/p2d2x2s3/cypienta/vrl-lambda:v0.1 && aws ecr create-repository --repository-name ${REPO_NAME} && export ECR_URI="${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_REGION}.amazonaws.com" && aws ecr get-login-password --region ${AWS_REGION} | docker login --username AWS --password-stdin ${ECR_URI} && docker tag public.ecr.aws/p2d2x2s3/cypienta/vrl-lambda:v0.1 ${ECR_URI}/${REPO_NAME}:v0.1 && docker push ${ECR_URI}/${REPO_NAME}:v0.1 && echo ${ECR_URI}/${REPO_NAME}:v0.1
+        $ export AWS_ACCOUNT_ID=$(aws sts get-caller-identity --query "Account" --output text) && export REPO_NAME="cypienta-vrl-lambda" && export VRL_TAG="v0.2" && docker pull public.ecr.aws/p2d2x2s3/cypienta/vrl-lambda:${VRL_TAG} && aws ecr create-repository --repository-name ${REPO_NAME} && export ECR_URI="${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_REGION}.amazonaws.com" && aws ecr get-login-password --region ${AWS_REGION} | docker login --username AWS --password-stdin ${ECR_URI} && docker tag public.ecr.aws/p2d2x2s3/cypienta/vrl-lambda:${VRL_TAG} ${ECR_URI}/${REPO_NAME}:${VRL_TAG} && docker push ${ECR_URI}/${REPO_NAME}:${VRL_TAG} && echo ${ECR_URI}/${REPO_NAME}:${VRL_TAG}
 
 2. Store the AWS Account ID, and ECR repository name to environment variable in cloud shell.
 
@@ -87,7 +87,7 @@ Setup Lambda repository - Detailed manual steps
 Deploy resources using the Cloud Formation template
 ---------------------------------------------------
 
-1. On your local machine, download the template file from Github. `Template file <https://github.com/cypienta/AWS/blob/862fe7a6a28a3be7c8f3367d142d5464a2f52037/template.yaml>`__. Or, use the following command to download the ``template.yaml`` file.
+1. On your local machine, download the template file from Github. `Template file <https://github.com/cypienta/AWS/blob/e23069800cbac885af278e010881580c7f37c80a/template.yaml>`__. Or, use the following command to download the ``template.yaml`` file.
 
     .. code-block:: shell
 
