@@ -6,7 +6,7 @@ Subscribe to Machine Learning models
 
 1. Subscribe to the `Cypienta MITRE ATTACK Flow Detector (TEMP) <https://aws.amazon.com/marketplace/pp/prodview-tmtfhgbkm63tm>`__ by clicking on ``Continue to Subscribe`` button.
 
-    .. image:: resourcestrial_product.png
+    .. image:: resources/trial_product.png
         :alt: UI product subscribe
         :align: center
 
