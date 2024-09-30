@@ -45,3 +45,8 @@ Lambda concurrent executions
 
 Verify that quota limit for ``Concurrent executions`` for AWS Lambda function. On your AWS console for the region where you want to deploy your resources, Search for ``Service Quotas``, and select ``AWS Lambda`` from the AWS Services list. Search for quota name ``Concurrent executions``. Make sure that the applied account-level quota value is more than 12 to allow reserved concurrency for the enrich_with_technique, update_lookup_table lambda function. If the value is not greater than 10, select the ``Concurrent executions`` and click on ``Request increase at account level`` and set to any value greater than 10.
 
+
+VPC and Internet Gateways
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Verify that there are enough quota limit for creating one VPC, one Internet Gateway,, two public subnets for one template deployment. On your AWS console for the region where you want to deploy your resources, Search for ``Service Quotas``, and select ``Amazon Virtual Private Cloud (Amazon VPC)`` from the AWS Services list. Search for relevant quota names and make sure that the applied account-level quota value is as desired.
