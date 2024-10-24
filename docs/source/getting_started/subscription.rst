@@ -1,14 +1,6 @@
 Subscribing to Cypienta products on AWS Marketplace
 ===================================================
 
-https://aws.amazon.com/marketplace/pp/prodview-owwjtg7ce2cmy
-https://aws.amazon.com/marketplace/pp/prodview-lyubv6w3yhv4e
-
-https://aws.amazon.com/marketplace/pp/prodview-dad2myycdjz2s
-https://aws.amazon.com/marketplace/pp/prodview-y2srnvk75fi3s
-https://aws.amazon.com/marketplace/pp/prodview-yvjpz6yrorld2
-https://aws.amazon.com/marketplace/pp/prodview-uixbbbwiwb67s
-
 ATTACK Technique Detector
 -------------------------
 
