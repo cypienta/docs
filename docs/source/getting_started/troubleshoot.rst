@@ -135,7 +135,8 @@ The S3 bucket folder structure is as follows:
 
     bucket/
     ├── input/
-    │   └── input.json
+    │   └── cypienta_cef/
+    │       └── input.json
     ├── output/
     │   └── 2024-08-08 21:22:52 +0000/
     |       ├── cluster.json
@@ -148,7 +149,7 @@ The S3 bucket folder structure is as follows:
     ├── splunk/
     └── README.rst
 
-**input/:** The input folder contains all the files that will be processed by the Cypienta pipeline. Once the file is created in this folder, the file is added to the queue to be processed in a step function execution. There will be one step function execution per file in the input folder in sequential order. The status of the current execution can be viewed on ``Step function`` AWS service.
+**input/:** The input folder contains all the files that will be processed by the Cypienta pipeline. Once the file is created in this folder, the file is added to the queue to be processed in a step function execution. There will be one step function execution per file in the input folder in sequential order. The status of the current execution can be viewed on Airflow UI.
 
 **output/:** The output folder contains event, cluster, flow output for the input that was processed by the Cypienta pipeline.
 

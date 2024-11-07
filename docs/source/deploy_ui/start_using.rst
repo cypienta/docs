@@ -152,3 +152,33 @@ How to use "Cut Events" feature
     .. image:: resources/cut_completed.png
         :alt: cut completed
         :align: center
+
+
+Generate summary using Open AI
+------------------------------
+
+1. On the left hand side panel, click on ``GenAI``
+
+    .. image:: resources/gen_ai_add_key.png
+        :alt: gen ai config
+        :align: center
+
+2. Add your API key in the input field and click on ``Add API key``.
+
+3. On the left hand side panel, click on ``Campaigns``
+
+    .. image:: resources/campaign_list.png
+        :alt: Campaign list
+        :align: center
+
+4. Select any campaign for which you want to generate a summary. Click on ``Generate Summary`` button.
+
+    .. image:: resources/gen_ai_create_summary.png
+        :alt: gen ai summary
+        :align: center
+
+4. Click on the ``Diamond`` tab and view the summary created for your selected campaign.
+
+    .. image:: resources/gen_ai_summary.png
+        :alt: gen ai summary
+        :align: center

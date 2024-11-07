@@ -78,10 +78,12 @@ Deploy resources using the Cloud Formation template
 
 10. Once the cloud stack is completed successfully. You can start using
     the products. Click on the ``Outputs`` tab for the recently created cloud 
-    stack and note down the load balancer URL for the UI under ``LoadBalancerDNSName``. 
+    stack and note down the load balancer URL for the UI under ``CypientaUI``. 
+    Load balancer for the airflow will be under ``CypientaAirflow``.
+    Bucket name for the S3 bucket will be under ``CypientaBucket``.
     Click on the link to open the UI.
 
-    .. image:: resources/lb_url.png
+    .. image:: resources/template_output.png
         :alt: lb url
         :align: center
 
