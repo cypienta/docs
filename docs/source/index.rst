@@ -54,17 +54,8 @@ In this documentation, you will find detailed instructions for:
 
     lambda/functions
 
-
 .. toctree::
     :maxdepth: 1
-    :caption: Data Mapping & Transfromations 
-
-    vrl/transform
-    vrl/ai
-
-.. toctree::
-    :maxdepth: 1
-    :caption: Test with CEF and non-CEF input format
+    :caption: Test with CEF input format
 
     getting_started/end_to_end_test_cef
-    getting_started/end_to_end_test

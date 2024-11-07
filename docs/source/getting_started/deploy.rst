@@ -38,39 +38,13 @@ Deploy resources using the Cloud Formation template
     Give a name to the stack in ``Stack name``.
 
 
-    Fill in the following parameter values as they require user input:
-
-    **BucketName:** The name of S3 bucket that you want to create.
-    (required to change as the current value populated may not be
-    valid). Follow these
-    `rules <https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucketnamingrules.html#general-purpose-bucket-names>`__
-    for naming a bucket. Constraint of the bucket name by AWS is that
-    the bucket name must be globally unique. So note that your cloud
-    formation stack may fail if the name provided is already taken. You
-    can see the failure reasons by clicking on the stack that was
-    created and clicking on the ``Events`` tab.
-
-    **TechModelContainerImage:** The container image URL for ATTACK Technique detector. The container image URL noted in the section :doc:`subscribe`.
-
-    **ClusterModelPart1ContainerImage:** The container image URL for Cluster Model Part 1. The container image URL noted in the section :doc:`subscribe`.
-
-    **ClusterModelPart2ContainerImage:** The container image URL for Cluster Model Part 2. The container image URL noted in the section :doc:`subscribe`.
-
-    **FlowModelContainerImage:** The container image URL for MITRE flow detector. The container image URL noted in the section :doc:`subscribe`.
-
-    **LambdaContainerImage:** The container image URL for Lambda Function. The container image URL noted in the section :doc:`subscribe`.
-
-    **AirflowContainerImage:** The container image URL for Airflow. The container image URL noted in the section :doc:`subscribe`.
+    All parameter values are pre-filled for quick user experience. Some of the parameters are:
 
     **SuperuserEmail:** The email for admin user for UI
 
     **SuperuserUsername:** The username of the admin user for UI
 
     **SuperuserPassword:** The password of the admin user for UI
-
-    **WebContainerImage:** The container image of the subscribed marketplace UI product with tag ``market*``. The ``Web container image`` noted in the section :doc:`subscribe`.
-
-    **NginxContainerImage:** The container image of the subscribed marketplace UI product with tag ``nginx-market*``. The ``Nginx container image`` noted in the section :doc:`subscribe`.
 
     The constraints for choosing the ``Cpu`` and ``Memory`` for the cluster can be found `here <https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-taskdefinition.html#cfn-ecs-taskdefinition-cpu>`__
 
@@ -85,7 +59,7 @@ Deploy resources using the Cloud Formation template
     failure options``, select ``Roll back all stack resources`` for
     ``Behaviour on provisioning failure``. Select ``Delete all newly
     created resources`` for ``Delete newly created resources during a
-    rollback``. Expand the options for ``Stack creation options - optional`` and under  ``Timeout``, enter ``15`` to set a max timeout of 15 minutes for the stack. And then click on ``Next``.
+    rollback``. Expand the options for ``Stack creation options - optional`` and under  ``Timeout``, enter ``20`` to set a max timeout of 20 minutes for the stack. And then click on ``Next``.
 
     .. image:: resources/stack_timeout.png
         :alt: stack timeout
