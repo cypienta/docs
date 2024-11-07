@@ -51,7 +51,11 @@ How to delete stack
 
         3. Navigate to AWS console and search for ``EC2``.
 
-        4. Manually delete the running EC2 instance with name ``* - <ECS-cluster-name>``. Select all the pertinent instances, click on the ``Instance state`` dropdown and click on ``Terminate instance``.
+        4. Manually reduce the desired capacity of the Auto Scaling Groups with name ``<ECS-cluster-name>-*``. Select each auto scaling group and select ``Actions`` dropdown and select ``Edit``. Reduce the ``Desired capacity`` to ``0`` and reduce the ``Min desired capacity`` to ``0``. Click on ``Update``.
+
+        5. Manually delete the running EC2 instance with name ``* - <ECS-cluster-name>``. Select all the pertinent instances, click on the ``Instance state`` dropdown and click on ``Terminate instance``.
+
+7. In the EC2 AWS Service, navigate to ``Volumes`` under ``Elastic Block Storage`` and select all the volumes with name ``<ECS-cluster-name>_*``. And click on ``Actions`` and then click on ``Delete volume``.
 
 
 Common Mistakes
@@ -121,6 +125,34 @@ Click on ``Edit`` button, and click on ``Add environment variable``. Under the `
 4. Select the ``input_flow.json``, click on ``Actions``, click on ``Copy``. On the Copy page, click on ``Browse S3``, click on ``Choose destination``, and then click on ``Copy``.
 
 5. This will trigger a new batch transform job.
+
+
+Airflow Task failure
+~~~~~~~~~~~~~~~~~~~
+
+If any DAG run in airflow has failed, then you may manually rerun the task. Follow the steps below to rerun the task:
+
+1. Login to the Airflow UI.
+
+2. Navigate to the DAG that has failed.
+
+3. On the left hand side panel which shows all the DAG runs, select the failed DAG task.
+
+    .. image:: resources/failed_dag_task.png
+        :alt: failed_dag_task
+        :align: center
+
+4. Click on the ``Clear task`` button on the top right corner of the page.
+
+    .. image:: resources/failed_task_clear_task.png
+        :alt: failed_task_clear_task
+        :align: center
+
+5. Click on the ``Clear`` button to clear the task.
+
+    .. image:: resources/failed_task_clear.png
+        :alt: failed_task_clear
+        :align: center
 
 
 S3 schema
