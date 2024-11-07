@@ -6,7 +6,7 @@ AWS Deployment
 Deploy resources using the Cloud Formation template
 ---------------------------------------------------
 
-1. On your local machine, download the template file from Github. `Template file <https://github.com/cypienta/AWS/blob/e23069800cbac885af278e010881580c7f37c80a/template.yaml>`__. Or, use the following command to download the ``template.yaml`` file.
+1. On your local machine, download the template file from Github. `Template file <https://github.com/cypienta/AWS/blob/4cdece2a8404bc182eba33637625c2615a725204/template.yaml>`__. Or, use the following command to download the ``template.yaml`` file.
 
     .. code-block:: shell
 
