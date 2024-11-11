@@ -18,6 +18,7 @@ In this documentation, you will find detailed instructions for:
     getting_started/prerequisites
     getting_started/subscription
     getting_started/deploy
+    deploy_ui/mapping
     getting_started/troubleshoot
 
 .. toctree::
