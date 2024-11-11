@@ -74,7 +74,7 @@ Deploy resources using the Cloud Formation template
     recently created cloud stack and going to the ``Events`` tab.
 
     .. note::
-        **Resource Creation Time:** The cloud stack will take approximately 10 minutes to complete the creation of all the resources. 
+        **Resource Creation Time:** The cloud stack will take approximately 15 minutes to complete the creation of all the resources. 
 
 10. Once the cloud stack is completed successfully. You can start using
     the products. Click on the ``Outputs`` tab for the recently created cloud 
