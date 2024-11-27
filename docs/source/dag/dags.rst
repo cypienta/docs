@@ -9,8 +9,7 @@ The fleet of airflow DAGs will be responsible for end-to-end flow for the Cypien
 #. **s3_trigger:**
 
     - The DAG is triggered from the periodic schedule in the Cypienta UI.
-    - Gets the list of file in the upload folders for multiple data sources ``mapping/input/``. If the list of files is not empty
-        then the skip_input DAG is triggered. Else, it exits.
+    - Gets the list of file in the upload folders for multiple data sources ``mapping/input/``. If the list of files is not empty then the skip_input DAG is triggered. Else, it exits.
 
 #. **skip_input:**
 
@@ -22,6 +21,7 @@ The fleet of airflow DAGs will be responsible for end-to-end flow for the Cypien
 
     - The DAG is triggered by skip_input DAG to process the input files.
     - It triggers the following tasks in sequence:
+
         - enrich_with_technique
         - update_lookup_table - trigger update_lookup_table DAG
         - clustering part 1
@@ -32,6 +32,7 @@ The fleet of airflow DAGs will be responsible for end-to-end flow for the Cypien
 
     - The DAG is triggered by pipeline_part_1 DAG to process the batches in sequential order.
     - It reads from the redis queue front and triggers the following tasks in sequence:
+
         - clustering part 2
         - flow - if the current processed batch is the last batch in the queue
         - create campaign - if the current processed batch is the last batch in the queue
