@@ -51,6 +51,12 @@ In this documentation, you will find detailed instructions for:
 
 .. toctree::
     :maxdepth: 1
+    :caption: Pipeline Overview 
+
+    dag/dags
+
+.. toctree::
+    :maxdepth: 1
     :caption: Open-Source Lambda Functions 
 
     lambda/functions

@@ -4,75 +4,106 @@ Overview of Lambda
 Functionality of Lambda Functions
 ---------------------------------
 
-The fleet of lambda functions will be responsible for end-to-end flow for the Cypienta Sagemaker products.
+The fleet of lambda functions will be responsible for end-to-end flow for the Cypienta Correlation Pipeline.
 
-#. **splunk_input:**
+#. **create_mapping:**
 
-    - Get the input from splunk pushed to S3 path ``splunk_input/input`` and chunk it to tranform using VRL.
-    - Merge back transformed input after vrl_lambda processes all chunks and put it in the ``input/`` folder.
+    - Gets a file that was uploaded to Field mapping in the UI.
+    - Suggests the mapping for the file and responds to the API call.
 
-#. **vrl_lambda:**
+#. **preprocess_input:**
 
-    - Transform data from CIM to CEF mapping.
-    - Save transformed alerts to S3.
+    - Transforms uploaded file to json format. ``mapping/input/<field-mapping-name>/<filename>`` S3 folder.
+    - Map the uploaded file to internal format using corresponding saved field mappings.
+    - Save a raw input file to ``mapping/raw/<field-mapping-name>/<filename>`` S3 folder.
+    - Save the transformed input file to ``mapping/input/<field-mapping-name>/<filename>`` S3 folder.
 
 #. **skip_input:**
 
-    - Get the input data from the ``input/`` S3 folder
-    - Check if an execution is running for step function. If execution is not running, start one. Else, add the current input to queue
+    - Get the transformed input files from the ``input/<field-mapping-name>/`` S3 folder
+    - Check if an execution is running for pipeline. If execution is not running, start one. Else, add the current input files to queue.
 
 #. **enrich_with_technique:**
 
-    - Get the input data from the ``input/`` S3 folder
-    - Chunk the input, sanitize it in format as required for cluster model, encode node_features, encode other_attributes_dict, create mappings for internal ids to user given ids, mappings for chunk unique id to internal ids.
-    - Enrich input with techniques. If the lookup table does not contain the specific technique, then start technique classification transform job per chunk
+    - Get the input data from the ``input/<field-mapping-name>/`` S3 folder
+    - Merge and sort the data from multiple datasources by time and batch the data
+    - encode node_features, encode other_attributes_dict, create mappings for internal ids to user given ids, internal ids to data sources.
+    - Sanitize it in format as required for cluster model.
+    - Enrich input with techniques. If the lookup table does not contain the specific technique, then start technique classification transform job per batch
+
+#. **start_tech_task:**
+
+    - Get the input and output s3 path for the technique classification model.
 
 #. **process_enriched_with_technique:**
 
-    - Get response from technique transform job and enrich the input with recognized techniques
+    - Get response from technique model and enrich the input with recognized techniques
     - Create input for the clustering model by adding node features if present. And save the resulting file to S3
 
 #. **update_lookup_table:**
 
     - Update technique lookup table.
 
+#. **create_embedding:**
+
+    - Read the input file saved to S3.
+    - Filter alerts that do not have any techniques.
+    - Filter batch file that do not have more than a threshold number of alerts.
+    - Skip processing current input any further if there are no batches left to process after filtering.
+    - Create sequential order of batches to be processed by the pipeline_part_2 DAG.
+
+#. **start_embedding_task:**
+
+    - Get the input and output s3 path for the cluster part 1 model.
+
+#. **process_embedding:**
+
+    - Get response from cluster part 1 model.
+    - Create input for the clustering model part 2 by adding node features if present. And save the resulting file to S3
+
 #. **create_cluster:**
 
-    - Read the input file saved to S3. Start temporal clustering part 1.
+    - Read the input file saved to S3 for the current batch. Start clustering part 2 model.
 
 #. **process_cluster:**
 
-    - Read the response from clustering model part 1.
-    - Create input for clustering model part 2 and save to S3.
+    - Read the response from clustering part 2 model.
+    - Check if there is another batch that needs to run after the current response.
+    - If yes, then create input for the next batch, save to S3.
+    - Else, extract agg_alert.json, cluster.json (for internal scratch) to S3, and create input for flow model and save to S3.
 
-#. **create_cluster:**
+.. #. **create_flow:**
 
-    - Read the input file saved to S3. If this is the first batch for the input file, then start clustering transform job. Else skip the file.
-
-#. **process_cluster:**
-
-    - Read the response from clustering model.
-    - Check if there is another batch that needs to run after the current response. If yes, then create input for the next batch, save to S3, and start clustering transform job. Else, extract agg_alert.json, cluster.json (for internal scratch) to S3, and create input for flow model and save to S3.
-
-#. **create_flow:**
-
-    - Triggered by input saved to s3 for flow model. Create flow transform job
+..     - Triggered by input saved to s3 for flow model. Create flow transform job
 
 #. **process_flow:**
 
     - Read response from the flow model. Save the flow_output.json to s3 (for internal scratch)
     - Clean up flow.json, cluster.json for user and save to ``output/`` folder.
-    - Create enrich_alert_input.json and save to S3 (for internal scratch)
 
 #. **create_campaign:**
 
-    - Read enrich_alert_input.json and create campaigns on UI
+    - Create or update campaigns on UI.
+    - Delete older campaigns if threshold of number of campaigns on UI is reached.
+    - Update Pipeline dashboard
+    - Update global metrics
+    - Update node features and event attributes weights
+
+#. **delete_event:**
+
+    - Delete older campaigns and relevant events from database if threshold of number of campaigns on UI is reached.
 
 #. **save_feedback:**
 
     - Triggered by cut action performed on UI.
     - Fetch involved events and campaigns from UI and update weights for node and event attributes.
     - Create cluster ticket output for involved clusters, and save feedback.
+
+#. **restore:**
+
+    - Check if there are any snapshots for database to revert to.
+    - If yes, then restore the database to the last saved snapshot and restart it.
+    - Else, clear database and restart it.
 
 .. 13. **create_jira:**
 
