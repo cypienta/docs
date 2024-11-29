@@ -8,7 +8,8 @@ Welcome to the official documentation for Cypienta. This guide will help you und
     :caption: Getting Started
     :glob:
 
-    <getting_started/prerequisites> Prerequisites for installation and usage of the product.
+    Prerequisites for installation and usage of the product <getting_started/prerequisites> Prerequisites for installation and usage of the product.
+    :description: Prerequisites for installation and usage of the product.
     getting_started/subscription
         :description: Guide to subscribing to Cypienta products on AWS Marketplace.
     getting_started/deploy
