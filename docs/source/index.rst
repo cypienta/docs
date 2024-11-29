@@ -11,6 +11,7 @@ Welcome to the official documentation for Cypienta. This guide will help you und
     getting_started/subscription
     getting_started/deploy
     deploy_ui/mapping
+    deploy_ui/airflow
     getting_started/troubleshoot
 
 .. toctree::
@@ -18,6 +19,7 @@ Welcome to the official documentation for Cypienta. This guide will help you und
     :caption: Cypienta UI
 
     deploy_ui/start_using
+    deploy_ui/tune_config
 
 .. toctree::
     :maxdepth: 1
