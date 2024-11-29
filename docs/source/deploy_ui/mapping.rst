@@ -9,7 +9,7 @@ Map Alert fields to Cypienta Internal Format
 
 
     .. note::
-        The default ``Username`` is ``maestro`` and the default ``Password`` is ``changemenow``
+        The default ``Username`` is ``cypienta`` and the default ``Password`` is ``cypienta``
 
 2.  On the left hand side panel, click on ``Add Alerts``.
 

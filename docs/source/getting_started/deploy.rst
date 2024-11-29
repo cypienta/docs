@@ -88,9 +88,9 @@ Deploy resources using the Cloud Formation template
         :align: center
 
     .. note::
-        The default credentials for Cypienta UI: Default ``Username`` is ``maestro`` and the default ``Password`` is ``changemenow``
+        The default credentials for Cypienta UI: Default ``Username`` is ``cypienta`` and the default ``Password`` is ``cypienta``
 
-        The default credentials for Cypienta Airflow: Default ``Username`` is ``airflow`` and the default ``Password`` is ``airflow``
+        The default credentials for Cypienta Airflow: Default ``Username`` is ``cypienta`` and the default ``Password`` is ``cypienta``
 
 Now all your resources are ready to be used.
 
