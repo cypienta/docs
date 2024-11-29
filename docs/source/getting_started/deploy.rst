@@ -98,13 +98,10 @@ Now all your resources are ready to be used.
 Handling Multiple Inputs
 -------------------------
 
-The pipeline will process files in the input folder sequentially in the order of upload.
-Only one file will be processed at a time. Once a file is finished be processed the
-pipeline will start with the next file in the queue automatically.
+The pipeline will process files in the input folder in a batch.
+The files will be processed at a scheduled time which can be setup in Cypienta UI. Once a file is finished processing the
+pipeline will start with the next batch of files in the queue automatically.
 
 .. note::
-    **Small input files:** For best performance, it is not recommended to upload many
-    small files due to the startup time overhead of SageMaker jobs. 
-    It is recommended to aggregate small inputs into larger input files.
 
     **Handling Large Input Files:** Currently the pipeline can handle upto 100,000 events in single input file. Be mindful of the input file that is used as input.
