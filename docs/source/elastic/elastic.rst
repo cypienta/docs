@@ -1,6 +1,11 @@
 Configure Elastic
 =================
 
+Prerequisites
+-------------
+
+Make sure that you have deployed the Cypienta application detailed in :doc:`../getting_started/deploy` before integrating.
+
 Logstash pipeline from Elastic Search to AWS S3
 -----------------------------------------------
 

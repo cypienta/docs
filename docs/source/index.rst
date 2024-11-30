@@ -14,20 +14,31 @@ Welcome to the official documentation for Cypienta. This guide will help you und
 
 .. toctree::
     :maxdepth: 1
-    :caption: Ex Integrations (SIEM, XDR, SOAR)
+    :caption: Cypienta UI
+
+    deploy_ui/start_using
+
+.. toctree::
+    :maxdepth: 1
+    :caption: Splunk Integration
 
     splunk/splunk
     splunk/vrl
     splunk/output
+
+.. toctree::
+    :maxdepth: 1
+    :caption: Elastic Integration
+
     elastic/elastic
     elastic/vrl
     elastic/output
 
 .. toctree::
     :maxdepth: 1
-    :caption: Cypienta UI
+    :caption: JIRA Integration
 
-    deploy_ui/start_using
+    jira/jira
 
 .. toctree::
     :maxdepth: 1
