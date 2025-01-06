@@ -24,29 +24,44 @@ The fleet of airflow DAGs will be responsible for end-to-end flow for the Cypien
 
         - enrich_with_technique
         - update_lookup_table - trigger update_lookup_table DAG
-        - clustering part 1
 
-    - The DAG then puts in the redis queue, the batches that must be processed by the pipeline_part_2 DAG in sequential order, and triggers the pipeline_part_2 DAG.
+    - The DAG then triggers pipeline_part_2 concurrently, one for each clustering agent to be processed.
 
 #. **pipeline_part_2:**
 
-    - The DAG is triggered by pipeline_part_1 DAG to process the batches in sequential order.
-    - It reads from the redis queue front and triggers the following tasks in sequence:
+    - The DAG is triggered by pipeline_part_1 DAG to process the batches per clustering agent.
+    - It triggers the following tasks in sequence:
+
+        - clustering part 1 - batches for clustering part 1 are ran concurrently
+    
+    - The DAG then triggers pipeline_part_3 concurrently for per clustering agent to be processed. Each clustering agent DAG run will run only single batch of data in sequential manner.
+
+#. **pipeline_part_3:**
+
+    - The DAG is triggered by pipeline_part_2 DAG to process the batches in sequential order per clustering agent.
+    - It triggers the following tasks in sequence:
 
         - clustering part 2
-        - flow - if the current processed batch is the last batch in the queue
-        - create campaign - if the current processed batch is the last batch in the queue
-        - retrigger pipeline_part_2 if there are more batches to process
-    - Once the current batch is processed successfully, it removes the batch from the redis queue.
+        - retrigger pipeline_part_3 if there are more batches to process
+
+    - Once the current batch is processed successfully, it triggers the pipeline_part_4 DAG for the pertinent clustering agent.
+
+#. **pipeline_part_4:**
+
+    - The DAG is triggered by pipeline_part_3 DAG.
+    - It triggers the following tasks in sequence:
+
+        - flow - batches for flows are ran concurrently
+        - create campaign
 
 #. **snapshot:**
 
-    - The DAG is triggered by the pipeline_part_2 DAG to create a snapshot of the current state of the pipeline.
+    - The DAG is triggered by the pipeline_part_4 DAG to create a snapshot of the current state of the pipeline.
     - It snapshots the database and restarts it.
 
 #. **restore:**
 
-    - This DAG is triggered by the failure callback of the pipeline_part_1 and pipeline_part_2 DAG.
+    - This DAG is triggered by the failure callback of the pipeline_part_1, pipeline_part_2, pipeline_part_3, and pipeline_part_4 DAG.
     - It restores the database to the last saved snapshot and restarts it.
 
 #. **update_lookup_table:**

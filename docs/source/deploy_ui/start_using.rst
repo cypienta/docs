@@ -3,6 +3,9 @@ Start using Cypienta UI
 
 Once all your resources are deployed and the ECS app is up and in ``Running`` status. You can start using the Cypienta UI.
 
+.. note::
+    The Cypienta UI will include those events that have MITRE ATT&CK techniques associated with them or recognized with the ``enrich with technique`` step of the pipeline. If no techniques are associated with the events, they will not be used as part of clustering step, and will not be visible in the UI.
+
 
 Start using Cypienta UI
 -----------------------
