@@ -1,5 +1,5 @@
 VRL mapping language & engine
----------------------------
+=============================
 
 Once you have the Elastic or Splunk logs stored in S3 in JSON Lines format, you
 can use the `VRL (Vector Remap
@@ -8,7 +8,7 @@ your data to meet the format expected by the Cypienta end-to-end
 processing.
 
 VRL Transformations
-~~~~~~~~~~~~~~~~~~~
+-------------------
 
 To apply a transformation to your log source using the VRL tool, you
 need to specify a VRL program file to transform your data as a string in
@@ -16,7 +16,7 @@ the ``transforms`` key in your ``log_source.yml`` file. Write your VRL
 transformation script and save it as a ``.vrl`` file. Here, ``program.vrl``
 
 Example: parsing JSON
-^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~
 
 To look at a simple example. Let's assume the following event.
 
@@ -208,7 +208,7 @@ The resulting event:
     }
 
 Writing transformation VRL expressions
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The input to your VRL expression is a single record from your data
 source. The output of the VRL expression is the transformed record.
@@ -217,7 +217,7 @@ source. The output of the VRL expression is the transformed record.
 
 
 Using an AI model to generate mappings
-~~~~~~~~~~~~~~~~~~~
+--------------------------------------
 
 https://github.com/cypienta/data_mapper_model
 

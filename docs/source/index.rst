@@ -10,24 +10,44 @@ Welcome to the official documentation for Cypienta. This guide will help you und
     getting_started/prerequisites
     getting_started/subscription
     getting_started/deploy
+    deploy_ui/mapping
+    deploy_ui/airflow
     getting_started/troubleshoot
-
-.. toctree::
-    :maxdepth: 1
-    :caption: Ex Integrations (SIEM, XDR, SOAR)
-
-    splunk/splunk
-    splunk/vrl
-    splunk/output
-    elastic/elastic
-    elastic/vrl
-    elastic/output
 
 .. toctree::
     :maxdepth: 1
     :caption: Cypienta UI
 
     deploy_ui/start_using
+    deploy_ui/tune_config
+
+.. toctree::
+    :maxdepth: 1
+    :caption: Splunk Integration
+
+    splunk/splunk
+    splunk/vrl
+    splunk/output
+
+.. toctree::
+    :maxdepth: 1
+    :caption: Elastic Integration
+
+    elastic/elastic
+    elastic/vrl
+    elastic/output
+
+.. toctree::
+    :maxdepth: 1
+    :caption: JIRA Integration
+
+    jira/jira
+
+.. toctree::
+    :maxdepth: 1
+    :caption: Pipeline Overview 
+
+    dag/dags
 
 .. toctree::
     :maxdepth: 1
@@ -35,10 +55,8 @@ Welcome to the official documentation for Cypienta. This guide will help you und
 
     lambda/functions
 
-
 .. toctree::
     :maxdepth: 1
-    :caption: Data Mapping & Transfromations 
+    :caption: Test with CEF input format
 
-    vrl/transform
-    vrl/ai
+    getting_started/end_to_end_test_cef

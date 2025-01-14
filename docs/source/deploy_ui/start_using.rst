@@ -3,6 +3,10 @@ Start using Cypienta UI
 
 Once all your resources are deployed and the ECS app is up and in ``Running`` status. You can start using the Cypienta UI.
 
+.. note::
+    The Cypienta UI will include those events that have MITRE ATT&CK techniques associated with them or recognized with the ``enrich with technique`` step of the pipeline. If no techniques are associated with the events, they will not be used as part of clustering step, and will not be visible in the UI.
+
+
 Start using Cypienta UI
 -----------------------
 
@@ -26,6 +30,9 @@ Start using Cypienta UI
     .. image:: resources/home_page.png
         :alt: Home page
         :align: center
+    
+    .. note::
+        The default ``Username`` is ``cypienta`` and the default ``Password`` is ``cypienta``
 
 
 How to use the Hide feature for events in UI
@@ -36,6 +43,11 @@ How to use the Hide feature for events in UI
     .. image:: resources/campaign_list.png
         :alt: Campaign list
         :align: center
+
+    
+    .. note::
+        The ``Campaigns`` page will show all the clusters that were created from the events. Each event will only be present in one cluster. Clusters with single event will not be visible on UI.
+        The ``Flows`` page will show all the flows that were created from the events. Each event can be present in none or more than one flow.
 
 2. Click on any campaign that you want to modify:
 
@@ -65,6 +77,7 @@ How to use the Hide feature for events in UI
         :align: center
 
    You can see the list of hidden events now has an event that was selected earlier and hide action was taken.
+
 
 Edit recognized techniques for events
 -------------------------------------
@@ -141,4 +154,84 @@ How to use "Cut Events" feature
 
     .. image:: resources/cut_completed.png
         :alt: cut completed
+        :align: center
+
+
+How to add Rules and Labels for campaigns
+-----------------------------------------
+
+1. On the left hand side panel, click on ``Cluster`` drop down and select ``Rules``.
+
+    .. image:: resources/select_rules.png
+        :alt: select rules
+        :align: center
+
+2. Click on ``Add Rule`` button to add a new rule.
+
+    .. image:: resources/add_rule.png
+        :alt: add rule
+        :align: center
+
+3. Fill in the details for the rule. Give a distinguishable name to the rule. Select the metric on which you want to set a rule.
+   Select the condition and value for the rule. Do not select any of the campaigns in the ``Campaigns`` field and click on ``Save``.
+
+    .. image:: resources/new_rule.png
+        :alt: add rule details
+        :align: center
+
+4. Now to utilize the new rule we need to add a label to the campaign. On the left hand side panel, click on ``Cluster`` drop down and select ``Labels``.
+
+    .. image:: resources/select_labels.png
+        :alt: select labels
+        :align: center
+
+5. Click on ``Add Label`` button to add a new label.
+
+    .. image:: resources/add_label.png
+        :alt: add label
+        :align: center
+
+6. Fill in the details for the label. Give a distinguishable name to the label, which will be applied to all campaigns. Select the rules that you want to apply to the label and click on ``Save``.
+
+    .. image:: resources/new_label.png
+        :alt: add label details
+        :align: center
+
+7. Now go back to the ``Clusters`` page to see the list of Campaigns and you will see the label applied to all the campaigns.
+
+    .. image:: resources/view_labels.png
+        :alt: label applied
+        :align: center
+
+    .. note::
+        Applying new or edited rules or labels to all campaigns may take some time. Refresh the campaigns page to check if the changes have been applied.
+
+
+Generate summary using Open AI
+------------------------------
+
+1. On the left hand side panel, click on ``GenAI``
+
+    .. image:: resources/gen_ai_add_key.png
+        :alt: gen ai config
+        :align: center
+
+2. Add your API key in the input field and click on ``Add API key``.
+
+3. On the left hand side panel, click on ``Campaigns``
+
+    .. image:: resources/campaign_list.png
+        :alt: Campaign list
+        :align: center
+
+4. Select any campaign for which you want to generate a summary. Click on ``Generate Summary`` button.
+
+    .. image:: resources/gen_ai_create_summary.png
+        :alt: gen ai summary
+        :align: center
+
+4. Click on the ``Diamond`` tab and view the summary created for your selected campaign.
+
+    .. image:: resources/gen_ai_summary.png
+        :alt: gen ai summary
         :align: center
