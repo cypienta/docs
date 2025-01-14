@@ -3,7 +3,7 @@
 # -- Project information
 
 project = 'Cypienta'
-copyright = '2024, Cypienta'
+copyright = '2025, Cypienta'
 author = 'Cypienta'
 
 # release = '1.0'
@@ -31,8 +31,8 @@ templates_path = ['_templates']
 
 # -- Options for HTML output
 
-html_theme = 'sphinx_rtd_theme'
-# html_theme = 'sphinx_material'
+# html_theme = 'sphinx_rtd_theme'
+html_theme = 'sphinx_material'
 
 # -- Options for EPUB output
 # epub_show_urls = 'footnote'
