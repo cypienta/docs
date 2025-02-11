@@ -8,10 +8,15 @@ Getting Started
 ---------------
 
 :doc:`getting_started/prerequisites`: Prerequisites for deploying Cypienta on AWS.
+
 :doc:`getting_started/subscription`: Subscription details for Cypienta.
+
 :doc:`getting_started/deploy`: Deploy Cypienta on AWS.
+
 :doc:`deploy_ui/mapping`: Mapping custom data fields to Cypienta input format.
+
 :doc:`deploy_ui/airflow`: Airflow configuration and errors.
+
 :doc:`getting_started/troubleshoot`: Troubleshooting common issues.
 
 
@@ -19,6 +24,7 @@ Cypienta UI
 ---------------
 
 :doc:`deploy_ui/start_using`: Start using Cypienta UI.
+
 :doc:`deploy_ui/tune_config`: Tune Cluster Model Config.
 
 
@@ -26,6 +32,7 @@ Splunk Integration
 ---------------
 
 :doc:`splunk/splunk`: Splunk integrating with Cypienta to get data as input.
+
 :doc:`splunk/output`: Splunk integrating with Cypienta to get output on Splunk SOAR.
 
 
@@ -33,6 +40,7 @@ Elastic Integration
 ---------------
 
 :doc:`elastic/elastic`: Elastic integrating with Cypienta to get data as input.
+
 :doc:`elastic/output`: Elastic integrating with Cypienta to get output on Elastic.
 
 
