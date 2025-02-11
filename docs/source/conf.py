@@ -19,7 +19,7 @@ extensions = [
     'sphinx.ext.autodoc',
     'sphinx.ext.autosummary',
     'sphinx.ext.intersphinx',
-    'sphinx_toolbox.sidebar_links',
+    # 'sphinx_toolbox.sidebar_links',
 ]
 
 intersphinx_mapping = {
