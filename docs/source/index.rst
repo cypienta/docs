@@ -72,7 +72,7 @@ Test with CEF input format
     :maxdepth: 1
     :caption: Getting Started
 
-    Write something <getting_started/prerequisites> Some more text
+    Prerequisites for deploying Cypienta on AWS <getting_started/prerequisites>
     getting_started/subscription
     getting_started/deploy
     deploy_ui/mapping
