@@ -3,60 +3,58 @@ Cypienta
 
 Welcome to the official documentation for Cypienta. This guide will help you understand and utilize the powerful features of our software, ensuring a smooth and efficient experience from subscription to installation.
 
-.. toctree::
-    :maxdepth: 1
-    :caption: Getting Started
 
-    Write something <getting_started/prerequisites> Some more text
-    getting_started/subscription
-    getting_started/deploy
-    deploy_ui/mapping
-    deploy_ui/airflow
-    getting_started/troubleshoot
+Getting Started
+---------------
 
-.. toctree::
-    :maxdepth: 1
-    :caption: Cypienta UI
+:doc:`getting_started/prerequisites`: Prerequisites for deploying Cypienta on AWS.
+:doc:`getting_started/subscription`: Subscription details for Cypienta.
+:doc:`getting_started/deploy`: Deploy Cypienta on AWS.
+:doc:`deploy_ui/mapping`: Mapping custom data fields to Cypienta input format.
+:doc:`deploy_ui/airflow`: Airflow configuration and errors.
+:doc:`getting_started/troubleshoot`: Troubleshooting common issues.
 
-    deploy_ui/start_using
-    deploy_ui/tune_config
 
-.. toctree::
-    :maxdepth: 1
-    :caption: Splunk Integration
+Cypienta UI
+---------------
 
-    splunk/splunk
-    splunk/vrl
-    splunk/output
+:doc:`deploy_ui/start_using`: Start using Cypienta UI.
+:doc:`deploy_ui/tune_config`: Tune Cluster Model Config.
 
-.. toctree::
-    :maxdepth: 1
-    :caption: Elastic Integration
 
-    elastic/elastic
-    elastic/vrl
-    elastic/output
+Splunk Integration
+---------------
 
-.. toctree::
-    :maxdepth: 1
-    :caption: JIRA Integration
+:doc:`splunk/splunk`: Splunk integrating with Cypienta to get data as input.
+:doc:`splunk/output`: Splunk integrating with Cypienta to get output on Splunk SOAR.
 
-    jira/jira
 
-.. toctree::
-    :maxdepth: 1
-    :caption: Pipeline Overview 
+Elastic Integration
+---------------
 
-    dag/dags
+:doc:`elastic/elastic`: Elastic integrating with Cypienta to get data as input.
+:doc:`elastic/output`: Elastic integrating with Cypienta to get output on Elastic.
 
-.. toctree::
-    :maxdepth: 1
-    :caption: Open-Source Lambda Functions 
 
-    lambda/functions
+JIRA Integration
+---------------
 
-.. toctree::
-    :maxdepth: 1
-    :caption: Test with CEF input format
+:doc:`jira/jira`: JIRA integrating with Cypienta to create tickets from output.
 
-    getting_started/end_to_end_test_cef
+
+Pipeline Overview 
+---------------
+
+:doc:`dag/dags`: Overview of the pipeline.
+
+
+Open-Source Lambda Functions
+---------------
+
+:doc:`lambda/functions`: Overview of functioning of open-source lambda functions.
+
+
+Test with CEF input format
+---------------
+
+:doc:`getting_started/end_to_end_test_cef`: Test Cypienta with CEF input format.
