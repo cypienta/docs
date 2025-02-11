@@ -66,3 +66,60 @@ Test with CEF input format
 ---------------
 
 :doc:`getting_started/end_to_end_test_cef`: Test Cypienta with CEF input format.
+
+
+.. toctree::
+    :maxdepth: 1
+    :caption: Getting Started
+
+    Write something <getting_started/prerequisites> Some more text
+    getting_started/subscription
+    getting_started/deploy
+    deploy_ui/mapping
+    deploy_ui/airflow
+    getting_started/troubleshoot
+
+.. toctree::
+    :maxdepth: 1
+    :caption: Cypienta UI
+
+    deploy_ui/start_using
+    deploy_ui/tune_config
+
+.. toctree::
+    :maxdepth: 1
+    :caption: Splunk Integration
+
+    splunk/splunk
+    splunk/output
+
+.. toctree::
+    :maxdepth: 1
+    :caption: Elastic Integration
+
+    elastic/elastic
+    elastic/output
+
+.. toctree::
+    :maxdepth: 1
+    :caption: JIRA Integration
+
+    jira/jira
+
+.. toctree::
+    :maxdepth: 1
+    :caption: Pipeline Overview 
+
+    dag/dags
+
+.. toctree::
+    :maxdepth: 1
+    :caption: Open-Source Lambda Functions 
+
+    lambda/functions
+
+.. toctree::
+    :maxdepth: 1
+    :caption: Test with CEF input format
+
+    getting_started/end_to_end_test_cef
