@@ -68,50 +68,50 @@ Test with CEF input format
 :doc:`getting_started/end_to_end_test_cef`: Test Cypienta with CEF input format.
 
 
-.. .. sidebar-links::
-..     :caption: Getting Started
+.. sidebar-links::
+    :caption: Getting Started
 
-..     getting_started/prerequisites
-..     getting_started/subscription
-..     getting_started/deploy
-..     deploy_ui/mapping
-..     deploy_ui/airflow
-..     getting_started/troubleshoot
+    getting_started/prerequisites
+    getting_started/subscription
+    getting_started/deploy
+    deploy_ui/mapping
+    deploy_ui/airflow
+    getting_started/troubleshoot
 
-.. .. sidebar-links::
-..     :caption: Cypienta UI
+.. sidebar-links::
+    :caption: Cypienta UI
 
-..     deploy_ui/start_using
-..     deploy_ui/tune_config
+    deploy_ui/start_using
+    deploy_ui/tune_config
 
-.. .. sidebar-links::
-..     :caption: Splunk Integration
+.. sidebar-links::
+    :caption: Splunk Integration
 
-..     splunk/splunk
-..     splunk/output
+    splunk/splunk
+    splunk/output
 
-.. .. sidebar-links::
-..     :caption: Elastic Integration
+.. sidebar-links::
+    :caption: Elastic Integration
 
-..     elastic/elastic
-..     elastic/output
+    elastic/elastic
+    elastic/output
 
-.. .. sidebar-links::
-..     :caption: JIRA Integration
+.. sidebar-links::
+    :caption: JIRA Integration
 
-..     jira/jira
+    jira/jira
 
-.. .. sidebar-links::
-..     :caption: Pipeline Overview 
+.. sidebar-links::
+    :caption: Pipeline Overview 
 
-..     dag/dags
+    dag/dags
 
-.. .. sidebar-links::
-..     :caption: Open-Source Lambda Functions 
+.. sidebar-links::
+    :caption: Open-Source Lambda Functions 
 
-..     lambda/functions
+    lambda/functions
 
-.. .. sidebar-links::
-..     :caption: Test with CEF input format
+.. sidebar-links::
+    :caption: Test with CEF input format
 
-..     getting_started/end_to_end_test_cef
+    getting_started/end_to_end_test_cef
