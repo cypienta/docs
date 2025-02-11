@@ -7,7 +7,7 @@ Welcome to the official documentation for Cypienta. This guide will help you und
     :maxdepth: 1
     :caption: Getting Started
 
-    Write something <getting_started/prerequisites>
+    Write something <getting_started/prerequisites> Some more text
     getting_started/subscription
     getting_started/deploy
     deploy_ui/mapping
