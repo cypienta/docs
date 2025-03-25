@@ -3,42 +3,36 @@ Start using Cypienta UI
 
 Once all your resources are deployed and the ECS app is up and in ``Running`` status. You can start using the Cypienta UI.
 
-.. note::
-    The Cypienta UI will include those events that have MITRE ATT&CK techniques associated with them or recognized with the ``enrich with technique`` step of the pipeline. If no techniques are associated with the events, they will not be used as part of clustering step, and will not be visible in the UI.
-
 
 Start using Cypienta UI
 -----------------------
 
-1. Note the Load balancer URL for the UI that is deployed. Go to AWS
-   Console and search for ``EC2`` and on the left hand side panel, expand
-   ``Load Balancing``, and select ``Load Balancers``. Copy the ``DNS name`` of
-   the corresponding load balancer and keep note of it.
+1. Navigate to the CloudFormation stack that was created in the :doc:`deploy` page.
 
-    .. image:: resources/dns_name.png
-        :alt: get dns name
-        :align: center
+2. Select the stack that was created and click on the ``Outputs`` tab.
 
-2. Open your browser with URL: ``http://<DNS-name>:8000``.
+3. Note the Load balancer URL for the ``CypientaUI`` in the outputs section.
+
+4. Open a new tab in your browser and navigate to the Load balancer URL.
+
+5. Login to the portal with the default credentials.
 
     .. image:: resources/ui_login.png
-        :alt: Login to UI
-        :align: center
-
-3. Login to the portal.
-
-    .. image:: resources/home_page.png
-        :alt: Home page
+        :alt: Login page
         :align: center
     
     .. note::
         The default ``Username`` is ``cypienta`` and the default ``Password`` is ``cypienta``
 
+    .. image:: resources/home_page.png
+        :alt: Home page
+        :align: center
 
-How to use the Hide feature for events in UI
-----------------------------------------------
 
-1. On the left hand side panel, click on ``Campaigns``
+Explore Campaign List table
+-------------------
+
+1. On the left hand side panel, click on ``Clusters``. From the ``Clustering Agent Selection`` dropdown, you may select any of the clustering agents to get the list of campaigns for that clustering agent.
 
     .. image:: resources/campaign_list.png
         :alt: Campaign list
@@ -46,192 +40,255 @@ How to use the Hide feature for events in UI
 
     
     .. note::
-        The ``Campaigns`` page will show all the clusters that were created from the events. Each event will only be present in one cluster. Clusters with single event will not be visible on UI.
-        The ``Flows`` page will show all the flows that were created from the events. Each event can be present in none or more than one flow.
+        The ``Clusters`` page will show all the campaigns that were created from the clustered events.
+        The ``Flows`` page will show all the flows that were created from the events.
 
-2. Click on any campaign that you want to modify:
 
-    .. image:: resources/hide_open_campaign.png
-        :alt: open campaign
+2. The Campaign List table will show the list of campaigns sorted in descending order of the campaign id. To sort it by ascending order, click on the campaign id column header. This will sort the campaigns in ascending order of the campaign id.
+
+    .. image:: resources/campaign_list_sort.png
+        :alt: Campaign list sort
         :align: center
 
-3. Select the events from the ``Stages`` panel by clicking on the radio
-   button on the top right of each event
+    .. note::
+        Any column header with a blue hyperlink can be clicked to sort the campaigns in ascending or descending order of that column.
 
-    .. image:: resources/hide_select_event.png
-        :alt: select event
+
+3. You can also filter the campaigns by the ``Campaign Status`` column. Select the ``Campaign Status`` from the dropdown and click on the status you want to filter. This will filter the campaigns by the selected status.
+
+    .. image:: resources/campaign_list_prefilter.png
+        :alt: Campaign list pre filter
+        :align: center
+    
+
+After filtering the campaigns, you can see the filtered campaigns in the table.
+
+    .. image:: resources/campaign_list_postfilter.png
+        :alt: Campaign list post filter
         :align: center
 
-4. Click on the edit icon (one with the pencil) on top of the panel and
-   click on ``Hide`` to hide the events from the campaign.
 
-    .. image:: resources/click_hide.png
-        :alt: click hide
+4. To hide columns from the table, click on the collapse icon on the top of the column header. This will hide the column from the table.
+
+    .. image:: resources/campaign_list_precollapse.png
+        :alt: Campaign list pre collapse
         :align: center
 
-5. Click on the ``Events`` tab in the analysis page to see a list of all
-   events under the selected campaign
+    
+After collapsing the column, you can see the updated table as follows:
 
-    .. image:: resources/hide_events_tab.png
-        :alt: click hide
+    .. image:: resources/campaign_list_postcollapse.png
+        :alt: Campaign list post collapse
         :align: center
 
-   You can see the list of hidden events now has an event that was selected earlier and hide action was taken.
+5. In the ``Assigned To`` colums, you can click on the dropdown and add new assignees to the campaigns.
 
-
-Edit recognized techniques for events
--------------------------------------
-
-1. On the left hand side panel, click on ``Campaigns``
-
-    .. image:: resources/campaign_list.png
-        :alt: Campaign list
+    .. image:: resources/campaign_list_assign.png
+        :alt: Campaign list pre assign
         :align: center
 
-2. Click on any campaign that you want to modify:
+    You may also use the dropdown on the column header to filter the campaigns by the assigned user.
 
-    .. image:: resources/tech_campaign.png
-        :alt: Open campaign
+
+Explore Campaign page
+---------------------
+
+1. Once you click on a campaign ``Name`` from the Campaign List table, you will be redirected to the Campaign page. The Campaign page will show the current campaign status and different tabs to explore the campaign. The firs tab opened is the ``Playbook`` tab which shows a simga graph on the left hand side, a timeline on the right side and list of events per stage in the center.
+
+    .. image:: resources/campaign_page.png
+        :alt: Campaign page
         :align: center
 
-3. Select the ``Events`` tab to see the list of events under the selected
-   campaign
+    .. note::
+        Select the ``Tactics tab`` to see the list of tactics for the campaign.
+        Select the expand icon on the top right of the page to expand the center panel to include all possible columns.
 
-    .. image:: resources/tech_events_tab.png
-        :alt: events tab
+
+2. To view a particular event, click on the event from the central panel. This will open a pop up with more details about the event.
+
+    .. image:: resources/playbook_event.png
+        :alt: Campaign page event
+        :align: center
+        
+
+3. Click on the ``Events`` tab to see the list of events for the campaign.
+
+    .. image:: resources/campaign_events.png
+        :alt: Campaign page events
         :align: center
 
-4. Click on the Feedback button on the right-hand side for the event
-   that you want to modify. Select the appropriate tactics and
-   techniques that you want for the event and add an optional comment
-   for the feedback. Select the check box ``Also update rows with the
-   same message``, to modify the techniques and tactics for all such
-   events with same message. Click on ``Submit`` to record the feedback on
-   the UI.
 
-    .. image:: resources/tech_feedback.png
-        :alt: feedback
+4. As similar to the you may collaps a column for the events table, and filter the events where there is a dropdown at the column header. Use the Raw Data button to expand the event details and view raw event data.
+
+    .. image:: resources/campaign_raw_event.png
+        :alt: Campaign page events raw
         :align: center
+
+
+5. You can use the ``Hide`` button to hide an event from the campaign. This will open up a side panel, which will ask for a comment on why the event is being hidden. Click on ``Submit`` once the comment is added.
+
+    .. image:: resources/campaign_hide_event.png
+        :alt: Campaign page hide event
+        :align: center
+        
+    You can see the hidden events in the ``Hidden Events`` section at the top of the page.
+
+    .. image:: resources/campaign_hidden_events.png
+        :alt: Campaign page hidden events
+        :align: center
+
+    You can see the Unhide button on the right side of the hidden event in the hidden events section. The number of hidden events, visible events is shown in the top of the page.
+
+
+6. If you want to edit the TTPs for any event, click on the ``Feedback`` button. This will open up a side panel, where you can select the ``Tactics`` and ``Techniques`` for the event. You can also add a comment to the feedback. You may select the checkbox for ``Also update rows with the same message``, to modify the techniques and tactics for all such events with same message. You may also select the ``Use for training`` checkbox to use the feedback for training the model. Click on ``Submit`` once the changes are made.
+
+    .. image:: resources/campaign_feedback.png
+        :alt: Campaign page feedback
+        :align: center
+        
+
+7. To select IOCs from the events, click on the ``IOCs`` button. This will open up a side panel, where you can select the IOCs from the events. For example, lets select the ``src`` as the field for IOC and add the type of IOC from the events.
+
+    .. image:: resources/campaign_iocs_selection.png
+        :alt: Campaign page IOCs
+        :align: center
+        
+    .. note::
+        You can see all the IOCs created for the campaign in the ``IOCs`` tab.
+
+
+How to add comments to the campaign
+-----------------------------------
+
+1. Click on the ``Comments`` tab to see the list of comments for the campaign.
+
+    .. image:: resources/campaign_comments.png
+        :alt: Campaign page comments
+        :align: center
+
+    You can add a new comment by writing in the text area and clicking on ``Post Comment``.    
 
 
 How to use "Cut Events" feature
 -------------------------------
 
-1. On the left hand side panel, click on ``Campaigns``
+1. On the ``Playbook`` tab, central panel which shows the list of events, select the events you want to cut. Then click on the ``Actions`` dropdown and select ``Cut Events``.
 
-    .. image:: resources/campaign_list.png
-        :alt: Campaign list
+    .. image:: resources/playbook_events_selection.png
+        :alt: Playbook events selection
         :align: center
 
-2. Click on any campaign from which you want to copy events:
+2. This will open a pop up panel as below.
 
-   Picking two campaigns for reference below:
-
-    .. image:: resources/cut_show_campaigns.png
-        :alt: show campaigns
+    .. image:: resources/playbook_cut_events.png
+        :alt: Playbook cut events
         :align: center
 
-   Notice the event count for campaign name ``3599.0`` is 4 and ``3572.0`` is 12. 
+    This panel shows you the list of events, the source campaign.
 
-   Click on campaign name ``3599.0`` to cut the event to ``3572.0``
+3. Scroll down to see the list of campaigns that you want to cut the events to.
 
-3. Select the event that you want to cut and click on the edit button
-   on top of the section
-
-    .. image:: resources/cut_select_event.png
-        :alt: select event
+    .. image:: resources/playbook_cut_events_target_campaigns.png
+        :alt: Playbook cut events target campaigns
         :align: center
 
-4. Select ``Cut Events``, and a side panel will appear to select campaign(s) you want to cut the events to. Search for the ``campaign id`` or the ``campaign name`` you want to cut events to. Here, selection shows campaign name ``3614``, campaign id ``23``. You may choose different values for the ``Event attributes`` and ``Node attributes``. Default value for all the attribute is set to 0. And click on ``Done``.
-
-    .. image:: resources/cut_modal.png
-        :alt: cut modal
+    You can select one campaign you want to cut the events to by click on the add button in the ``Select Target Campaign`` section ``Available Campaigns``.
+    
+    .. image:: resources/playbook_cut_event_target_added.png
+        :alt: Playbook cut events target campaigns
         :align: center
 
-5. Click on ``OK`` button to confirm your cut action
+4. Write an optional comment for the cut events action you are performing. Use the switch ``Use this action for training the model`` to use the cut events action for training the model. Finally, click on ``Submit`` to perform the cut events action.
 
-6. Navigate back to the Campaigns page. You will notice now that the campaign name ``3599.0`` has an event count of 3, changed from 4. And the ``3572.0`` campaign has an event count of 13 changed from 12. 
+5. Click on ``OK`` to confirm the cut events action.
 
-    .. image:: resources/cut_completed.png
-        :alt: cut completed
+    .. image:: resources/playbook_cut_events_confirm.png
+        :alt: Playbook cut events submit
         :align: center
 
 
-How to add Rules and Labels for campaigns
------------------------------------------
+6. You can see the events have been moved from the source campaign to the target campaign.
 
-1. On the left hand side panel, click on ``Cluster`` drop down and select ``Rules``.
-
-    .. image:: resources/select_rules.png
-        :alt: select rules
+    .. image:: resources/playbook_cut_events_moved.png
+        :alt: Playbook cut events moved
         :align: center
 
-2. Click on ``Add Rule`` button to add a new rule.
 
-    .. image:: resources/add_rule.png
-        :alt: add rule
-        :align: center
+.. How to add Rules and Labels for campaigns
+.. -----------------------------------------
 
-3. Fill in the details for the rule. Give a distinguishable name to the rule. Select the metric on which you want to set a rule.
-   Select the condition and value for the rule. Do not select any of the campaigns in the ``Campaigns`` field and click on ``Save``.
+.. 1. On the left hand side panel, click on ``Cluster`` drop down and select ``Rules``.
 
-    .. image:: resources/new_rule.png
-        :alt: add rule details
-        :align: center
+..     .. image:: resources/select_rules.png
+..         :alt: select rules
+..         :align: center
 
-4. Now to utilize the new rule we need to add a label to the campaign. On the left hand side panel, click on ``Cluster`` drop down and select ``Labels``.
+.. 2. Click on ``Add Rule`` button to add a new rule.
 
-    .. image:: resources/select_labels.png
-        :alt: select labels
-        :align: center
+..     .. image:: resources/add_rule.png
+..         :alt: add rule
+..         :align: center
 
-5. Click on ``Add Label`` button to add a new label.
+.. 3. Fill in the details for the rule. Give a distinguishable name to the rule. Select the metric on which you want to set a rule.
+..    Select the condition and value for the rule. Do not select any of the campaigns in the ``Campaigns`` field and click on ``Save``.
 
-    .. image:: resources/add_label.png
-        :alt: add label
-        :align: center
+..     .. image:: resources/new_rule.png
+..         :alt: add rule details
+..         :align: center
 
-6. Fill in the details for the label. Give a distinguishable name to the label, which will be applied to all campaigns. Select the rules that you want to apply to the label and click on ``Save``.
+.. 4. Now to utilize the new rule we need to add a label to the campaign. On the left hand side panel, click on ``Cluster`` drop down and select ``Labels``.
 
-    .. image:: resources/new_label.png
-        :alt: add label details
-        :align: center
+..     .. image:: resources/select_labels.png
+..         :alt: select labels
+..         :align: center
 
-7. Now go back to the ``Clusters`` page to see the list of Campaigns and you will see the label applied to all the campaigns.
+.. 5. Click on ``Add Label`` button to add a new label.
 
-    .. image:: resources/view_labels.png
-        :alt: label applied
-        :align: center
+..     .. image:: resources/add_label.png
+..         :alt: add label
+..         :align: center
 
-    .. note::
-        Applying new or edited rules or labels to all campaigns may take some time. Refresh the campaigns page to check if the changes have been applied.
+.. 6. Fill in the details for the label. Give a distinguishable name to the label, which will be applied to all campaigns. Select the rules that you want to apply to the label and click on ``Save``.
+
+..     .. image:: resources/new_label.png
+..         :alt: add label details
+..         :align: center
+
+.. 7. Now go back to the ``Clusters`` page to see the list of Campaigns and you will see the label applied to all the campaigns.
+
+..     .. image:: resources/view_labels.png
+..         :alt: label applied
+..         :align: center
+
+..     .. note::
+..         Applying new or edited rules or labels to all campaigns may take some time. Refresh the campaigns page to check if the changes have been applied.
 
 
-Generate summary using Open AI
-------------------------------
+.. Generate summary using Open AI
+.. ------------------------------
 
-1. On the left hand side panel, click on ``GenAI``
+.. 1. On the left hand side panel, click on ``GenAI``
 
-    .. image:: resources/gen_ai_add_key.png
-        :alt: gen ai config
-        :align: center
+..     .. image:: resources/gen_ai_add_key.png
+..         :alt: gen ai config
+..         :align: center
 
-2. Add your API key in the input field and click on ``Add API key``.
+.. 2. Add your API key in the input field and click on ``Add API key``.
 
-3. On the left hand side panel, click on ``Campaigns``
+.. 3. On the left hand side panel, click on ``Campaigns``
 
-    .. image:: resources/campaign_list.png
-        :alt: Campaign list
-        :align: center
+..     .. image:: resources/campaign_list.png
+..         :alt: Campaign list
+..         :align: center
 
-4. Select any campaign for which you want to generate a summary. Click on ``Generate Summary`` button.
+.. 4. Select any campaign for which you want to generate a summary. Click on ``Generate Summary`` button.
 
-    .. image:: resources/gen_ai_create_summary.png
-        :alt: gen ai summary
-        :align: center
+..     .. image:: resources/gen_ai_create_summary.png
+..         :alt: gen ai summary
+..         :align: center
 
-4. Click on the ``Diamond`` tab and view the summary created for your selected campaign.
+.. 4. Click on the ``Diamond`` tab and view the summary created for your selected campaign.
 
-    .. image:: resources/gen_ai_summary.png
-        :alt: gen ai summary
-        :align: center
+..     .. image:: resources/gen_ai_summary.png
+..         :alt: gen ai summary
+..         :align: center
