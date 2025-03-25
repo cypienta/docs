@@ -11,7 +11,7 @@ Map Alert fields to Cypienta Internal Format
     .. note::
         The default ``Username`` is ``cypienta`` and the default ``Password`` is ``cypienta``
 
-2.  On the left hand side panel, click on ``Add Alerts``.
+2.  On the left hand side panel, click on ``Add Data Source``.
 
     .. image:: resources/add_alerts.png
         :alt: Add Alerts
@@ -26,6 +26,8 @@ Map Alert fields to Cypienta Internal Format
         
         JSON: The JSON format file must have filename with extension as ``.json``. The file must have a json list of alerts format and must contain atleast 1 alert.
 
+        JSONLines: The JSONLines format file must have filename with extension as ``.jsonl``. The file must have a json list of alerts format and must contain atleast 1 alert. In case you have jsonlines format file with extension as ``.json``, the file will be detected as JSON lines format file automatically.
+
         XML: The XML format file must have filename with extension as ``.xml``. The file must have a list element for ``alerts`` and must contain atleast 1 alert.
 
 4. Once the file is uploaded, the system will automatically map and suggest the fields to the internal format.
@@ -33,6 +35,9 @@ Map Alert fields to Cypienta Internal Format
     .. image:: resources/alerts_mapping.png
         :alt: Alerts Mapping
         :align: center
+
+    .. note::
+        The system will automatically map the fields to the internal format using the field names of only the first alert. The sample values shown in the right section are from the first 3 alerts if they are available. So, make sure the first alert has all the fields that are required for the internal format, it could be set as empty values if the field is not always present, and set priority for the fields.
 
 5. There are 5 required fields that must be mapped to the internal format. The fields are:
 
@@ -44,6 +49,7 @@ Map Alert fields to Cypienta Internal Format
 
     The remaining fields are optional and can be mapped as per the requirement.
 
+    -  ``Tech``
     -  ``Event_feature``
     -  ``Node_feature``
 

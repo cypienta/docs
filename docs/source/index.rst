@@ -28,28 +28,6 @@ Cypienta UI
 :doc:`deploy_ui/tune_config`: Tune Cluster Model Config.
 
 
-Splunk Integration
----------------
-
-:doc:`splunk/splunk`: Splunk integrating with Cypienta to get data as input.
-
-:doc:`splunk/output`: Splunk integrating with Cypienta to get output on Splunk SOAR.
-
-
-Elastic Integration
----------------
-
-:doc:`elastic/elastic`: Elastic integrating with Cypienta to get data as input.
-
-:doc:`elastic/output`: Elastic integrating with Cypienta to get output on Elastic.
-
-
-JIRA Integration
----------------
-
-:doc:`jira/jira`: JIRA integrating with Cypienta to create tickets from output.
-
-
 Pipeline Overview 
 ---------------
 
@@ -83,23 +61,6 @@ Test with CEF input format
 
     deploy_ui/start_using
     deploy_ui/tune_config
-
-.. sidebar-links::
-    :caption: Splunk Integration
-
-    splunk/splunk
-    splunk/output
-
-.. sidebar-links::
-    :caption: Elastic Integration
-
-    elastic/elastic
-    elastic/output
-
-.. sidebar-links::
-    :caption: JIRA Integration
-
-    jira/jira
 
 .. sidebar-links::
     :caption: Pipeline Overview 

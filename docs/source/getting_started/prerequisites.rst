@@ -14,11 +14,16 @@ Make sure that you have the required permissions for resources for the IAM user 
 -  Lambda
 
 To confirm you have the required permssion for the resources necessary to run the 
-pipeline you can check that with the following script. To run the script the iam user must have ``iam:SimulatePrincipalPolicy`` policy.
+pipeline you can check that with the following script. To run the script the IAM user must have ``iam:SimulatePrincipalPolicy`` policy.
 
 .. code-block:: console
 
-    $ wget -O- https://raw.githubusercontent.com/cypienta/AWS/v0.9.2/check_permissions.py | python 
+    $ wget -O- https://raw.githubusercontent.com/cypienta/AWS/v0.9.2/check_permissions.py | python
+
+
+.. note::
+    To allow successful auto update to the template with minor bug fixes. Use an IAM role with same permission as the IAM user above to allow the update. You can get the role ARN from the AWS console by searching for ``IAM``.
+    On the left hand side panel, under ``Access Management``, select ``Roles``. Select the role that you created with the same permission as the IAM user above. There will be a Summary section that will have the role ARN. Copy the role ARN and use it in the ``CloudFormationRoleArn`` parameter in the template.
 
 Quotas
 ------

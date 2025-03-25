@@ -48,10 +48,8 @@ Deploy resources using the Cloud Formation template
 
     The constraints for choosing the ``Cpu`` and ``Memory`` for the cluster can be found `here <https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-taskdefinition.html#cfn-ecs-taskdefinition-cpu>`__
 
-    Recommended value for parameter **ChunkSize** is below ``100000``.
-
     .. note::
-        **ChunkSize:** The size of a single chunk that will be processed at a time for an input file uploaded to S3. 
+        **CloudFormationRoleArn:** The IAM role ARN for the CloudFormation stack. This is required to allow the CloudFormation stack to update the template with minor bug fixes automatically. Delete the default value and enter the IAM role ARN for the CloudFormation stack as recorded in section :doc:`prerequisites`.
 
 6.  Click on ``Next`` after adding the parameters.
 
@@ -104,4 +102,4 @@ pipeline will start with the next batch of files in the queue automatically.
 
 .. note::
 
-    **Handling Large Input Files:** Currently the pipeline can handle upto 100,000 events in single input file. Be mindful of the input file that is used as input.
+    **Handling Large Input Files:** Currently the pipeline can handle upto 1 million events in single batch of input files. Be mindful of the number of events in the input file that is used as input per batch.
