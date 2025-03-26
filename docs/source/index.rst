@@ -19,6 +19,8 @@ Getting Started
 
 :doc:`getting_started/troubleshoot`: Troubleshooting common issues.
 
+:doc:`getting_started/support`: Send support request to Cypienta.
+
 
 Cypienta UI
 ---------------
@@ -55,6 +57,7 @@ Test with CEF input format
     deploy_ui/mapping
     deploy_ui/airflow
     getting_started/troubleshoot
+    getting_started/support
 
 .. sidebar-links::
     :caption: Cypienta UI
