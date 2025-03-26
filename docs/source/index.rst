@@ -48,6 +48,12 @@ Test with CEF input format
 :doc:`getting_started/end_to_end_test_cef`: Test Cypienta with CEF input format.
 
 
+Advanced User Guide
+---------------
+
+:doc:`aws/security_groups`: Configure security groups for Cypienta.
+
+
 .. sidebar-links::
     :caption: Getting Started
 
@@ -79,3 +85,8 @@ Test with CEF input format
     :caption: Test with CEF input format
 
     getting_started/end_to_end_test_cef
+
+.. sidebar-links::
+    :caption: Advanced User Guide
+
+    aws/security_groups
