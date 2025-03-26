@@ -92,6 +92,9 @@ Deploy resources using the Cloud Formation template
 
 Now all your resources are ready to be used.
 
+.. note::
+    Currently the pipeline will send logs for Cypienta Airflow, and Cypienta UI usage logs to Cypienta. This is to help us improve the product. You can opt out of this by contacting us at support@cypienta.com.
+
 
 Handling Multiple Inputs
 -------------------------
