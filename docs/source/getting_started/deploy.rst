@@ -10,7 +10,7 @@ Deploy resources using the Cloud Formation template
 
     .. code-block:: shell
 
-        $ wget https://github.com/cypienta/AWS/raw/v0.9/template.yaml
+        $ wget https://github.com/cypienta/AWS/raw/v0.10.0/template.yaml
     
     .. note::
         Run this command on your local machine. This command will download the template.yaml file.
