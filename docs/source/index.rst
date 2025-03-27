@@ -36,10 +36,10 @@ Pipeline Overview
 :doc:`dag/dags`: Overview of the pipeline.
 
 
-Open-Source Lambda Functions
+Open-Source Data Transformation Tasks
 ---------------
 
-:doc:`lambda/functions`: Overview of functioning of open-source lambda functions.
+:doc:`lambda/functions`: Overview of functioning of open-source data transformation tasks in Cypienta Pipeline.
 
 
 Test with CEF input format
@@ -77,7 +77,7 @@ Advanced User Guide
     dag/dags
 
 .. sidebar-links::
-    :caption: Open-Source Lambda Functions 
+    :caption: Open-Source Data Transformation Tasks
 
     lambda/functions
 

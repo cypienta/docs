@@ -5,11 +5,11 @@ How to test end-to-end
 ----------------------
 
 1. Navigate to the AWS console and search for ``S3``. Select the S3 bucket
-   that you created and navigate to the folder ``mapping/input/cypienta_cef/``.
+   that you created and navigate to the folder ``input/cypienta_cef/``.
 
     .. note::
         The folder structure should be as follows:
-        ``s3://{bucket-name}/mapping/input/cypienta_cef/``
+        ``s3://{bucket-name}/input/cypienta_cef/``
 
 2. Sample input json file:
 
@@ -49,8 +49,12 @@ How to test end-to-end
 
     All fields are required unless mentioned otherwise. If the value for the field is not present, keep empty string as value.
 
-3. Upload input json file to the s3 bucket in path: ``s3://{bucket-name}/mapping/input/cypienta_cef/``. The name of the input file does not matter to the end-to-end flow. Note that if you upload a file with the same name, it will be overwritten in S3 bucket.
+3. Upload input json file to the s3 bucket in path: ``s3://{bucket-name}/input/cypienta_cef/``. The name of the input file does not matter to the end-to-end flow. Note that if you upload a file with the same name, it will be overwritten in S3 bucket. Once you upload the input file. You can use the Airflow to monitor the flow of your input.
 
-    1. Once you upload the input file. You can use the Airflow to monitor the flow of your input.
+4. You can wait for the default pipeline schedule to trigger the pipeline to process your input file (every 5 hours). To manually trigger the pipeline, navigate to the Airflow UI using the link listed in the CloudFormation stack outputs. Login using the default credentials if not modified. Click on the Play button on the right side of the ``file_polling`` DAG listed under ``Dags`` tab.
 
-4. Final output will be put on the S3 bucket with prefix ``s3://{bucket-name}/output/``
+5. You can monitor the progress for the pipeline in the Airflow UI.
+
+6. Once the pipeline is complete, you can view campaigns in the UI.
+
+7. Final output will be put on the S3 bucket with prefix ``s3://{bucket-name}/output/``

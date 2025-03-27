@@ -6,7 +6,7 @@ AWS Deployment
 Deploy resources using the Cloud Formation template
 ---------------------------------------------------
 
-1. On your local machine, download the template file from Github. `Template file <https://github.com/cypienta/AWS/blob/bc46a4f2a4144b958af08df23835fc246f7c1ffe/template.yaml>`__. Or, use the following command to download the ``template.yaml`` file.
+1. On your local machine, download the template file from Github. `Template file <https://github.com/cypienta/AWS/blob/8f1422b9c43843a90a6135d0ff181ce8e9439547/template.yaml>`__. Or, use the following command to download the ``template.yaml`` file.
 
     .. code-block:: shell
 
@@ -27,7 +27,7 @@ Deploy resources using the Cloud Formation template
         :alt: Subscribe to technique detector
         :align: center
 
-4. For the ``Prerequisite - Prepare template`` section, select ``Choose an existing template``, and then select ``Upload a template file``. It will enable a ``Choose file`` button. Click on the button to upload the template. The template is present in the root directory of Lambda repository you have cloned. Then click on ``Next``.
+4. For the ``Prerequisite - Prepare template`` section, select ``Choose an existing template``, and then select ``Upload a template file``. It will enable a ``Choose file`` button. Click on the button to upload the template. The template is present in the same file location where you ran the ``wget`` command. Then click on ``Next``.
 
     .. image:: resources/upload_template_file.png
         :alt: Subscribe to technique detector
@@ -48,8 +48,6 @@ Deploy resources using the Cloud Formation template
 
     The constraints for choosing the ``Cpu`` and ``Memory`` for the cluster can be found `here <https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-taskdefinition.html#cfn-ecs-taskdefinition-cpu>`__
 
-    .. note::
-        **CloudFormationRoleArn:** The IAM role ARN for the CloudFormation stack. This is required to allow the CloudFormation stack to update the template with minor bug fixes automatically. Delete the default value and enter the IAM role ARN for the CloudFormation stack as recorded in section :doc:`prerequisites`.
 
 6.  Click on ``Next`` after adding the parameters.
 
