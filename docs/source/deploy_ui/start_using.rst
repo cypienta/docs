@@ -214,54 +214,54 @@ How to use "Cut Events" feature
         :align: center
 
 
-.. How to add Rules and Labels for campaigns
-.. -----------------------------------------
+How to add Rules and Labels for campaigns
+-----------------------------------------
 
-.. 1. On the left hand side panel, click on ``Cluster`` drop down and select ``Rules``.
+1. On the left hand side panel, click on ``Cluster`` drop down and select ``Rules``.
 
-..     .. image:: resources/select_rules.png
-..         :alt: select rules
-..         :align: center
+    .. image:: resources/select_rules.png
+        :alt: select rules
+        :align: center
 
-.. 2. Click on ``Add Rule`` button to add a new rule.
+2. Click on ``Add Rule`` button to add a new rule.
 
-..     .. image:: resources/add_rule.png
-..         :alt: add rule
-..         :align: center
+    .. image:: resources/add_rule.png
+        :alt: add rule
+        :align: center
 
-.. 3. Fill in the details for the rule. Give a distinguishable name to the rule. Select the metric on which you want to set a rule.
-..    Select the condition and value for the rule. Do not select any of the campaigns in the ``Campaigns`` field and click on ``Save``.
+3. Fill in the details for the rule. Give a distinguishable name to the rule. Select the metric on which you want to set a rule.
+   Select the condition and value for the rule. Do not select any of the campaigns in the ``Campaigns`` field and click on ``Save``.
 
-..     .. image:: resources/new_rule.png
-..         :alt: add rule details
-..         :align: center
+    .. image:: resources/new_rule.png
+        :alt: add rule details
+        :align: center
 
-.. 4. Now to utilize the new rule we need to add a label to the campaign. On the left hand side panel, click on ``Cluster`` drop down and select ``Labels``.
+4. Now to utilize the new rule we need to add a label to the campaign. On the left hand side panel, click on ``Cluster`` drop down and select ``Labels``.
 
-..     .. image:: resources/select_labels.png
-..         :alt: select labels
-..         :align: center
+    .. image:: resources/select_labels.png
+        :alt: select labels
+        :align: center
 
-.. 5. Click on ``Add Label`` button to add a new label.
+5. Click on ``Add Label`` button to add a new label.
 
-..     .. image:: resources/add_label.png
-..         :alt: add label
-..         :align: center
+    .. image:: resources/add_label.png
+        :alt: add label
+        :align: center
 
-.. 6. Fill in the details for the label. Give a distinguishable name to the label, which will be applied to all campaigns. Select the rules that you want to apply to the label and click on ``Save``.
+6. Fill in the details for the label. Give a distinguishable name to the label, which will be applied to all campaigns. Select the rules that you want to apply to the label and click on ``Save``.
 
-..     .. image:: resources/new_label.png
-..         :alt: add label details
-..         :align: center
+    .. image:: resources/new_label.png
+        :alt: add label details
+        :align: center
 
-.. 7. Now go back to the ``Clusters`` page to see the list of Campaigns and you will see the label applied to all the campaigns.
+7. Now go back to the ``Clusters`` page to see the list of Campaigns and you will see the label applied to all the campaigns.
 
-..     .. image:: resources/view_labels.png
-..         :alt: label applied
-..         :align: center
+    .. image:: resources/view_labels.png
+        :alt: label applied
+        :align: center
 
-..     .. note::
-..         Applying new or edited rules or labels to all campaigns may take some time. Refresh the campaigns page to check if the changes have been applied.
+    .. note::
+        Applying new or edited rules or labels to all campaigns may take some time. Refresh the campaigns page to check if the changes have been applied.
 
 
 .. Generate summary using Open AI
