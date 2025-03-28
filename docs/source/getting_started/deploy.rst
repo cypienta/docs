@@ -6,11 +6,11 @@ AWS Deployment
 Deploy resources using the Cloud Formation template
 ---------------------------------------------------
 
-1. On your local machine, download the template file from Github. `Template file <https://github.com/cypienta/AWS/blob/bc46a4f2a4144b958af08df23835fc246f7c1ffe/template.yaml>`__. Or, use the following command to download the ``template.yaml`` file.
+1. On your local machine, download the template file from Github. `Template file <https://github.com/cypienta/AWS/blob/8f1422b9c43843a90a6135d0ff181ce8e9439547/template.yaml>`__. Or, use the following command to download the ``template.yaml`` file.
 
     .. code-block:: shell
 
-        $ wget https://github.com/cypienta/AWS/raw/v0.9/template.yaml
+        $ wget https://github.com/cypienta/AWS/raw/v0.10.0/template.yaml
     
     .. note::
         Run this command on your local machine. This command will download the template.yaml file.
@@ -27,7 +27,7 @@ Deploy resources using the Cloud Formation template
         :alt: Subscribe to technique detector
         :align: center
 
-4. For the ``Prerequisite - Prepare template`` section, select ``Choose an existing template``, and then select ``Upload a template file``. It will enable a ``Choose file`` button. Click on the button to upload the template. The template is present in the root directory of Lambda repository you have cloned. Then click on ``Next``.
+4. For the ``Prerequisite - Prepare template`` section, select ``Choose an existing template``, and then select ``Upload a template file``. It will enable a ``Choose file`` button. Click on the button to upload the template. The template is present in the same file location where you ran the ``wget`` command. Then click on ``Next``.
 
     .. image:: resources/upload_template_file.png
         :alt: Subscribe to technique detector
@@ -48,10 +48,6 @@ Deploy resources using the Cloud Formation template
 
     The constraints for choosing the ``Cpu`` and ``Memory`` for the cluster can be found `here <https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-taskdefinition.html#cfn-ecs-taskdefinition-cpu>`__
 
-    Recommended value for parameter **ChunkSize** is below ``100000``.
-
-    .. note::
-        **ChunkSize:** The size of a single chunk that will be processed at a time for an input file uploaded to S3. 
 
 6.  Click on ``Next`` after adding the parameters.
 
@@ -94,14 +90,12 @@ Deploy resources using the Cloud Formation template
 
 Now all your resources are ready to be used.
 
+.. note::
+    Currently the pipeline will send logs for Cypienta Airflow, and Cypienta UI usage logs to Cypienta. This is to help us improve the product. You can opt out of this by contacting us at support@cypienta.com.
+
 
 Handling Multiple Inputs
 -------------------------
 
 The pipeline will process files in the input folder in a batch.
-The files will be processed at a scheduled time which can be setup in Cypienta UI. Once a file is finished processing the
-pipeline will start with the next batch of files in the queue automatically.
-
-.. note::
-
-    **Handling Large Input Files:** Currently the pipeline can handle upto 100,000 events in single input file. Be mindful of the input file that is used as input.
+The files will be processed at a scheduled time which can be setup in Cypienta UI. It will process all the files in the input folder at the scheduled time. If there are multiple files in the input folder, it will process them in the same batch. If the first batch is not finished processing, the second batch will start processing concurrently up until clustering is completed, after that sequencer model will process the batch in sequential order.

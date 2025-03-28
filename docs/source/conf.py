@@ -7,9 +7,9 @@ copyright = '2025, Cypienta'
 author = 'Cypienta'
 
 # release = '1.0'
-release = '0.9'
+release = '0.10.1'
 # version = '1.0.0'
-version = '0.9.0'
+version = '0.10.1'
 
 # -- General configuration
 
