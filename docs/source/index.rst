@@ -17,10 +17,6 @@ Getting Started
 
 :doc:`deploy_ui/airflow`: Airflow configuration and errors.
 
-:doc:`getting_started/troubleshoot`: Troubleshooting common issues.
-
-:doc:`getting_started/support`: Send support request to Cypienta.
-
 
 Cypienta UI
 ---------------
@@ -48,6 +44,14 @@ Test with CEF input format
 :doc:`getting_started/end_to_end_test_cef`: Test Cypienta with CEF input format.
 
 
+Troubleshoot
+---------------
+
+:doc:`troubleshoot/troubleshoot`: Troubleshoot common issues.
+
+:doc:`troubleshoot/support`: Send support request to Cypienta.
+
+
 Advanced User Guide
 ---------------
 
@@ -62,8 +66,6 @@ Advanced User Guide
     getting_started/deploy
     deploy_ui/mapping
     deploy_ui/airflow
-    getting_started/troubleshoot
-    getting_started/support
 
 .. sidebar-links::
     :caption: Cypienta UI
@@ -85,6 +87,12 @@ Advanced User Guide
     :caption: Test with CEF input format
 
     getting_started/end_to_end_test_cef
+
+.. sidebar-links::
+    :caption: Troubleshoot
+
+    troubleshoot/support
+    troubleshoot/troubleshoot
 
 .. sidebar-links::
     :caption: Advanced User Guide
