@@ -19,7 +19,7 @@ pipeline you can check that with the following script. To run the script the IAM
 
 .. code-block:: console
 
-    $ wget -O- https://raw.githubusercontent.com/cypienta/AWS/v0.9.2/check_permissions.py | python
+    $ wget -O- https://raw.githubusercontent.com/cypienta/AWS/v0.10.0/check_permissions.py | python
 
 
 Quotas
