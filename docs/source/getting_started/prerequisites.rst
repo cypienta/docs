@@ -16,7 +16,7 @@ Make sure that you have the required permissions for resources for the IAM user 
 -  EventBridge Scheduler
 
 To confirm you have the required permssion for the resources necessary to run the 
-pipeline you can check that with the following script. To run the script the IAM user must have ``iam:SimulatePrincipalPolicy`` policy.
+pipeline you can check that with the following script. To run the script the IAM user must have ``iam:SimulatePrincipalPolicy``, ``iam:GetUser`` and ``iam:GetUserPolicy`` policy.
 
 .. code-block:: console
 
