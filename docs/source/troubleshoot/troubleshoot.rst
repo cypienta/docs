@@ -44,8 +44,36 @@ In case there is a failure while deleting the stack, follow the steps below to m
 8. Manually delete the running EC2 instance with name ``* - <ECS-cluster-name>``. Select all the pertinent instances, click on the ``Instance state`` dropdown and click on ``Terminate instance``.
 
 
+Airflow Errors
+--------------
+
+1.  Go to the Cypienta UI and login with your credentials.
+
+    .. image:: resources/ui_login.png
+        :alt: Login to UI
+        :align: center
+
+
+    .. note::
+        The default credentials are present in :doc:`start_using` page.
+
+2.  On the left hand side panel, expand ``Settings`` and click on ``Errors``.
+
+    .. image:: resources/bastet_airflow.png
+        :alt: Airflow
+        :align: center
+
+3. The tab ``Error`` shows the Airflow Error List that will show the errors that have occurred in the Airflow pipeline.
+
+4. Click on the ``Go to Airflow`` link at the top right to go to the Airflow UI.
+
+5. If you want to rerun the task, follow the steps below in section :ref:`Rerun Airflow task <rerun_task>`.
+
+
 Common errors
 -------------
+
+.. _rerun_task:
 
 Airflow Task failure
 ~~~~~~~~~~~~~~~~~~~
