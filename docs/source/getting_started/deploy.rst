@@ -98,9 +98,4 @@ Handling Multiple Inputs
 -------------------------
 
 The pipeline will process files in the input folder in a batch.
-The files will be processed at a scheduled time which can be setup in Cypienta UI. Once a file is finished processing the
-pipeline will start with the next batch of files in the queue automatically.
-
-.. note::
-
-    **Handling Large Input Files:** Currently the pipeline can handle upto 1 million events in single batch of input files. Be mindful of the number of events in the input file that is used as input per batch.
+The files will be processed at a scheduled time which can be setup in Cypienta UI. It will process all the files in the input folder at the scheduled time. If there are multiple files in the input folder, it will process them in the same batch. If the first batch is not finished processing, the second batch will start processing concurrently up until clustering is completed, after that sequencer model will process the batch in sequential order.
