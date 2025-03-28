@@ -13,7 +13,9 @@ Getting Started
 
 :doc:`getting_started/deploy`: Deploy Cypienta on AWS.
 
-:doc:`deploy_ui/mapping`: Mapping custom data fields to Cypienta input format.
+:doc:`getting_started/end_to_end_test_cef`: Test the Cypienta pipeline with CEF input data.
+
+:doc:`deploy_ui/mapping`: Run the pipeline with your custom data fields.
 
 :doc:`deploy_ui/airflow`: Airflow configuration and errors.
 
@@ -38,12 +40,6 @@ Open-Source Data Transformation Tasks
 :doc:`lambda/functions`: Overview of functioning of open-source data transformation tasks in Cypienta Pipeline.
 
 
-Test with CEF input format
----------------
-
-:doc:`getting_started/end_to_end_test_cef`: Test Cypienta with CEF input format.
-
-
 Troubleshoot
 ---------------
 
@@ -64,6 +60,7 @@ Advanced User Guide
     getting_started/prerequisites
     getting_started/subscription
     getting_started/deploy
+    getting_started/end_to_end_test_cef
     deploy_ui/mapping
     deploy_ui/airflow
 
@@ -82,11 +79,6 @@ Advanced User Guide
     :caption: Open-Source Data Transformation Tasks
 
     lambda/functions
-
-.. sidebar-links::
-    :caption: Test with CEF input format
-
-    getting_started/end_to_end_test_cef
 
 .. sidebar-links::
     :caption: Troubleshoot
