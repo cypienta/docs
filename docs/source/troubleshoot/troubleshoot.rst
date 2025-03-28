@@ -67,40 +67,40 @@ Airflow Errors
 
 4. Click on the ``Go to Airflow`` link at the top right to go to the Airflow UI.
 
-5. If you want to rerun the task, follow the steps below in section :ref:`Rerun Airflow task <rerun_task>`.
+.. 5. If you want to rerun the task, follow the steps below in section :ref:`Rerun Airflow task <rerun_task>`.
 
 
-Common errors
--------------
+.. Common errors
+.. -------------
 
-.. _rerun_task:
+.. .. _rerun_task:
 
-Airflow Task failure
-~~~~~~~~~~~~~~~~~~~
+.. Airflow Task failure
+.. ~~~~~~~~~~~~~~~~~~~
 
-If any DAG run in airflow has failed, then you may manually rerun the task. Follow the steps below to rerun the task:
+.. If any DAG run in airflow has failed, then you may manually rerun the task. Follow the steps below to rerun the task:
 
-1. Login to the Airflow UI.
+.. 1. Login to the Airflow UI.
 
-2. Navigate to the DAG that has failed.
+.. 2. Navigate to the DAG that has failed.
 
-3. On the left hand side panel which shows all the DAG runs, select the failed DAG task.
+.. 3. On the left hand side panel which shows all the DAG runs, select the failed DAG task.
 
-    .. image:: resources/failed_dag_task.png
-        :alt: failed_dag_task
-        :align: center
+..     .. image:: resources/failed_dag_task.png
+..         :alt: failed_dag_task
+..         :align: center
 
-4. Click on the ``Clear task`` button on the top right corner of the page.
+.. 4. Click on the ``Clear task`` button on the top right corner of the page.
 
-    .. image:: resources/failed_task_clear_task.png
-        :alt: failed_task_clear_task
-        :align: center
+..     .. image:: resources/failed_task_clear_task.png
+..         :alt: failed_task_clear_task
+..         :align: center
 
-5. Click on the ``Clear`` button to clear the task.
+.. 5. Click on the ``Clear`` button to clear the task.
 
-    .. image:: resources/failed_task_clear.png
-        :alt: failed_task_clear
-        :align: center
+..     .. image:: resources/failed_task_clear.png
+..         :alt: failed_task_clear
+..         :align: center
 
 
 S3 schema
