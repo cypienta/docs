@@ -9,6 +9,7 @@ Make sure that you have the required permissions for resources for the IAM user 
 -  ECS
 -  EC2
 -  ECR
+-  EFS
 -  IAM
 -  CloudFormation
 -  Lambda
@@ -29,13 +30,13 @@ Quotas
 Instance types
 ~~~~~~~~~~~~~~
 
-Verify your instance type quotas by going to the AWS console. Search for ``Service Quotas``, and select ``Amazon Elastic Compute Cloud (Amazon EC2)`` from the AWS Services list. Search for ``Running On-Demand G and VT instances`` or ``Running On-Demand P instances``. You will require a GPU instance type for ``ATTACK Technique Detector`` and ``Temporal Clustering``, so look at the supported and recommended instance types for the product before subscribing and request for an increase of quota if found to be less than 1. The recommended GPU instance types are g4dn. The ``MITRE ATTACK Flow Detector`` requires a CPU-based instance type such as c5.
+Verify your instance type quotas by going to the AWS console. Search for ``Service Quotas``, and select ``Amazon Elastic Compute Cloud (Amazon EC2)`` from the AWS Services list. Search for ``Running On-Demand Standard (A, C, D, H, I, M, R, T, Z) instances``. Request for an increase of quota if found to be less than 35. The EKS will be automatically adding and removing this instance type nodes to the cluster as needed.
 
 .. note::
     Example: 
         - Given the target region, go to service quotas or visit https://us-east-2.console.aws.amazon.com/servicequotas/home/services/sagemaker/quotas
-        - Search and select "Running On-Demand G and VT instances" or visit https://us-east-2.console.aws.amazon.com/servicequotas/home/services/ec2/quotas/L-DB2E81BA
-            - If the applied account-level quota value is less than 4, request an increase to at least 4.
+        - Search and select "Running On-Demand Standard (A, C, D, H, I, M, R, T, Z) instances" or visit https://us-east-1.console.aws.amazon.com/servicequotas/home/services/ec2/quotas/L-1216C47A
+            - If the applied account-level quota value is less than 35, request an increase to at least 35.
 
 
 VPC and Internet Gateways

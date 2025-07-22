@@ -8,25 +8,35 @@ The following fleet of ECS data transformation tasks will be responsible for end
 
 #. **schema_matcher_and_classifier:**
 
-    - This task will be triggered by in the ``schema_matcher_and_classifier`` DAG.
+    - This task will be triggered by the ``schema_matcher_and_classifier`` DAG.
     - It will map the raw data to the internal format for cypienta pipeline, and enrich the input data with MITRE ATT&CK techniques.
     - It will reduce the number of alerts to be enriched by using a cache.
     - It will generate a unique id for each alert and store the mapping for the same.
 
+#. **create_events:**
+
+    - This task will be triggered by the ``create_events`` DAG.
+    - It will create events in the Cypienta UI.
+
 #. **aggregator:**
 
-    - This task will be triggered by in the ``aggregator`` DAG.
+    - This task will be triggered by the ``aggregator`` DAG.
     - It will get the data from the list of files, aggregate the data, chunk the data, and save the final output data to the volume.
     - It will prepare the queue for batch order and chunk order for the sequencer model input.
 
+#. **create_agg_events:**
+
+    - This task will be triggered by the ``create_agg_events`` DAG.
+    - It will create aggregated events in the Cypienta UI.
+
 #. **process_cluster_output:**
 
-    - This task will be triggered by in the ``clustering`` DAG.
-    - It will process the cluster output and create campaigns on the Cypienta UI.
+    - This task will be triggered by the ``clustering`` DAG.
+    - It will process the cluster output and create cluster ticket output, and custom outputs.
 
 #. **start_sequencer:**
 
-    - This task will be triggered by in the ``clustering`` DAG.
+    - This task will be triggered by the ``clustering`` DAG.
     - It will check if the sequencer data is available in the volume to start the sequencer model given that the current chunk has completed clustering successfully.
     - If the sequencer data is available, it will prepare the input data for the sequencer model.
     - It will check if there are any next pending sequencer input data that can be used to start the sequencer model.
@@ -35,8 +45,13 @@ The following fleet of ECS data transformation tasks will be responsible for end
 
 #. **process_sequencer_output:**
 
-    - This task will be triggered by in the ``sequencer`` DAG.
-    - It will process the sequencer output and create flow campaigns on the Cypienta UI.
+    - This task will be triggered by the ``sequencer`` DAG.
+    - It will process the sequencer output and create sequencer ticket output, and custom outputs.
+
+#. **create_campaigns:**
+
+    - This task will be triggered by the ``process_cluster_output`` or ``process_sequencer_output`` DAG.
+    - It will create campaigns on the Cypienta UI.
 
 #. **skip_batch:**
 

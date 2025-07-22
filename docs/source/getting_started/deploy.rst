@@ -6,11 +6,11 @@ AWS Deployment
 Deploy resources using the Cloud Formation template
 ---------------------------------------------------
 
-1. On your local machine, download the template file from Github. `Template file <https://github.com/cypienta/AWS/blob/8f1422b9c43843a90a6135d0ff181ce8e9439547/template.yaml>`__. Or, use the following command to download the ``template.yaml`` file.
+1. On your local machine, download the template file from Github. `Template file <https://github.com/cypienta/AWS/blob/72491068c068c95cb5176c2edf8a5bd3f7ca8d0a/template.yaml>`__. Or, use the following command to download the ``template.yaml`` file.
 
     .. code-block:: shell
 
-        $ wget https://github.com/cypienta/AWS/raw/v0.10.0/template.yaml
+        $ wget https://github.com/cypienta/AWS/raw/v0.10.4/template.yaml
     
     .. note::
         Run this command on your local machine. This command will download the template.yaml file.
@@ -40,13 +40,21 @@ Deploy resources using the Cloud Formation template
 
     All parameter values are pre-filled for quick user experience. Some of the parameters are:
 
-    **SuperuserEmail:** The email for admin user for UI
+    **MaxCpuToUse:** The maximum CPU to use for the tasks on EKS cluster. The minimum recommended value is already filled in with the default value.
 
-    **SuperuserUsername:** The username of the admin user for UI
+    **MaxRamToUse:** The maximum RAM to use for the tasks on EKS cluster. The minimum recommended value is already filled in with the default value.
 
-    **SuperuserPassword:** The password of the admin user for UI
+    **SchemaResourcePercentage:** The percentage of the total CPU and RAM to use for the schema resource. This will be used to calculate the maximum parallel tasks executions that can be run on the EKS cluster. The minimum recommended value is already filled in with the default value.
 
-    The constraints for choosing the ``Cpu`` and ``Memory`` for the cluster can be found `here <https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-taskdefinition.html#cfn-ecs-taskdefinition-cpu>`__
+    **AggregatorResourcePercentage:** The percentage of the total CPU and RAM to use for the aggregator resource. This will be used to calculate the maximum parallel tasks executions that can be run on the EKS cluster. The minimum recommended value is already filled in with the default value.
+
+    **ClusterModelResourcePercentage:** The percentage of the total CPU and RAM to use for the cluster model resource. This will be used to calculate the maximum parallel tasks executions that can be run on the EKS cluster. The minimum recommended value is already filled in with the default value.
+
+    **FlowModelResourcePercentage:** The percentage of the total CPU and RAM to use for the flow model resource. This will be used to calculate the maximum parallel tasks executions that can be run on the EKS cluster. The minimum recommended value is already filled in with the default value.
+
+    **ClusterOutResourcePercentage:** The percentage of the total CPU and RAM to use for the cluster out resource. This will be used to calculate the maximum parallel tasks executions that can be run on the EKS cluster. The minimum recommended value is already filled in with the default value.
+
+    **FlowOutResourcePercentage:** The percentage of the total CPU and RAM to use for the flow out resource. This will be used to calculate the maximum parallel tasks executions that can be run on the EKS cluster. The minimum recommended value is already filled in with the default value.
 
 
 6.  Click on ``Next`` after adding the parameters.
@@ -74,19 +82,29 @@ Deploy resources using the Cloud Formation template
 
 10. Once the cloud stack is completed successfully. You can start using
     the products. Click on the ``Outputs`` tab for the recently created cloud 
-    stack and note down the load balancer URL for the UI under ``CypientaUI``. 
-    Load balancer for the airflow will be under ``CypientaAirflow``.
-    Bucket name for the S3 bucket will be under ``CypientaBucket``.
-    Click on the link to open the UI.
+    stack and note down the S3 bucket name under ``CypientaBucket``.
+    The EFS file system name will be under ``CypientaEFS``.
+    The EKS cluster name will be under ``CypientaEKSCluster``.
+    The namespace used for the pipeline helm chart application will be under ``CypientaEKSNamespace``.
+
+    The last part of the UUID for the S3 bucket name is the id used to unqiuely identify the Load Balancer URL for the UI. Here it its ``0affe1cc4a03``.
 
     .. image:: resources/template_output.png
-        :alt: lb url
+        :alt: template outputs
         :align: center
 
     .. note::
         The default credentials for Cypienta UI: Default ``Username`` is ``cypienta`` and the default ``Password`` is ``cypienta``
 
         The default credentials for Cypienta Airflow: Default ``Username`` is ``cypienta`` and the default ``Password`` is ``cypienta``
+
+10. You can now view the EKS cluster deployed in the AWS console. Navigate to the AWS console and search for ``EKS``. On the left hand side panel, select ``Clusters``. You can see the EKS cluster deployed in the list. The EKS cluster name will be matching the value under ``CypientaEKSCluster``.
+
+11. Get the Load Balancer URL for the UI. Navigate to the AWS console and search for ``EC2``. On the left hand side panel, under ``Load Balancing``, select ``Load Balancers``. You can see the Load Balancer deployed in the list. The Load Balancer name's suffix will be matching the suffix of the UUID value under ``CypientaBucket``. Here its ``0affe1cc4a03``. You can copy the DNS name of the Load Balancer and paste it in a different tab or window of the browser.
+
+    .. image:: resources/load_balancer.png
+        :alt: load balancer
+        :align: center
 
 Now all your resources are ready to be used.
 

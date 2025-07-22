@@ -15,14 +15,14 @@ Airflow Scheduler
     .. note::
         The default credentials are present in :doc:`start_using` page.
 
-2.  On the Cypienta UI, on the left hand side panel, expand ``Settings`` and click on ``Pipeline Schedule``. The default schedule is setup using a cron tab which will trigger the Pipeline every 5 hours.
+2.  On the Cypienta UI, on the left hand side panel, expand ``Settings`` and click on ``Pipeline``. The default schedule is setup using a cron tab which will trigger the Pipeline every 5 hours.
 
     .. image:: resources/bastet_airflow_schedule.png
         :alt: Airflow
         :align: center
 
 
-3. To edit the pipeline schedule, click on the ``Edit`` button. The schedule can be edited using two different methods. One is a cron tab format and the other is a present schedule.
+3. To edit the pipeline schedule, click on the ``Edit`` icon button under ``Actions`` column. The schedule can be edited using two different methods. One is a cron tab format and the other is a present schedule.
 
 
 4. Click on the ``Preset Schedule`` tab to see the preset schedules. Select the drop down ``Select Interval`` to see the different preset schedules.

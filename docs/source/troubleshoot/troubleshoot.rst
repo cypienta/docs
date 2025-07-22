@@ -16,33 +16,6 @@ How to delete stack
     .. note::
         If you need to backup the data in the bucket, you can download the data from the bucket you want to keep and then empty the bucket. The data once deleted cannot be recovered.
 
-5. In the EC2 AWS Service, navigate to ``Volumes`` under ``Elastic Block Storage`` and select all the volumes with name ``<ECS-cluster-name>_*``. And click on ``Actions`` and then click on ``Delete volume``. If the ``Volume state`` is not in ``Available`` state, then you will have to wait for the cloud formation stack to complete the deletion.
-
-    .. note::
-        You need to do the deletion of the volumes manually as the cloud formation stack does not complete the deletion of the volumes as they are persistent volumes. If you do not delete the volumes, and create a new stack with the same as the one you deleted earlier in the same region, you will not start from a clean slate and may face issues.
-
-
-Delete stack failed
-~~~~~~~~~~~~~~~~~~~
-
-In case there is a failure while deleting the stack, follow the steps below to manually delete few blocking stack resources:
-
-1. Search for ``CloudFormation`` in the the AWS console search bar.
-
-2. Open the stack that you want to delete and click on ``Delete``.
-
-3. Navigate to AWS console and search for ``ECS`` and select ``Elastic Container Service``.
-
-4. Click on the ECS cluster deployed from the stack. Check that there are no services running. If there are any, select all the service from the ``Services`` tab and click on ``Delete service``. Check the box for ``Force delete`` and type in ``delete`` in the confirmation box and then click on ``Delete``.
-
-5. Click on the ``Tasks`` tab and select all the tasks and click on ``Stop task``.
-
-6. Navigate to AWS console and search for ``EC2``.
-
-7. Manually reduce the desired capacity of the Auto Scaling Groups with name ``<ECS-cluster-name>-*``. Select each auto scaling group and select ``Actions`` dropdown and select ``Edit``. Reduce the ``Desired capacity`` to ``0`` and reduce the ``Min desired capacity`` to ``0``. Click on ``Update``.
-
-8. Manually delete the running EC2 instance with name ``* - <ECS-cluster-name>``. Select all the pertinent instances, click on the ``Instance state`` dropdown and click on ``Terminate instance``.
-
 
 Airflow Errors
 --------------
@@ -57,7 +30,7 @@ Airflow Errors
     .. note::
         The default credentials are present in :doc:`start_using` page.
 
-2.  On the left hand side panel, expand ``Settings`` and click on ``Errors``.
+2.  On the left hand side panel, expand ``Settings`` and click on ``Pipeline``, then click on the ``Errors`` tab.
 
     .. image:: resources/bastet_airflow.png
         :alt: Airflow
@@ -115,7 +88,7 @@ The S3 bucket folder structure is as follows:
 
     bucket/
     ├── input/
-    │   └── cypienta_cef/
+    │   └── Common_Event_Format/
     │       └── input.json
     ├── clustering_agent/
     |   ├── config_1.json
@@ -127,8 +100,9 @@ The S3 bucket folder structure is as follows:
     │       └── flow.json
     ├── mapping/
     │   └── field_mapping/
-    │       └── cypienta_cef.json
+    │       └── Common_Event_Format.json
     ├── uploads/
+    ├── output/
     └── scratch/
 
 **input/:** The input folder contains all the files that will be processed by the Cypienta pipeline. Once the file is created in this folder, the file is added to the queue to be processed in a step function execution. There will be one step function execution per file in the input folder in sequential order. The status of the current execution can be viewed on Airflow UI.
@@ -142,3 +116,5 @@ The S3 bucket folder structure is as follows:
 **mapping/:** The folder contains the mapping files for the Cypienta pipeline.
 
 **uploads/:** The folder contains the files that are uploaded to the S3 bucket from the UI.
+
+**output/:** The folder contains the output files that are created by the Cypienta pipeline.

@@ -1,15 +1,15 @@
-End to End Test (CEF input format)
+End to End Test (Common Event Format)
 ==================================================
 
 How to test end-to-end
 ----------------------
 
 1. Navigate to the AWS console and search for ``S3``. Select the S3 bucket
-   that you created and navigate to the folder ``input/cypienta_cef/``.
+   that you created and navigate to the folder ``input/Common_Event_Format/``.
 
     .. note::
         The folder structure should be as follows:
-        ``s3://{bucket-name}/input/cypienta_cef/``
+        ``s3://{bucket-name}/input/Common_Event_Format/``
 
 2. Sample input json file:
 
@@ -38,20 +38,20 @@ How to test end-to-end
             {
                 "_cd": "318:6", // id for Event in splunk - optional
                 "_eventType": "tech", // event type - optional
-                "_time": "1568916650", // time from splunk
+                "_time": "1568916650", // time from splunk - time
                 "id": "318:6", // internal id for Event
-                "sourceAddressIPv6": "10.0.0.4", // source address
-                "destinationAddress": "10.0.0.4", // destination address
-                "description": "initial execution of malicious document calls wmic to execute the file with regsvr32" // description of the event
+                "sourceAddressIPv6": "10.0.0.4", // source address - entities
+                "destinationAddress": "10.0.0.4", // destination address - entities
+                "description": "initial execution of malicious document calls wmic to execute the file with regsvr32" // description of the event - name
                 ... // other cef fields
             }, ...
         ]
 
     All fields are required unless mentioned otherwise. If the value for the field is not present, keep empty string as value.
 
-3. Upload input json file to the s3 bucket in path: ``s3://{bucket-name}/input/cypienta_cef/``. The name of the input file does not matter to the end-to-end flow. Note that if you upload a file with the same name, it will be overwritten in S3 bucket. Once you upload the input file. You can use the Airflow to monitor the flow of your input.
+3. Upload input json file to the s3 bucket in path: ``s3://{bucket-name}/input/Common_Event_Format/``. The name of the input file does not matter to the end-to-end flow. Note that if you upload a file with the same name, it will be overwritten in S3 bucket. Once you upload the input file. You can use the Airflow to monitor the flow of your input.
 
-4. You can wait for the default pipeline schedule to trigger the pipeline to process your input file (every 5 hours). To manually trigger the pipeline, navigate to the Airflow UI using the link listed in the CloudFormation stack outputs. Login using the default credentials if not modified. Click on the Play button on the right side of the ``file_polling`` DAG listed under ``Dags`` tab.
+4. You can wait for the default pipeline schedule to trigger the pipeline to process your input file (every 5 hours). To manually trigger the pipeline, navigate to the Airflow UI. Login using the default credentials if not modified. Click on the Play button on the right side of the ``file_polling`` DAG listed under ``Dags`` tab.
 
 5. You can monitor the progress for the pipeline in the Airflow UI.
 

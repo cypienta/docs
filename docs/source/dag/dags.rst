@@ -9,6 +9,7 @@ The fleet of airflow DAGs will be responsible for end-to-end flow for the Cypien
 #. **file_polling:**
 
     - The DAG is triggered from the periodic schedule in the Cypienta UI.
+    - The maximum individual file size is set to be 1 GB, and the maximum file size total in a batch could be 2 GB. If in a batch there are more than 2 GB of files, the DAG will split up the batch in ascending order of file modification time, and process the files in batches of 2 GB.
     - Gets the list of file in the upload folders for multiple data sources ``input/<data_source_name>/``. If the list of files is not empty then the schema_matcher_and_classifier DAG is triggered. Else, it exits.
     - If there is an error while processing the files in the DAG, the ``file_polling_recovery`` DAG is triggered. And, the ``file_polling`` DAG will be blocked until the ``file_polling_recovery`` DAG is completed successfully.
     - This DAG will record the order of batch of files.
@@ -28,7 +29,7 @@ The fleet of airflow DAGs will be responsible for end-to-end flow for the Cypien
 #. **schema_matcher_and_classifier:**
 
     - The DAG is triggered by file_polling DAG.
-    - It starts a concurrent task for each file in the batch. The concurrency is currently limited to 4 tasks, 1 DAG run at a time.
+    - It starts a concurrent task for each file in the batch. The concurrency is currently limited to 10 tasks (default), 1 DAG run at a time. The concurrency limit is set based on the input parameters to CloudFormation stack.
     - The ``schema_matcher_and_classifier`` task will transform the raw data into internal format for cypienta pipeline, and enrich the input data with MITRE ATT&CK techniques.
     - If there are no alerts to be processed, the DAG will exit and skip the current batch by triggering the ``skip_batch`` DAG.
     - If there is an error in the task for schema matcher, the task will be retried 5 times with exponential backoff.
@@ -39,8 +40,10 @@ The fleet of airflow DAGs will be responsible for end-to-end flow for the Cypien
 
     - The DAG is triggered by ``schema_matcher_and_classifier`` DAG to process the input files.
     - It takes as an input a volume file path prefix to get list of files to be aggregated.
-    - It will aggreagte the data from the list of files, aggregate the data, chunk the data, and save the final output data to the volume.
-    - The concurrency is limited to 1 DAG run at a time with concurrency limit of 4.
+    - It will first aggregate the data within a single data source.
+    - It will then aggregate the data from all the data sources.
+    - It will chunk the data, and save the final output data to the volume.
+    - The concurrency is limited to 1 DAG run at a time with concurrency limit of 3 (default). The concurrency limit is set based on the input parameters to CloudFormation stack.
     - If there is an error in the task for aggregator, the task will be retried 5 times with exponential backoff.
     - If the error persists, the task will be marked as failed, trigger the ``skip_batch`` DAG and the DAG will exit.
     - It will get list of clustering agents from the volume and it will trigger the ``clustering`` DAG per chunk for each clustering agent.
@@ -52,7 +55,7 @@ The fleet of airflow DAGs will be responsible for end-to-end flow for the Cypien
     - After completing the clustering task, it will start concurrent task to check which sequencer data is available and can be used to start the sequencer model, i.e. trigger the ``sequencer`` DAG. And, it will process the cluster output and create campaigns on the Cypienta UI.
     - If the sequencer data is available, it will start the sequencer model one chunk per DAG run.
     - If the sequencer data is not available, it will skip the task in the DAG.
-    - The concurrency is limited to 10 DAG runs at a time with concurrency limit of tasks as 4.
+    - The concurrency is limited to 10 DAG runs at a time with concurrency limit of tasks as 4 (default). The concurrency limit is set based on the input parameters to CloudFormation stack.
     - If any task in clustering DAG fails, it will be retried 5 times with exponential backoff. after 5 retries, it will trigger the ``skip_batch`` DAG for the current chunk and clustering agent and skip it in any further processing.
 
 #. **sequencer:**
@@ -62,6 +65,7 @@ The fleet of airflow DAGs will be responsible for end-to-end flow for the Cypien
     - The clustering DAG will only trigger the sequencer DAG if the sequencer data is available.
     - The sequencer data is fundamentally a chunk of data from cluster output in a fixed window size of 5000 clusters.
     - It is possible that one chunk of cluster output has multiple chunks of sequencer data, which will result into multiple DAG runs for ``sequencer`` DAG.
+    - The concurrency is limited to 10 DAG runs at a time with concurrency limit of tasks as 4 (default). The concurrency limit is set based on the input parameters to CloudFormation stack.
     - Once the sequencer model is completed, it will trigger the task to create flow campaigns on the Cypienta UI.
 
 #. **skip_batch:**
@@ -71,3 +75,43 @@ The fleet of airflow DAGs will be responsible for end-to-end flow for the Cypien
     - The DAG is triggered by ``clustering`` DAG if there is an error in the ``clustering`` DAG.
     - The DAG will check the source of the trigger and decide if the entire batch or a specific chunk is to be skipped for any further processing. And makes sure that the subsequent pipelne runs are not blocked by any failed task.
     - If there are any pending chunks that can be processed now through sequencer model given that the current batch or chunk is marked as failed, then it will trigger the ``start_sequencer`` DAG.
+
+#. **process_cluster_output:**
+
+    - The DAG is triggered by ``clustering`` DAG to process the cluster output and create cluster ticket output, and custom outputs.
+    - It will start the parallel task for each cluster output chunk in the batch.
+    - After completing the process cluster output task, it will check if campaigns are ready to be uploaded to the Cypienta UI, it they are, it will trigger the ``create_campaigns`` DAG, else it will end the DAG after skipping the creation of campaigns.
+    - The concurrency is limited to 4 DAG runs (default) at a time. The concurrency limit is set based on the input parameters to CloudFormation stack.
+    - If any task in clustering DAG fails, it will be retried 5 times with exponential backoff.
+
+#. **process_sequencer_output:**
+
+    - The DAG is triggered by ``sequencer`` DAG to process the sequencer output and create sequencer ticket output, and custom outputs.
+    - It will start the parallel task for each sequencer output chunk in the batch.
+    - After completing the process sequencer output task, it will check if campaigns are ready to be uploaded to the Cypienta UI, it they are, it will trigger the ``create_campaigns`` DAG, else it will end the DAG after skipping the creation of campaigns.
+    - The concurrency is limited to 4 DAG runs (default) at a time. The concurrency limit is set based on the input parameters to CloudFormation stack.
+    - If any task in clustering DAG fails, it will be retried 5 times with exponential backoff.
+
+#. **create_events:**
+
+    - The DAG is triggered by ``schema_matcher_and_classifier`` DAG to upload events in a batch to the Cypienta UI.
+    - It will start the parallel task for each file in the batch.
+    - After completing the create events task, it will check if aggregated events are ready to be uploaded to the Cypienta UI, it they are, it will trigger the ``create_agg_events`` DAG, else it will end the DAG after skipping the creation of aggregated events.
+    - The concurrency is limited to 4 DAG runs at a time with concurrency limit of tasks as 4 (default). The concurrency limit is set based on the input parameters to CloudFormation stack.
+    - If any task in clustering DAG fails, it will be retried 5 times with exponential backoff.
+
+#. **create_agg_events:**
+
+    - The DAG is triggered by ``create_events`` or ``aggregator`` DAG to upload aggregated events in a batch to the Cypienta UI.
+    - It will start the parallel task for each aggregated event chunk in the batch.
+    - After completing the create events task, it will check if campaigns are ready to be uploaded to the Cypienta UI, it they are, it will trigger the ``create_campaigns`` DAG, else it will end the DAG after skipping the creation of campaigns.
+    - The concurrency is limited to 4 DAG runs at a time with concurrency limit of tasks as 4 (default). The concurrency limit is set based on the input parameters to CloudFormation stack.
+    - If any task in clustering DAG fails, it will be retried 5 times with exponential backoff.
+
+#. **create_campaigns:**
+
+    - The DAG is triggered by ``create_agg_events`` or ``process_cluster_output``, ``process_sequencer_output`` DAG to create campaigns in a batch on the Cypienta UI.
+    - It will start the parallel task for each campaign in the batch.
+    - After completing the create campaigns task, it will end the DAG.
+    - The concurrency is limited to 4 DAG runs at a time with concurrency limit of tasks as 4 (default). The concurrency limit is set based on the input parameters to CloudFormation stack.
+    - If any task in clustering DAG fails, it will be retried 5 times with exponential backoff.

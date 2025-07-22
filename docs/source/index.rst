@@ -13,19 +13,19 @@ Getting Started
 
 :doc:`getting_started/deploy`: Deploy Cypienta on AWS.
 
-:doc:`getting_started/end_to_end_test_cef`: Test the Cypienta pipeline with CEF input data.
+:doc:`getting_started/end_to_end_test_cef`: Test the Cypienta pipeline with Common Event Format input data.
 
 :doc:`deploy_ui/mapping`: Run the pipeline with your custom data fields.
 
 :doc:`deploy_ui/airflow`: Airflow configuration and errors.
 
 
-Cypienta UI
----------------
+.. Cypienta UI
+.. ---------------
 
-:doc:`deploy_ui/start_using`: Start using Cypienta UI.
+.. :doc:`deploy_ui/start_using`: Start using Cypienta UI.
 
-:doc:`deploy_ui/tune_config`: Tune Cluster Model Config.
+.. :doc:`deploy_ui/tune_config`: Tune Cluster Model Config.
 
 
 Pipeline Overview 
@@ -64,11 +64,11 @@ Advanced User Guide
     deploy_ui/mapping
     deploy_ui/airflow
 
-.. sidebar-links::
-    :caption: Cypienta UI
+.. .. sidebar-links::
+..     :caption: Cypienta UI
 
-    deploy_ui/start_using
-    deploy_ui/tune_config
+..     deploy_ui/start_using
+..     deploy_ui/tune_config
 
 .. sidebar-links::
     :caption: Pipeline Overview 
