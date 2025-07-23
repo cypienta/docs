@@ -6,7 +6,7 @@ AWS Deployment
 Deploy resources using the Cloud Formation template
 ---------------------------------------------------
 
-1. On your local machine, download the template file from Github. `Template file <https://github.com/cypienta/AWS/blob/72491068c068c95cb5176c2edf8a5bd3f7ca8d0a/template.yaml>`__. Or, use the following command to download the ``template.yaml`` file.
+#. On your local machine, download the template file from Github. `Template file <https://github.com/cypienta/AWS/blob/72491068c068c95cb5176c2edf8a5bd3f7ca8d0a/template.yaml>`__. Or, use the following command to download the ``template.yaml`` file.
 
     .. code-block:: shell
 
@@ -15,25 +15,25 @@ Deploy resources using the Cloud Formation template
     .. note::
         Run this command on your local machine. This command will download the template.yaml file.
 
-2. Navigate to the AWS console, and search for ``CloudFormation``.
+#. Navigate to the AWS console, and search for ``CloudFormation``.
 
     .. note::
         The UI component deployed from this template is only supported in the following AWS Regions. Make sure that you create stack in the supported region.
         Supported AWS regions: eu-north-1, ap-south-1, eu-west-3, us-east-2, eu-west-1, eu-central-1, sa-east-1, ap-east-1, us-east-1, ap-northeast-2, eu-west-2, ap-northeast-1, us-west-2, us-west-1, ap-southeast-1, ap-southeast-2, ca-central-1
 
-3. Click on ``Stacks`` on the left hand side panel, and click on ``Create stack`` dropdown. Select ``With new resources (standard)`` to start creating a stack
+#. Click on ``Stacks`` on the left hand side panel, and click on ``Create stack`` dropdown. Select ``With new resources (standard)`` to start creating a stack
 
     .. image:: resources/create_stack_start.png
         :alt: Subscribe to technique detector
         :align: center
 
-4. For the ``Prerequisite - Prepare template`` section, select ``Choose an existing template``, and then select ``Upload a template file``. It will enable a ``Choose file`` button. Click on the button to upload the template. The template is present in the same file location where you ran the ``wget`` command. Then click on ``Next``.
+#. For the ``Prerequisite - Prepare template`` section, select ``Choose an existing template``, and then select ``Upload a template file``. It will enable a ``Choose file`` button. Click on the button to upload the template. The template is present in the same file location where you ran the ``wget`` command. Then click on ``Next``.
 
     .. image:: resources/upload_template_file.png
         :alt: Subscribe to technique detector
         :align: center
 
-5. Now you can input all the parameters needed for the cloud formation stack. A few parameters are already filled in with default recommended values. You can change the values as required.
+#. Now you can input all the parameters needed for the cloud formation stack. A few parameters are already filled in with default recommended values. You can change the values as required.
     
     Give a name to the stack in ``Stack name``.
 
@@ -61,9 +61,9 @@ Deploy resources using the Cloud Formation template
     **FlowOutResourcePercentage:** The percentage of the total CPU and RAM to use for the flow out resource. This will be used to calculate the maximum parallel tasks executions that can be run on the EKS cluster. The minimum recommended value is already filled in with the default value.
 
 
-6.  Click on ``Next`` after adding the parameters.
+#.  Click on ``Next`` after adding the parameters.
 
-7.  On the page ``Configure stack options``, under the section ``Stack
+#.  On the page ``Configure stack options``, under the section ``Stack
     failure options``, select ``Roll back all stack resources`` for
     ``Behaviour on provisioning failure``. Select ``Delete all newly
     created resources`` for ``Delete newly created resources during a
@@ -75,13 +75,13 @@ Deploy resources using the Cloud Formation template
         :alt: stack timeout
         :align: center
 
-8.  You can monitor the events of the cloud stack by clicking on the
+#.  You can monitor the events of the cloud stack by clicking on the
     recently created cloud stack and going to the ``Events`` tab.
 
     .. note::
         **Resource Creation Time:** The cloud stack will take approximately 15 minutes to complete the creation of all the resources. 
 
-9. Once the cloud stack is completed successfully. You can start using
+#. Once the cloud stack is completed successfully. You can start using
     the products. Click on the ``Outputs`` tab for the recently created cloud 
     stack and note down the S3 bucket name under ``CypientaBucket``.
     The EFS file system name will be under ``CypientaEFS``.
@@ -99,9 +99,9 @@ Deploy resources using the Cloud Formation template
 
         The default credentials for Cypienta Airflow: Default ``Username`` is ``cypienta`` and the default ``Password`` is ``cypienta``
 
-10. You can now view the EKS cluster deployed in the AWS console. Navigate to the AWS console and search for ``EKS``. On the left hand side panel, select ``Clusters``. You can see the EKS cluster deployed in the list. The EKS cluster name will be matching the value under ``CypientaEKSCluster``.
+#. You can now view the EKS cluster deployed in the AWS console. Navigate to the AWS console and search for ``EKS``. On the left hand side panel, select ``Clusters``. You can see the EKS cluster deployed in the list. The EKS cluster name will be matching the value under ``CypientaEKSCluster``.
 
-11. Get the Load Balancer URL for the UI. Navigate to the AWS console and search for ``EC2``. On the left hand side panel, under ``Load Balancing``, select ``Load Balancers``. You can see the Load Balancer deployed in the list. The Load Balancer name's suffix will be matching the suffix of the UUID value under ``CypientaBucket``. Here its ``0affe1cc4a03``. You can copy the DNS name of the Load Balancer and paste it in a different tab or window of the browser.
+#. Get the Load Balancer URL for the UI. Navigate to the AWS console and search for ``EC2``. On the left hand side panel, under ``Load Balancing``, select ``Load Balancers``. You can see the Load Balancer deployed in the list. The Load Balancer name's suffix will be matching the suffix of the UUID value under ``CypientaBucket``. Here its ``0affe1cc4a03``. You can copy the DNS name of the Load Balancer and paste it in a different tab or window of the browser.
 
     .. image:: resources/load_balancer.png
         :alt: load balancer
