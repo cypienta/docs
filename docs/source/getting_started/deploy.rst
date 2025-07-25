@@ -6,7 +6,7 @@ AWS Deployment
 Deploy resources using the Cloud Formation template
 ---------------------------------------------------
 
-#. On your local machine, download the template file from Github. `Template file <https://github.com/cypienta/AWS/blob/v0.10.4/template.yaml>`__. Or, use the following command to download the ``template.yaml`` file.
+#. On your local machine, download the template file from Github. `Template file <https://github.com/cypienta/AWS/blob/v0.10.4/template.yaml>`_ :target:`_blank`. Or, use the following command to download the ``template.yaml`` file.
 
     .. code-block:: shell
 
@@ -64,13 +64,14 @@ Deploy resources using the Cloud Formation template
     ``Behaviour on provisioning failure``. Select ``Delete all newly
     created resources`` for ``Delete newly created resources during a
     rollback``. Expand the options for ``Stack creation options - optional`` and under  ``Timeout``, enter ``20`` to set a max timeout of 20 minutes for the stack.
-    And then click on ``Next``. At the bottom of the page, select all checkboxes for ``I
-    acknowledge…`` and click on ``Submit``. This will start creating the
-    required resources.
 
     .. image:: resources/stack_timeout.png
         :alt: stack timeout
         :align: center
+
+#.  At the bottom of the page, select all checkboxes for ``I
+    acknowledge…`` and click on ``Next``. This will start creating the
+    required resources.
 
     .. image:: resources/stack_acknowledge.png
         :alt: stack acknowledge
@@ -121,4 +122,5 @@ Handling Multiple Inputs
 -------------------------
 
 The pipeline will process files in the input folder in a batch.
-The files will be processed at a scheduled time which can be setup in Cypienta UI. It will process all the files in the input folder at the scheduled time. If there are multiple files in the input folder, it will process them in the same batch. If the first batch is not finished processing, the second batch will start processing concurrently up until clustering is completed, after that sequencer model will process the batch in sequential order.
+The files will be processed at a scheduled time which can be setup in Cypienta UI. It will process all the files in the input folder at the scheduled time. If there are multiple files in the input folder, it will process them in the same batch. The initial limit of file size is 1.5 GB for per file, and the limit of files in a batch is 2 GB.
+If there are more than 2 GB of files in the input folder, the pipeline will process them in batches of 2 GB sorted in ascending order of updated timestamp.
