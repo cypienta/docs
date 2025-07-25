@@ -6,7 +6,7 @@ AWS Deployment
 Deploy resources using the Cloud Formation template
 ---------------------------------------------------
 
-#. On your local machine, download the template file from Github. `Template file <https://github.com/cypienta/AWS/blob/72491068c068c95cb5176c2edf8a5bd3f7ca8d0a/template.yaml>`__. Or, use the following command to download the ``template.yaml`` file.
+#. On your local machine, download the template file from Github. `Template file <https://github.com/cypienta/AWS/blob/v0.10.4/template.yaml>`__. Or, use the following command to download the ``template.yaml`` file.
 
     .. code-block:: shell
 
@@ -63,12 +63,17 @@ Deploy resources using the Cloud Formation template
     failure options``, select ``Roll back all stack resources`` for
     ``Behaviour on provisioning failure``. Select ``Delete all newly
     created resources`` for ``Delete newly created resources during a
-    rollback``. Expand the options for ``Stack creation options - optional`` and under  ``Timeout``, enter ``20`` to set a max timeout of 20 minutes for the stack. And then click on ``Next``. At the bottom of the page, select all checkboxes for ``I
+    rollback``. Expand the options for ``Stack creation options - optional`` and under  ``Timeout``, enter ``20`` to set a max timeout of 20 minutes for the stack.
+    And then click on ``Next``. At the bottom of the page, select all checkboxes for ``I
     acknowledge…`` and click on ``Submit``. This will start creating the
     required resources.
 
     .. image:: resources/stack_timeout.png
         :alt: stack timeout
+        :align: center
+
+    .. image:: resources/stack_acknowledge.png
+        :alt: stack acknowledge
         :align: center
 
 #.  You can monitor the events of the cloud stack by clicking on the
@@ -98,6 +103,9 @@ Deploy resources using the Cloud Formation template
 #. You can now view the EKS cluster deployed in the AWS console. Navigate to the AWS console and search for ``EKS``. On the left hand side panel, select ``Clusters``. You can see the EKS cluster deployed in the list. The EKS cluster name will be matching the value under ``CypientaEKSCluster``.
 
 #. Get the Load Balancer URL for the UI. Navigate to the AWS console and search for ``EC2``. On the left hand side panel, under ``Load Balancing``, select ``Load Balancers``. You can see the Load Balancer deployed in the list. The Load Balancer name's suffix will be matching the suffix of the UUID value under ``CypientaBucket``. Here its ``0affe1cc4a03``. You can copy the DNS name of the Load Balancer and paste it in a different tab or window of the browser.
+
+    .. note::
+        Wait for the Load Balancers to be in ``Active`` state before accessing them.
 
     .. image:: resources/load_balancer.png
         :alt: load balancer

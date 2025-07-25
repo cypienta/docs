@@ -15,13 +15,14 @@ Make sure that you have the required permissions for resources for the IAM user 
 -  Lambda
 -  EventBridge
 -  EventBridge Scheduler
+-  AWS Marketplace
 
 To confirm you have the required permssion for the resources necessary to run the 
 pipeline you can check that with the following script. To run the script the IAM user must have ``iam:SimulatePrincipalPolicy``, ``iam:GetUser`` and ``iam:GetUserPolicy`` policy.
 
 .. code-block:: console
 
-    $ wget -O- https://raw.githubusercontent.com/cypienta/AWS/v0.10.0/check_permissions.py | python
+    $ wget -O- https://raw.githubusercontent.com/cypienta/AWS/v0.10.4/check_permissions.py | python
 
 
 Quotas
@@ -34,8 +35,8 @@ Verify your instance type quotas by going to the AWS console. Search for ``Servi
 
 .. note::
     Example: 
-        - Given the target region, go to service quotas or visit https://us-east-2.console.aws.amazon.com/servicequotas/home/services/sagemaker/quotas
-        - Search and select "Running On-Demand Standard (A, C, D, H, I, M, R, T, Z) instances" or visit https://us-east-1.console.aws.amazon.com/servicequotas/home/services/ec2/quotas/L-1216C47A
+        - Given the target region, go to service quotas or visit `EC2 quotas <https://us-east-1.console.aws.amazon.com/servicequotas/home/services/ec2/quotas>`__
+        - Search and select "Running On-Demand Standard (A, C, D, H, I, M, R, T, Z) instances" or visit `EC2 quotas Running On-Demand Standard Quotas <https://us-east-1.console.aws.amazon.com/servicequotas/home/services/ec2/quotas/L-1216C47A>`__
             - If the applied account-level quota value is less than 35, request an increase to at least 35.
 
 
